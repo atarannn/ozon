@@ -1,0 +1,91 @@
+-
+  var menu1 = [
+    ['Цінності', ''],
+    ['Інфраструктура', ''],
+    ['Переваги', ''],
+    ['День в OZON', 'day.html'],
+    ['SFERA LIVING SYSTEM', 'sfera.html'],
+    ['Галерея', ''],
+    ['Відео', ''],
+    ['Новини', '']
+  ];
+  var menu2 = [
+    ['Обрати квартиру', ''],
+    ['Підбір за параметрами', ''],
+    ['Умови придбання', ''],
+    ['Технічні характеристики', '']
+  ];
+  var menu3 = [
+    ['Девелопер', ''],
+    ['Документація', ''],
+    ['Хід будівництва', ''],
+    ['Вебкамери', ''],
+    ['CLIENT TECHNICAL CONTROL', 'technical_control.html']
+  ];
+  var menu4 = [
+    ['Розташування', ''],
+    ['Зв’язок', '']
+  ];
+.menu-wrap(data-menu data-disable-page-scroll)
+  .menu
+    .menu-top
+      .menu-top__left
+        a(href='index.html')
+          img(src='./assets/images/logo/logo.svg' alt='logo')
+
+      .menu-top__right
+        .menu-top__right-social
+          a(href='https://www.facebook.com' target='_blank')
+            svg(width='38' height='38' viewbox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg')
+              rect(x='1' y='1' width='36' height='36' rx='18' stroke='#ECEDEF')
+              path(d='M20.9046 14.9925H22V13.0845C21.811 13.0585 21.1611 13 20.4041 13C18.8248 13 17.7429 13.9935 17.7429 15.8195V17.5H16V19.633H17.7429V25H19.8797V19.6335H21.552L21.8175 17.5005H19.8792V16.031C19.8797 15.4145 20.0457 14.9925 20.9046 14.9925V14.9925Z' stroke='#4D4D4C')
+          a(href='https://www.instagram.com/' target='_blank')
+            svg(width='38' height='38' viewbox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg')
+              rect(x='1' y='1' width='36' height='36' rx='18' stroke='#ECEDEF')
+              rect(x='13.5' y='13.5' width='11' height='11' rx='2.5' stroke='#4D4D4C')
+              path(d='M19.0009 16.4673C17.6019 16.4673 16.4668 17.6024 16.4668 19.0015C16.4668 20.4006 17.6019 21.5356 19.0009 21.5356C20.4 21.5356 21.5351 20.4006 21.5351 19.0015C21.5351 17.6024 20.4 16.4673 19.0009 16.4673Z' stroke='#4D4D4C')
+              path(fill-rule='evenodd' clip-rule='evenodd' d='M22 15.5C22 15.2238 22.2239 15 22.5 15C22.7761 15 23 15.2238 23 15.5C23 15.7761 22.7761 16 22.5 16C22.2239 16 22 15.7761 22 15.5Z' stroke='#4D4D4C')
+          //select#selectId.select(name='language')
+          //    option.caret(value='ук' selected='selected') ук
+          //    option(value='ru') ру
+          //    option(value='en') en
+        .menu-top__right-phone
+          a(href='tel:+380442334545')
+            span (044) 233-45-45
+        .menu-top__right-button
+          a(href="#" data-modal='consultation').text.text-hover
+            span Замовити дзвінок
+        .menu-top__right-close(data-close-menu)
+          .text Меню
+          .menu-close
+
+
+    .menu__section-wrapper
+      .menu__section
+        .menu__title Будинок
+        ul
+          each el in menu1
+            li
+              a(href=el[1])= el[0]
+      .menu__section
+        .menu__title Квартири
+        ul
+          each el in menu2
+            li
+              a(href=el[1])= el[0]
+
+      .menu__section
+        .menu__title Будівництво
+        ul
+          each el in menu3
+            li
+              a(href=el[1])= el[0]
+
+      .menu__section
+        .menu__title Контакти
+        ul
+          each el in menu4
+            li
+              a(href=el[1])= el[0]
+      .menu__block-pattern
+        img(src='./assets/images/icons/Pattern-10.svg' alt='Pattern-10')

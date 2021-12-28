@@ -1,0 +1,176 @@
+.page__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  min-height: 100vh;
+	.page__content {
+      flex-grow: 1;
+	}
+	.page__footer-wrapper {
+      flex-shrink: 0;
+	}
+}
+.section-padding--top {
+  padding-top: 60px;
+}
+.btn--res{
+  border: none;
+  background-color: transparent;
+}
+
+.brd{
+  border: 1px solid red;
+}
+
+.underline{
+  position: relative;
+  display: flex;
+  color: #000;
+
+  &::after{
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    content: "";
+  }
+}
+
+.row {
+  @include row-flex;
+  justify-content: space-between;
+}
+
+.half-block {
+  @include size(6);
+}
+
+.block-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blocks-margin {
+  margin-top: var(--blocks-margin);
+}
+
+.offset {
+  margin-left: var(--offset);
+  margin-right: var(--offset);
+}
+
+.blocks-offset {
+  margin-left: var(--blocks-offset);
+  margin-right: var(--blocks-offset);
+}
+
+.page-inner-offset {
+  margin-left: var(--page-inner-offset);
+  margin-right: var(--page-inner-offset);
+  margin-bottom: var(--page-inner-offset2);
+}
+
+.first__pattern {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: calc(-264px/2);
+  transform: translateY(50%);
+  background: url("../images/icons/Pattern-11.svg") center center / contain no-repeat;
+  width: 264px;
+  height: 296px;
+}
+
+.second__pattern {
+  position: absolute;
+  z-index: -1;
+  top: 900px;
+  right: calc(-264px/2);
+  transform: translateY(50%);
+  background: url("../images/icons/Pattern-9.svg") center center / contain no-repeat;
+  width: 264px;
+  height: 272px;
+}
+
+.third__pattern {
+  position: absolute;
+  z-index: -1;
+  top: 1600px;
+  left: calc(-265px/2);
+  transform: translateY(50%);
+  background: url("../images/icons/Pattern-5.svg") center center / contain no-repeat;
+  width: 265px;
+  height: 267px;
+}
+
+.fourth__pattern {
+  position: absolute;
+  z-index: -1;
+  top: 2200px;
+  right: calc(-264px/2);
+  transform: translateY(50%);
+  background: url("../images/icons/Pattern-8.svg") center center / contain no-repeat;
+  width: 264px;
+  height: 266px;
+}
+
+.fifth__pattern {
+  position: absolute;
+  z-index: -1;
+  top: 2700px;
+  left: 0;
+  transform: translateY(50%);
+  background: url("../images/icons/Pattern-2.svg") center center / contain no-repeat;
+  width: 133px;
+  height: 267px;
+}
+
+.sixth__pattern {
+  position: absolute;
+  z-index: -1;
+  top: 3200px;
+  right: calc(-264px/2);
+  transform: translateY(50%);
+  background: url("../images/icons/Pattern-1.svg") center center / contain no-repeat;
+  width: 264px;
+  height: 258px;
+}
+
+.seventh__pattern {
+  position: absolute;
+  z-index: -1;
+  top: 4200px;
+  left: 0;
+  transform: translateY(50%);
+  background: url("../images/icons/Pattern-4.svg") center center / contain no-repeat;
+  width: 134px;
+  height: 273px;
+}
+
+.eighth__pattern{
+  position: absolute;
+  z-index: -1;
+  top: 4900px;
+  right: calc(-286px/2);
+  transform: translateY(50%);
+  background: url("../images/icons/Pattern-5.svg") center center / contain no-repeat;
+  width: 286px;
+  height: 300px;
+}
+
+.ninth__pattern {
+  position: absolute;
+  z-index: -1;
+  top: 5600px;
+  left: calc(-286px/2);
+  transform: translateY(50%);
+  background: url("../images/icons/Pattern-3.svg") center center / contain no-repeat;
+  width: 286px;
+  height: 274px;
+}

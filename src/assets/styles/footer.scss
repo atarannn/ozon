@@ -1,0 +1,116 @@
+.footer {
+  padding-top: 100px;
+  padding-left: var(--header-padding);
+  padding-right: var(--header-padding);
+  padding-bottom: 30px;
+
+  background-color: $light-grey;
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-bottom: 1px solid #D9DBDF;
+    padding-bottom: var(--left-right-margin);
+  }
+
+  &__item {
+    ul {
+      margin-top: 20px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      li {
+        a {
+          @include HelveticaNeueCyr(10px, 240%, left, uppercase, $main-brown, 300);
+          @include hover-color;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .footer__text {
+      @include HelveticaNeueCyr(12px, 140%, left, none, $main-brown, 300);
+      max-width: 60%;
+      margin-bottom: 20px;
+    }
+
+    .footer__tel {
+      @include HelveticaNeueCyr(12px, 100%, left, none, $main-brown, 500);
+      @include hover-color;
+    }
+
+    .footer__text-upper {
+      @include HelveticaNeueCyr(12px, 140%, left, uppercase, $main-brown, 300);
+      max-width: 60%;
+      margin-top: 20px;
+    }
+
+    .footer__saga {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 20px;
+
+      & img {
+        height: 35px;
+        width: 35px;
+        margin-right: 15px;
+      }
+
+      &-text {
+        @include HelveticaNeueCyr(12px, 140%, left, none, $main-brown, 300);
+      }
+    }
+  }
+
+
+  form {
+    max-width: 80%;
+
+    .form-label {
+      @include cormorant(36px, 120%, left, 0.05em, uppercase, $main-brown);
+      margin-top: 50px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 50px;
+    border-top: 1px solid $grey;
+
+    @include HelveticaNeueCyr(12px, 140%, center, none, $footer-c, 300);
+
+    &-left {
+      width: 10%;
+      text-align: left;
+    }
+
+    &-center {
+      width: 40%;
+      text-align: center;
+    }
+
+    &-right {
+      width: 10%;
+      text-align: right;
+
+      display: flex;
+      flex-direction: column;
+
+      a {
+        color: $main-brown;
+        font-weight: 400;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'CLIENT TECHNICAL CONTROL'
+    var id_page = 'id-page-technical_control'
+    var class_page = 'class-page-technical_control'
+    var breadcrumbsSubitem = [
+      {
+        label: 'technical_control',
+        link: pagesLink[0].technical_control
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/technical_control.js')
+block content
+  include ../includes/breadcrumbs.pug
+
+  #technical_control
+    .page-inner-offset
+      h1.page-title= title_page
+      .info-top-wrapper.title__bottom-padding3
+        a(href="#")
+          img(src='./assets/images/icons/footer-saga.svg' alt='saga')
+        .info-top__text
+          .tenor-title Клієнтський Технічний Контроль – унікальний проєкт компанії SAGA Development, який дозволяє майбутньому мешканцю бути учасником процесу будівництва.
+          .text Ми розуміємо, що клієнт як інвестор і замовник послуги, повинен мати можливість слідкувати за ходом будівництва, контролювати термін здачі об’єкта в експлуатацію, вносити свої пропозиції щодо якості будівельних матеріалів та впливати на окремі проєктні рішення. Саме тому ми залучаємо покупця нерухомості до процесу та змінюємо його роль спостерігача на роль учасника.
+      .info-img.relative
+        .block__gradient
+        img(src='./assets/images/tech-control/Frame.png' alt='technical_control').technical_control-img-absolute
+        img(src='./assets/images/tech-control/1.png' alt='technical_control')
+      .helvetica-title.title__top-padding2.title__bottom-padding4 Мета проєкту – створити систему взаємодії, яка допоможе збудувати житловий комплекс у відповідності до очікувань інвестора.
+
+      .technical_control-info.border-bottom
+        .tenor-title-upper Client Technical Control надає право майбутнім мешканцям:
+        .info-text-block.title__top-padding2
+          .info-text-block__left
+            .text Разом з менеджером проєкту та представниками компанії SAGA Development проводити огляд будівельного майданчика
+            .text Контролювати відповідність планових і фактичних характеристик об′єкта
+            .text Слідкувати за темпами будівництва
+          .info-text-block__right
+            .text Контролювати виконання робіт з благоустрою території
+            .text Перевіряти освітлення та обладнання місць загального користування
+            .text Обговорювати результати технагляду
+            .text Складати перелік пропозицій для компанії
+      .technical_control-list-block
+        .helvetica-title.title__top-padding1 Як здійснюється Клієнтський Контроль?
+        ul.technical_control-list
+          li 1
+            .text Ми запрошуємо всіх інвесторів стати учасником Клієнтського Контролю.
+          li 2
+            .text Інформування про зустріч відбувається за допомогою пуш-повідомлення у мобільному додатку Sfera.
+          li 3
+            .text Всі інвестори будинку отримують запрошення на Клієнтський Контроль з метою контролю готовності об’єкта, підготовки пропозицій щодо благоустрою території тощо.
+      .info-img.title__top-padding4.title__bottom-padding2
+        img(src='./assets/images/tech-control/2.png' alt='technical_control')
+
+      .technical_control-info
+        .tenor-title-upper Під час відвідування будівельного майданчика інвесторів зустрічають:
+        .info-text-block.title__top-padding2
+          .info-text-block__left
+            .text Менеджер проєкту
+            .text Керівник служби технічного клієнтського контролю SAGA Development
+          .info-text-block__right
+            .text Брендменеджер проєкту
+            .text Представник відділу продажу
+            .text Представник управляючої компанії ATMOSFERA
+        .helvetica-title.title__top-padding3.title__bottom-padding3 За результатами візиту інвестори отримують звіт про те, які з пунктів зауважень компанія готова виконати.
+
+      .technical_control-info
+        .tenor-title-upper Інвестори можуть впливати на:
+        .info-img.title__top-padding1.title__bottom-padding3.relative
+          .technical_control-block-absolute
+            img(src='./assets/images/tech-control/Frame-2.png' alt='technical_control')
+            ul.technical_control-list
+              li 1
+                .text Відповідність якості заявленого проєкту реальному будівництву
+              li 2
+                .text Оформлення місць загального користування
+              li 3
+                .text Вибір окремих видів оздоблювальних матеріалів
+              li 3
+                .text Благоустрій
+          img(src='./assets/images/tech-control/3.png' alt='technical_control')
+        .button.title__top-padding2
+          a(href="#")
+            span Приєднатися до зустрічей ктк
+            +svg('arrow').btn-svg
+
+
+
+    .first__pattern
+    .second__pattern
+    .third__pattern
+    .fourth__pattern
+    .fifth__pattern
+    .sixth__pattern
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

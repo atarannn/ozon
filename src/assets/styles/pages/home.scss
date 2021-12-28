@@ -1,0 +1,373 @@
+.promo, .video, .garden, .aesthetics, .infrastructure, .location, .apartments, .card, .info, .connection{
+  position: relative;
+}
+
+.promo {
+  height: 95vh;
+  width: 100%;
+  background-color: $w;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__group {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    background: url("../images/icons/Group.svg") center center / contain no-repeat;
+    width: 272px;
+    height: 264px;
+  }
+}
+
+.promo__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  li {
+    margin-right: 50px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    @include HelveticaNeueCyr(14px, 170%, center, uppercase, $main-brown, 300);
+    @include hover-color;
+  }
+}
+
+.video {
+  width: 100%;
+  height: 95vh;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  &__button {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+
+    svg {
+      height: 50px;
+      width: 50px;
+      margin-left: 20px;
+    }
+  }
+
+  &__pattern {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 17%;
+    transform: translateY(50%);
+    background: url("../images/icons/Pattern-1.svg") center center / contain no-repeat;
+    width: 200px;
+    height: 197px;
+  }
+}
+
+.garden__pattern {
+  position: absolute;
+  bottom: -5%;
+  left: 0;
+  background: url("../images/icons/Pattern-2.svg") center center / contain no-repeat;
+  width: 133px;
+  height: 232px;
+}
+
+.infrastructure__pattern {
+  position: absolute;
+  top: -150px;
+  left: 75%;
+  z-index: -1;
+  background: url("../images/icons/Pattern-3.svg") center center / contain no-repeat;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 192px;
+}
+
+.concept {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  background: url("../images/img/concept.jpg") center center / cover no-repeat;
+
+  &__title {
+    @include cormorant (96px, 100%, left, 0.05em, uppercase, $w);
+
+    display: flex;
+    align-self: center;
+    margin-left: var(--left-right-margin);
+  }
+
+  &__items {
+    margin: 15% 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 90px;
+  }
+
+  &__item {
+    &-numbers {
+      @include tenor (48px, 120%, left, normal, none, $w);
+
+      span {
+        @include tenor (48px, 120%, left, normal, none, $w);
+        margin-right: 10px;
+
+        &:last-child {
+          margin-left: 10px;
+        }
+      }
+
+      sup {
+        @include tenor (18px, 120%, left, normal, none, $w);
+      }
+    }
+
+    &-text {
+      @include HelveticaNeueCyr (18px, 170%, left, lowercase, $w, 300);
+    }
+  }
+}
+
+.location {
+
+  &__map {
+    width: 50%;
+    height: 80vh;
+
+    &-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.apartments__video {
+  width: 100%;
+  height: 95vh;
+  position: relative;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.apartments__pattern {
+  position: absolute;
+  top: 83%;
+  transform: translateY(-50%);
+  left: 0%;
+  background: url("../images/icons/Pattern-4.svg") center center / contain no-repeat;
+  width: 132px;
+  height: 261px;
+}
+
+.card {
+  .title {
+    text-align: left;
+  }
+}
+
+.card-top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 100px;
+
+  .card-button.button {
+    margin-top: 20px;
+
+    a {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.card__item-image {
+  width: 100%;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.card__item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  .card-button.button {
+    margin-top: 0;
+  }
+}
+
+.card__item-right {
+  position: relative;
+
+  .pattern {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 261px;
+    height: 263px;
+  }
+}
+
+.info {
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-left: var(--left-right-margin);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-evenly;
+  align-items: start;
+  justify-items: start;
+  row-gap: 90px;
+  background: url("../images/img/info.jpg") center center / cover no-repeat;
+
+  &__first,
+  &__third {
+    display: grid;
+    grid-template-columns: 100px auto;
+    column-gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+
+    &-svg {
+      grid-row: 1 / 3;
+    }
+  }
+
+  &__first,
+  &__second,
+  &__third,
+  &__fourth {
+    .title {
+      text-align: left;
+    }
+
+    .button {
+      margin-top: 0;
+
+       a {
+         justify-content: flex-start;
+         color: $w;
+       }
+
+      &:hover a{
+        color: $main-green;
+      }
+    }
+  }
+
+  &__pattern {
+    position: absolute;
+    z-index: -1;
+    top: 100%;
+    left: 75%;
+    width: 264px;
+    height: auto;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.connection {
+  background: $dark-grey;
+  padding-left: var(--left-right-margin);
+  padding-right: var(--left-right-margin);
+
+  &__contacts-item {
+    margin-bottom: 70px;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  &__pattern {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 80px;
+    width: 264px;
+    height: auto;
+  }
+
+  &__contacts-left, &__contacts-right{
+    z-index: 1;
+  }
+
+  &__contacts-left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-top: 10%;
+  }
+
+  .title {
+    margin-bottom: 100px;
+  }
+
+  .connection__text {
+    @include HelveticaNeueCyr(18px, 170%, left, none, $main-brown, 300);
+    max-width: 60%;
+  }
+
+  a.connection__text{
+    @include hover-color;
+  }
+
+  .connection__text-upper {
+    @include HelveticaNeueCyr(18px, 170%, left, uppercase, $main-brown, 300);
+    max-width: 60%;
+    margin-top: 20px;
+  }
+
+  .button {
+    margin-top: 30px;
+  }
+}
+
+.helvet__title {
+  @include HelveticaNeueCyr(18px, 100%, left, uppercase, $main-brown, 400);
+  margin-bottom: 20px;
+}
+
+
+

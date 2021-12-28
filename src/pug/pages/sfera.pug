@@ -1,0 +1,137 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'SFERA LIVING SYSTEM'
+    var id_page = 'id-page-sfera'
+    var class_page = 'class-page-sfera'
+    var breadcrumbsSubitem = [
+      {
+        label: 'SFERA LIVING SYSTEM',
+        link: pagesLink[0].sfera
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/sfera.js')
+block content
+  include ../includes/breadcrumbs.pug
+
+  #sfera
+    .page-inner-offset
+      h1.page-title= title_page
+      .info-top-wrapper.title__bottom-padding3
+        a(href="#")
+          img(src='./assets/images/icons/sfera.svg' alt='sfera')
+        .info-top__text
+          .tenor-title ATMOSFERA — це високотехнологічна управляюча компанія, яка піклується про комфортне та щасливе життя мешканців.
+          .text Головна мета компанії ATMOSFERA – передбачити запити мешканців і забезпечити їх належне виконання в максимально короткий термін. ATMOSFERA піклується про комфорт мешканців OZON Concept House на всіх етапах – як після введення об’єкту до експлуатації та отримання права власності на квартиру, так і під час проживання у будинку.
+      .technical_control-info.title__top-padding2.title__bottom-padding3
+        .tenor-title-upper Client Technical Control надає право майбутнім мешканцям:
+        .info-text-block.title__top-padding2
+          .info-text-block__left
+            .text Команда професіоналів з укомплектованою матеріально-технічною базою
+            .text Сервіс-менеджер, який вирішить усі питання до заселення
+            .text Консьєрж, який вирішує усі запитання після заселення: від доставки продуктів до виклика сантехніка
+            .text Оформлення прав власності на квартиру
+            .text Створення ОСББ
+            .text Управління витратами та комунальними послугами
+            .text Автоматизована звітність будинку
+            .text Своєчасне усунення несправностей
+          .info-text-block__right
+            .text Ремонт у квартирі
+            .text Відповідальність за кожну задачу від мешканця
+            .text Енергозберігаючі технології
+            .text Підписання договорів з постачальниками послуг: тепло, вода, електроенергія
+            .text Прибирання місць загального користування
+            .text Контроль якості надання послуг
+            .text Безпека у будинку та на його території
+            .text Допомога в устаткуванні системи «розумна квартира»
+            .text Формування тарифів та рахунків
+            .text Інженерно-технічне обслуговування
+
+      .info-img
+        img(src='./assets/images/sfera/1.png' alt='sfera')
+
+      .technical_control-info.title__top-padding2.title__bottom-padding2
+        .tenor-title-upper МОБІЛЬНИЙ ДОДАТОК SFERA
+        .info-text-block.title__top-padding2.title__bottom-padding3
+          .info-text-block__left
+            .text Звітність про будівництво
+            .text Домофон у смартфоні – відкривайте двері з мобільного додатку навіть коли вас немає вдома
+            .text Важливі повідомлення
+            .text Новини будинку
+            .text Фінансова звірка
+          .info-text-block__right
+            .text Дистанційне відеоспостереження в зонах загального користування
+            .text Контроль над змінами по ремонту чи переплануванню
+            .text Вся документація в одному місці
+            .text Календар запланованих робіт
+            .text Виставлення рахунків
+            .text Контроль спожитої електроенергії
+
+
+
+      .technical_control-info.title__bottom-padding2
+        .tenor-title-upper ЧАТ SFERA
+        .info-text-block.title__top-padding2.title__bottom-padding3
+          .info-text-block__left
+            .text Вирішення екстрених проблем
+            .text Зворотний зв’язок 24/7
+          .info-text-block__right
+            .text Виклик сантехніка та інших технічних спеціалістів
+            .text Замовлення послуг та товарів
+
+      .info-img
+        img(src='./assets/images/sfera/2.png' alt='sfera')
+
+      .technical_control-info.title__top-padding3.title__bottom-padding2
+        .tenor-title-upper МОБІЛЬНИЙ ДОДАТОК SFERA
+        .info-text-block.title__top-padding2.title__bottom-padding3
+          .info-text-block__left
+            .text Управління вуличним освітленням
+            .text Автоматизоване освітлення у під’їздах
+            .text Відео-нагляд
+            .text Єдина система моніторингу стану будинку
+            .text IP-домофонія
+            .text Система контролю доступу
+          .info-text-block__right
+            .text Збір даних з приладів обліку енергоресурсів
+            .text Автоматизація та контроль індивідуального теплового пункту
+            .text Контроль температури у під’їздах
+            .text Система «розумний ліфт»
+
+      .technical_control-info.title__bottom-padding2
+        .tenor-title-upper СИСТЕМА «РОЗУМНА КВАРТИРА»
+        .info-text-block.title__top-padding2.title__bottom-padding3
+          .info-text-block__left
+            .text Система «розумний будинок» встановлена у всіх місцях загального користування. Вона не стосується приватного життя.
+          .info-text-block__right
+            .text Система «розумна квартира» є частиною приватного простору, тому вона може бути встановлена лише за бажанням мешканця.
+      .helvetica-title.title__bottom-padding3 Ми прагнемо створювати не лише будинки, але й атмосферу у них.
+      .info-img
+        img(src='./assets/images/sfera/3.png' alt='sfera')
+      .sfera-half-block.title__top-padding3.title__bottom-padding3 Ми мріємо досягнути затишку, у якому абсолютний комфорт буде підкреслюватися сучасними технологіями.
+      .helvetica-title Саме тому в кожному будинку присутня ATMOSFERA – система для життя.
+
+    .first__pattern
+    .second__pattern
+    .third__pattern
+    .fourth__pattern
+    .fifth__pattern
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -1,0 +1,12 @@
+#sfera{
+  position: relative;
+
+  .info-top__text .text{
+    margin-left: 30%;
+  }
+}
+
+.sfera-half-block {
+  @include HelveticaNeueCyr(18px, 160%, left, uppercase, $main-brown, 300);
+  margin-left: 45%;
+}
