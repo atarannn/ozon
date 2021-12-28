@@ -937,7 +937,7 @@ a {
 }
 
 .tenor-title {
-  @include tenor(20px, 170%, left, normal, normal, $main-brown);
+  @include tenor(20px, 170%, left, normal, none, $main-brown);
   margin-bottom: 30px;
 }
 

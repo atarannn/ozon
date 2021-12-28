@@ -4,11 +4,11 @@
 var settings = {
     outputStyle: 'scss', /* less || scss || sass || styl */
     columns: 12, /* number of grid columns */
-    offset: '20px', /* gutter width px || % || rem */
+    offset: '40px', /* gutter width px || % || rem */
     mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */
     container: {
         maxWidth: '1360px', /* max-width оn very large screen */
-        fields: '30px' /* side fields */
+        fields: '80px' /* side fields */
     },
     breakPoints: {
         lg: {

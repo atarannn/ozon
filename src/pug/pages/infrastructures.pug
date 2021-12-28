@@ -1,0 +1,187 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Інфраструктура'
+    var id_page = 'id-page-infrastructures'
+    var class_page = 'class-page-infrastructures'
+    var breadcrumbsSubitem = [
+      {
+        label: 'infrastructures',
+        link: pagesLink[0].infrastructures
+      }
+    ]
+    var rest = [
+      [{
+        img: 'infrastructures/1.png',
+        text: 'Зелені тераси для всіх мешканців'
+      }, {
+        img: 'infrastructures/2.png',
+        text: 'Зелені експлуатовані дахи'
+      }, {
+        img: 'infrastructures/3.png',
+        text: 'Ботанічний сад поруч з будинком'
+      }],
+      [{
+        img: 'infrastructures/4.png',
+        text: 'Приватні тераси'
+      }, {
+        img: 'infrastructures/5.png',
+        text: 'Парк навколо будинку'
+      }, {
+        img: 'infrastructures/6.png',
+        text: 'Кафе, ресторани та магазини у будинку'
+      }]
+    ]
+
+    var sport = [
+      [{
+        img: 'infrastructures/7.png',
+        text: 'Спортивні майданчики на прибудинковій території'
+      }, {
+        img: 'infrastructures/8.png',
+        text: 'Бігові та велодоріжки у парку навколо будинку'
+      }],
+      [{
+        img: 'infrastructures/9.png',
+        text: 'Басейн неподалік будинку'
+      },{
+        img: 'infrastructures/10.png',
+        text: 'Бігові та веломаршрути у ботанічному саду'
+      }]
+    ]
+
+    var child = [
+      {
+        img: 'infrastructures/11.png',
+        text: 'Дитячий садок у будинку'
+      }, {
+        img: 'infrastructures/12.png',
+        text: 'Дитячі майданчики на прибудинковій території'
+      }
+    ]
+
+    var beauty = [
+      [{
+        img: 'infrastructures/13.png',
+        text: 'Манікюрний салон'
+      }, {
+        img: 'infrastructures/14.png',
+        text: 'SPA-центр'
+      }, {
+        img: 'infrastructures/15.png',
+        text: 'Стоматологічний кабінет'
+      }],
+      [{
+        img: 'infrastructures/16.png',
+        text: 'Салон краси'
+      }, {
+        img: 'infrastructures/17.png',
+        text: 'Барбершоп'
+      }, {
+        img: 'infrastructures/18.png',
+        text: 'Аптека'
+      }]
+    ]
+
+    var cars = [
+      {
+        img: 'infrastructures/19.png',
+        text: 'Зарядні станції для електромобілів'
+      }, {
+        img: 'infrastructures/20.png',
+        text: 'Підземний паркінг'
+      }
+    ]
+
+
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+block content
+  include ../includes/breadcrumbs.pug
+
+  #infrastructure
+    .page-inner-offset
+      h1.page-title= title_page
+      .info-top-wrapper.title__bottom-padding4
+        .info-top__text
+          .tenor-title Завдяки тому, що OZON Concept House розташований у центрі, він оточений насиченою міською інфраструктурою. Поруч з будинком знаходиться багато кафе, ресторанів і магазинів, є декілька супермаркетів.
+          .text Створюючи OZON Concept House, ми також подбали про його внутрішню інфраструктуру. Все, що потрібно для комфорту та гармонійного життя, можна знайти у будинку або поруч з ним:
+
+    .infrastructure-block-wrapper
+      .infrastructure-block.infrastructure-block__margin
+        .helvetica-title Для відпочинку
+        .infrastructure-block__row
+          each inf in rest
+            .col
+              each val in inf
+                .block
+                  +img(val.img)
+                  .tenor-title.title__top-padding1=val.text
+
+      .infrastructure-block.infrastructure-block__margin
+        .helvetica-title Для спорту
+        .infrastructure-block__row
+          each inf in sport
+            .col
+              each val in inf
+                .block
+                  +img(val.img)
+                  .tenor-title.title__top-padding1=val.text
+
+      .infrastructure-block.infrastructure-block__margin
+        .helvetica-title Для дітей
+        .infrastructure-block__row
+          each inf in child
+            .col
+              .block
+                +img(inf.img)
+                .tenor-title.title__top-padding1=inf.text
+
+      .infrastructure-block.infrastructure-block__margin
+        .helvetica-title Для відпочинку
+        .infrastructure-block__row
+          each inf in beauty
+            .col
+              each val in inf
+                .block
+                  +img(val.img)
+                  .tenor-title.title__top-padding1=val.text
+
+      .infrastructure-block
+        .helvetica-title Для автомобілістів
+        .infrastructure-block__row
+          each inf in cars
+            .col
+              .block
+                +img(inf.img)
+                .tenor-title.title__top-padding1=inf.text
+        .block-big
+          img(src='./assets/images/infrastructures/21.png' alt='car')
+          .tenor-title.title__top-padding1 Наземний паркінг
+
+      .button.title__top-padding4
+        a(href="#")
+          span Обрати квартиру
+          +svg('arrow').btn-svg
+
+
+    .tenth__pattern
+    .eleventh__pattern
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

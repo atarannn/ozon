@@ -174,3 +174,25 @@
   width: 286px;
   height: 274px;
 }
+
+.tenth__pattern{
+  position: absolute;
+  z-index: -1;
+  top: 96%;
+  right: 0;
+  transform: translateY(50%);
+  background: url("../images/icons/Pattern-13.svg") center center / contain no-repeat;
+  width: 132px;
+  height: 266px;
+}
+
+.eleventh__pattern{
+  position: absolute;
+  z-index: -1;
+  top: 100%;
+  left: var(--left-right-margin);
+  transform: rotate(-90deg);
+  background: url("../images/icons/Pattern-12.svg") center center / contain no-repeat;
+  width: 267px;
+  height: 232px;
+}

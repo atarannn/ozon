@@ -52,11 +52,22 @@
   height: auto;
 }
 
+.technical_control-background-absolute{
+  background: linear-gradient(90deg, #DCDDE1 26.19%, rgba(220, 221, 225, 0) 100%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 50%;
+  z-index: 0;
+}
+
 .technical_control-block-absolute {
   position: absolute;
   left: 50px;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 1;
 
   display: flex;
   flex-direction: column;
