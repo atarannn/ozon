@@ -24,7 +24,6 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/home.js')
-  script(defer src='./assets/scripts/infrastructure.js')
 
 block content
   //- include ../includes/breadcrumbs.pug
@@ -47,7 +46,7 @@ block content
             span Дивитися квартири
             +svg('arrow').btn-svg
     .video
-      video(autoplay='true' muted='' loop='' playsinline controls)
+      video(autoplay='false' muted='' loop='' playsinline controls)
         source(src='./assets/images/video/video-main.mp4' type='video/mp4')
       .button.video__button
         a(href='#')
@@ -203,7 +202,7 @@ block content
 
       .info__third
         .info__third-svg
-            img.sfera(src='./assets/images/icons/sfera.svg' alt='sfera')
+            img.sfera(src='./assets/images/icons/sfera-1.svg' alt='sfera')
         h2.title-2.bottom-offset Sfera Living System
         .button
           a(href="#")
