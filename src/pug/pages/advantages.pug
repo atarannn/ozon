@@ -1,0 +1,70 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Переваги'
+    var id_page = 'id-page-advantages'
+    var class_page = 'class-page-advantages'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Advantages',
+        link: pagesLink[0].advantages
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+block content
+  include ../includes/breadcrumbs.pug
+
+  #advantages
+    .page-inner-offset
+      h1.page-title= title_page
+
+    .advantages-wrapper.page-inner-offset2
+      .advantages-1.relative
+        img(src='./assets/images/advantages/1.png' alt='adv')
+        .advantages-gradient
+        .advantages__text Розмаїття можливостей для спорту, відпочинку та гармонійного життя
+      .advantages-2.relative
+        img(src='./assets/images/advantages/2.png' alt='adv')
+        .advantages-gradient
+        .advantages__text Тихий центр Києва
+      .advantages-3.relative
+        img(src='./assets/images/advantages/3.png' alt='adv')
+        .advantages-gradient
+        .advantages__text Унікальна концепція «дім-сад»
+      .advantages-4.relative
+        img(src='./assets/images/advantages/4.png' alt='adv')
+        .advantages-gradient
+        .advantages__text Сусідство з ботанічним садом
+      .advantages-5.relative
+        img(src='./assets/images/advantages/5.png' alt='adv')
+        .advantages-gradient
+        .advantages__text Втілення концепції з увагою до кожної деталі
+      .advantages-6.relative
+        img(src='./assets/images/advantages/6.png' alt='adv')
+        .advantages-gradient
+        .advantages__text Сучасна архітектура
+      .advantages-7.relative
+        img(src='./assets/images/advantages/7.png' alt='adv')
+        .advantages-gradient
+        .advantages__text Насичена інфраструктура — як у будинку, так і навколо нього
+
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

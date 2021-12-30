@@ -1,0 +1,47 @@
+#advantages {
+  .advantages-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, auto);
+    gap: 20px;
+  }
+
+  .advantages-1 {
+    grid-area: 1/1/2/5;
+  }
+  .advantages-2 {
+    grid-area: 1/5/2/7;
+  }
+  .advantages-3 {
+    grid-area: 2/1/4/4;
+  }
+  .advantages-4 {
+    grid-area: 2/4/3/7;
+  }
+  .advantages-5 {
+    grid-area: 3/4/4/7;
+  }
+  .advantages-6 {
+    grid-area: 4/1/5/3;
+  }
+  .advantages-7 {
+    grid-area: 4/3/5/7;
+  }
+
+  .advantages-gradient {
+    position: absolute;
+    background: linear-gradient(180deg, rgba(77, 77, 76, 0) 0%, rgba(77, 77, 76, 0.75) 100%);
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .advantages__text {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    width: 60%;
+    @include tenor(20px, 170%, left, normal, none, $w);
+  }
+}

@@ -76,6 +76,24 @@
   margin-bottom: var(--page-inner-offset2);
 }
 
+.page-inner-offset2 {
+  margin-right: var(--left-right-margin);
+  margin-left: var(--left-right-margin);
+  margin-bottom: var(--page-inner-offset2);
+}
+
+.col {
+  width: 50%;
+
+  &:first-child {
+    padding-right: var(--inner-margin);
+  }
+
+  &:last-child {
+    padding-left: var(--inner-margin);
+  }
+}
+
 .first__pattern {
   position: absolute;
   z-index: -1;

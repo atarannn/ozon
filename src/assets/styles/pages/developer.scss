@@ -1,0 +1,70 @@
+#developer {
+  .info-top-wrapper {
+    border-bottom: 1px solid #ECEDEF;
+
+    a {
+      height: 120px;
+      width: 120px;
+    }
+
+    .tenor-title {
+      margin-bottom: 50px;
+    }
+  }
+
+  .developer-projects {
+    .tenor-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
+
+  .developer-projects__swipper {
+    position: relative;
+  }
+
+  .swiper {
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+
+    a img {
+      height: 40px;
+    }
+
+    a .bristol-img {
+      height: 60px;
+    }
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    border: 1px solid #ECEDEF;
+    border-radius: 200px;
+    height: 50px;
+    width: 50px;
+
+    &:after {
+      content: none;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -100px;
+    background-image: url("../images/icons/prev.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .swiper-button-next {
+    right: -100px;
+    background-image: url("../images/icons/next.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

@@ -1,0 +1,33 @@
+#documents {
+  .documets-block__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .document {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      border-bottom: 1px solid #E8E8E8;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+
+      height: 120px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      img {
+        height: 90px;
+        width: 65px;
+      }
+
+      .tenor-title {
+        margin-left: 30px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

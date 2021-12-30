@@ -1,0 +1,80 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Девелопер'
+    var id_page = 'id-page-developer'
+    var class_page = 'class-page-developer'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Developer',
+        link: pagesLink[0].developer
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/developer.js')
+block content
+  include ../includes/breadcrumbs.pug
+
+  #developer
+    .page-inner-offset
+      h1.page-title= title_page
+      .info-top-wrapper.title__bottom-padding2
+        a(href="#")
+          img(src='./assets/images/icons/footer-saga.svg' alt='saga')
+        .info-top__text
+          .tenor-title Девелопер OZON Concept House – компанія SAGA Development. Глобальна мета компанії – розвивати міста, спираючись на екосистему партнерства. SAGA Development кидає виклик консервативним стандартам, втілюючи інноваційні та креативні рішення для комфортного життя поколінь.
+      .developer-projects
+        .tenor-title.title__bottom-padding2 Інші проєкти компанії
+        .developer-projects__swipper
+          .swiper
+            .swiper-wrapper
+              .swiper-slide
+                a(href="#")
+                  img(src='./assets/images/developer/boston-logo.svg')
+              .swiper-slide
+                a(href="#")
+                  img(src='./assets/images/developer/happy-house.svg')
+              .swiper-slide
+                a(href="#")
+                  img(src='./assets/images/developer/resident.svg')
+              .swiper-slide
+                a(href="#")
+                  img(src='./assets/images/developer/new-york.svg')
+              .swiper-slide
+                a(href="#")
+                  img(src='./assets/images/developer/bristol.svg').bristol-img
+              .swiper-slide
+                a(href="#")
+                  img(src='./assets/images/developer/boston-logo.svg')
+              .swiper-slide
+                a(href="#")
+                  img(src='./assets/images/developer/happy-house.svg')
+              .swiper-slide
+                a(href="#")
+                  img(src='./assets/images/developer/resident.svg')
+              .swiper-slide
+                a(href="#")
+                  img(src='./assets/images/developer/new-york.svg')
+              .swiper-slide
+                a(href="#")
+                  img(src='./assets/images/developer/bristol.svg').bristol-img
+
+          .swiper-button-prev
+          .swiper-button-next
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

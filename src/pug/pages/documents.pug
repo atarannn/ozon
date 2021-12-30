@@ -1,0 +1,65 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Документація'
+    var id_page = 'id-page-documents'
+    var class_page = 'class-page-documents'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Documents',
+        link: pagesLink[0].documents
+      }
+    ]
+    var documents = [
+      [{
+        img: 'documents/1.png',
+        text: 'Лiцензiя Г. П. Командор ( повiдомлення, перелiк робiт, Витяг iз сайту ДАБI )',
+        link: '#'
+      }, {
+        img: 'documents/2.png',
+        text: 'Экспертиза проекта',
+        link: '#'
+      }],
+      [{
+        img: 'documents/3.png',
+        text: 'Договір оренди земельної ділянки від 12.06.2020ри',
+        link: '#'
+      }, {
+        img: 'documents/4.png',
+        text: '2020-11-26 ГП Цедика 14А Стадия П - КОРРЕКТ-2 ГП',
+        link: '#'
+      }]
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/documents.js')
+block content
+  include ../includes/breadcrumbs.pug
+
+  #documents
+    .page-inner-offset
+      h1.page-title= title_page
+      .documets-block__wrapper
+        each docs in documents
+          .col
+            each val in docs
+              a(href=val.link).document
+                +img(val.img)
+                .tenor-title=val.text
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
