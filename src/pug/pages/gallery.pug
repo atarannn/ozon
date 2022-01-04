@@ -11,6 +11,11 @@ block variable
         link: pagesLink[0].gallery
       }
     ]
+    var slider = [
+      {img: 'gallery/1.png'},
+      {img: 'gallery/1.png'},
+      {img: 'gallery/1.png'},
+      {img: 'gallery/1.png'}]
 
 block meta
   title= title_page
@@ -27,9 +32,16 @@ block scripts
 block content
   include ../includes/breadcrumbs.pug
   #gallery
-    .page-inner-offset
+    .page-inner-offset5
       h1.page-title= title_page
-
+      .gallery-slider__wrap.swiper-container
+        .swiper-wrapper
+          each sl in slider
+            .swiper-slide.gallery-slide
+              .slide__content(data-swiper-parallax="300" data-swiper-parallax-delay="600" data-img)
+                +img(sl.img)
+        .moving-arrow
+          +svg('gallery').arrow-style
 
 
 block footer

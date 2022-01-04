@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 // Google map start
 function func() {
     const script = document.createElement('script');
@@ -17,7 +16,6 @@ const options = {
 
 maps.forEach((image) => {
     const callback = (entries, observer) => {
-        /* Content excerpted, show below */
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 const lazyImage = entry.target;
@@ -36,8 +34,8 @@ function setMap() {
     const gmarkers1 = [];
     // const { points, main: center } = data;
     const center = {
-        lat: 50.41190227423886,
-        lng: 30.553187843077385,
+        lat: 50.4117039,
+        lng: 30.5506373,
     };
 
     /** Массив, куда записываются выбраные категории */
@@ -187,75 +185,55 @@ function setMap() {
     // });
 
     var baseFolder = './assets/images/markers/';
-    // const baseFolder = './assets/images/markers/';
-    const defaultMarkerSize = new google.maps.Size(40, 50);
-    const buildLogoSize = new google.maps.Size(70, 87);
+    const defaultMarkerSize = new google.maps.Size(40, 49);
+    const buildLogoSize = new google.maps.Size(54, 66);
     const markersAdresses = {
         main: `${baseFolder}marker-main.svg`,
-        // sport: `${baseFolder}marker-sport-complex.svg`,
-        // school: `${baseFolder}marker-school.svg`,
-        // bank: `${baseFolder}marker-bank.svg`,
-        // kindergarden: `${baseFolder}marker-kindergarden.svg`,
-        // park: `${baseFolder}marker-park.svg`,
-        // meal: `${baseFolder}marker-meal.svg`,
-        // dentist: `${baseFolder}marker-dentist.svg`,
-        // medicine: `${baseFolder}marker-medicine.svg`,
-        // metro: `${baseFolder}marker-metro.svg`,
-        // post: `${baseFolder}marker-post.svg`,
-        // shop: `${baseFolder}marker-shop.svg`,
-        // supermarkets: `${baseFolder}marker-supermarkets.svg`,
+        park: `${baseFolder}marker-park.svg`,
+        metro: `${baseFolder}marker-metro.svg`,
+        pool: `${baseFolder}marker-pool.svg`,
+        monument: `${baseFolder}marker-monument.svg`,
     };
-    const points = [{
-        content: `<img style="background:white" src="${markersAdresses.main}">`,
-        position: { lat: 50.41190227423886, lng: 30.553187843077385 },
-        type: 'main',
-        icon: { url: markersAdresses.main, scaledSize: buildLogoSize },
-    }];
-    // const markerPopupStyle = `
-    //   style="
-    //   background: #1798D5;
-    //   padding:5px 10px;
-    //   font-weight: 500;
-    //   font-size: 14px;
-    //   line-height: 22px;"
-    //  `;
-    /* beautify preserve:start */
-    // const points = [
-    //   {
-    //     content: `<img style="background:white" src="${markersAdresses.main}">`,
-    //     position: { lat: 50.476303, lng: 30.516779 },
-    //     type: 'main',
-    //     icon: { url: markersAdresses.main, scaledSize: buildLogoSize },
-    //   },
-    //   {
-    //     content: `<div ${markerPopupStyle}>PARK</div>`,
-    //     position: { lat: 50.478303, lng: 30.516779 },
-    //     type: 'park',
-    //     icon: { url: markersAdresses.park, scaledSize: defaultMarkerSize },
-    //   },
-    //   {
-    //     content: `<div ${markerPopupStyle}>Shop</div>`,
-    //     position: { lat: 50.480303, lng: 30.516779 },
-    //     type: 'shop',
-    //     icon: { url: markersAdresses.shop, scaledSize: defaultMarkerSize },
-    //   },
-    //   {
-    //     content: `<div ${markerPopupStyle}>Post</div>`,
-    //     position: { lat: 50.482303, lng: 30.516779 },
-    //     type: 'post',
-    //     icon: { url: markersAdresses.post, scaledSize: defaultMarkerSize },
-    //   },
-    //   {
-    //     content: `<div ${markerPopupStyle}>Bank</div>`,
-    //     position: { lat: 50.484303, lng: 30.516779 },
-    //     type: 'bank',
-    //     icon: { url: markersAdresses.bank, scaledSize: defaultMarkerSize },
-    //   },
-    // ];
-    /* beautify preserve:end */
+    const markerPopupStyle = `
+       style="
+       background: transparent;
+       padding: 5px 10px;
+       font-family: "Helvetica Neue",sans-serif;
+       font-weight: 300;
+       font-size: 14px;
+       line-height: 100%;
+       color: #4D4D4C;"
+      `;
+     const points = [{
+         content: `<div ${markerPopupStyle}>вулиця Вільшанська, 2-6</div>`,
+         position: { lat: 50.4117039, lng: 30.5506373 },
+         type: 'main',
+         icon: { url: markersAdresses.main, scaledSize: buildLogoSize }
+       }, {
+         content: `<div ${markerPopupStyle}>Національний Ботанічний сад ім. Гришко</div>`,
+         position: { lat: 50.41093, lng: 30.548896 },
+         type: 'park',
+         icon: { url: markersAdresses.park, scaledSize: defaultMarkerSize }
+       }, {
+         content: `<div ${markerPopupStyle}>Metro</div>`,
+         position: { lat: 50.412498, lng: 30.548456 },
+         type: 'metro',
+         icon: { url: markersAdresses.metro, scaledSize: defaultMarkerSize }
+        }, {
+         content: `<div ${markerPopupStyle}>Pool</div>`,
+         position: { lat: 50.410878, lng: 30.552630 },
+         type: 'pool',
+         icon: { url: markersAdresses.pool, scaledSize: defaultMarkerSize }
+        }, {
+         content: `<div ${markerPopupStyle}>Monument</div>`,
+         position: { lat: 50.412382, lng: 30.553199},
+         type: 'monument',
+         icon: { url: markersAdresses.monument, scaledSize: defaultMarkerSize }
+        },
+     ];
     const infowindow = new google.maps.InfoWindow({
         content: '',
-        maxWidth: 200,
+        maxWidth: 400,
     });
     points.forEach((marker) => {
         const category = marker.type;
@@ -275,7 +253,7 @@ function setMap() {
         gmarkers1.push(mapMarker);
     });
 }
-// eslint-disable-next-line no-unused-vars
+
 function initMap() {
     setMap();
     // $.ajax({

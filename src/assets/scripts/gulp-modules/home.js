@@ -24,15 +24,6 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
-//
-// const btnVideo  = document.querySelector('.video__button'),
-//     video = document.querySelector('.video video');
-//
-// btnVideo.addEventListener('click',function(){
-//   video.play();
-//   btnVideo.style.display = 'none';
-//   video.controls = 'controls';
-// });
 
 // Google map start
 function func() {
@@ -71,8 +62,8 @@ function setMap() {
   const gmarkers1 = [];
   // const { points, main: center } = data;
   const center = {
-    lat: 50.41190227423886,
-    lng: 30.553187843077385,
+    lat: 50.4117039,
+    lng: 30.5506373,
   };
 
   /** Массив, куда записываются выбраные категории */
@@ -205,12 +196,26 @@ function setMap() {
   const markersAdresses = {
     main: `${baseFolder}marker-main.svg`,
   };
+  const markerPopupStyle = `
+       style="
+       background: transparent;
+       padding: 5px 10px;
+       font-family: "Helvetica Neue",sans-serif;
+       font-weight: 300;
+       font-size: 14px;
+       line-height: 100%;
+       color: #4D4D4C;"
+      `;
   const points = [{
-    content: `<img style="background:white" src="${markersAdresses.main}">`,
-    position: { lat: 50.41190227423886, lng: 30.553187843077385 },
+    content: `<div ${markerPopupStyle}>вулиця Вільшанська, 2-6</div>`,
+    position: { lat: 50.4117039, lng: 30.5506373 },
     type: 'main',
     icon: { url: markersAdresses.main, scaledSize: buildLogoSize },
   }];
+  const infowindow = new google.maps.InfoWindow({
+    content: '',
+    maxWidth: 400,
+  });
   points.forEach((marker) => {
     const category = marker.type;
     const mapMarker = new google.maps.Marker({
@@ -219,13 +224,13 @@ function setMap() {
       icon: marker.icon,
       position: new google.maps.LatLng(marker.position.lat, marker.position.lng),
     });
-    // google.maps.event.addListener(mapMarker, 'click', function () {
-    //   infowindow.setContent(marker.content);
-    //   infowindow.open(map, mapMarker);
-    //   map.panTo(this.getPosition());
-    // });
-    // mapMarker.name = marker.type;
-    // gmarkers1.push(mapMarker);
+    google.maps.event.addListener(mapMarker, 'click', function () {
+      infowindow.setContent(marker.content);
+      infowindow.open(map, mapMarker);
+      map.panTo(this.getPosition());
+    });
+    mapMarker.name = marker.type;
+    gmarkers1.push(mapMarker);
   });
 }
 function initMap() {
