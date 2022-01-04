@@ -1,0 +1,50 @@
+#news-page{
+  position: relative;
+
+  .news-page-text__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    width: 100%;
+
+    .news-page-text {
+      width: 80%;
+
+      .button {
+        margin-top: 50px;
+      }
+    }
+  }
+  .news-title {
+    @include HelveticaNeueCyr(36px, 160%, left, uppercase, $main-brown, 400);
+    margin-bottom: 30px;
+  }
+  .news-Helvetica{
+    @include HelveticaNeueCyr(18px, 170%, left, none, $main-brown, 300);
+
+    p {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .news {
+    margin-bottom: 0;
+  }
+
+  .last-news__wrapper {
+    .page-title {
+      border-bottom: 2px solid #A6B720;
+      padding-bottom: 20px;
+    }
+    .last-news {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+}

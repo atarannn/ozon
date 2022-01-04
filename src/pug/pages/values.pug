@@ -1,0 +1,107 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Цінності'
+    var id_page = 'id-page-values'
+    var class_page = 'class-page-values'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Values',
+        link: pagesLink[0].values
+      }
+    ]
+    var values = [
+      {
+        title: 'Чистота',
+        slides: [
+          {
+            img: 'values/1.png',
+            text: 'Чисте повітря завдяки зеленій території та розташуванню поблизу ботанічного саду'
+          }, {
+            img: 'values/2.png',
+            text: 'Чисті кольори, чисті лінії, чиста естетика'
+          }, {
+            img: 'values/3.png',
+            text: 'Чисте задоволення — насолоджуватися чарівними видами, оточивши себе красою та зручністю'
+          }
+        ]
+      },
+      {
+        title: 'Гармонія',
+        slides: [
+          {
+            img: 'values/4.png',
+            text: 'Чисте повітря завдяки зеленій території та розташуванню поблизу ботанічного саду'
+          }, {
+            img: 'values/5.png',
+            text: 'Чисті кольори, чисті лінії, чиста естетика'
+          }, {
+            img: 'values/6.png',
+            text: 'Чисте задоволення — насолоджуватися чарівними видами, оточивши себе красою та зручністю'
+          }
+        ]
+      },
+      {
+        title: 'Спокій',
+        slides: [
+          {
+            img: 'values/7.png',
+            text: 'Тиха частина Печерська'
+          }, {
+            img: 'values/8.png',
+            text: 'Атмосфера будинку, яка умиротворяє'
+          }, {
+            img: 'values/9.png',
+            text: 'Інфраструктура, що призначена для релаксу'
+          }
+        ]
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/values.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #values
+    .page-inner-offset3
+      h1.page-title= title_page
+    .page-inner-offset4
+      each val in values
+        .value
+          .helvetica-title=val.title
+          .slides__wrapper
+            each item in val.slides
+              .slide.title__bottom-padding2
+                +img(item.img)
+                .tenor-title=item.text
+    .page-inner-offset2
+      .button
+        a(href="#")
+          span Обрати квартиру
+          +svg('arrow').btn-svg.button
+
+
+    .twelfth__pattern
+    .fifteenth__pattern
+    .sixteenth__pattern
+    .seventeenth__pattern
+    .eighteenth__pattern
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
+
+
+

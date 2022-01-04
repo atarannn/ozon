@@ -16,7 +16,7 @@ block variable
         img: 'news/1.png',
         text: 'Чисте повітря завдяки зеленій території та розташуванню поблизу ботанічного саду',
         date: '05.05.2021',
-        link: '#'
+        link: 'news-page.html'
       }, {
         img: 'news/2.png',
         text: 'Атмосфера будинку, яка умиротворяє',
@@ -78,40 +78,39 @@ block scripts
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/news.js')
 block content
-  block content
-    include ../includes/breadcrumbs.pug
+  include ../includes/breadcrumbs.pug
 
-    #news
-      .page-inner-offset
-        h1.page-title= title_page
-        .news-block__wrapper
-          each val in news
-            a(href=val.link).new
-              +img(val.img)
-              .tenor-date=val.date
-              .tenor-title=val.text
+  #news
+    .page-inner-offset
+      h1.page-title= title_page
+      .news-block__wrapper
+        each val in news
+          a(href=val.link).news
+            +img(val.img)
+            .tenor-date=val.date
+            .tenor-title=val.text
 
-        .pagination__wrapper
+      .pagination__wrapper
+        a(href="#")
+          +svg('pagination-prev')
+          span попередня
+        .pagination__numbers
           a(href="#")
-            +svg('pagination-prev')
-            span попередня
-          .pagination__numbers
-            a(href="#")
-              span 1
-            a(href="#")
-              span 2
-            a(href="#")
-              span 3
-            a(href="#")
-              span 4
-            span ...
+            span 1
           a(href="#")
-            span наступна
-            +svg('pagination-next')
+            span 2
+          a(href="#")
+            span 3
+          a(href="#")
+            span 4
+          span ...
+        a(href="#")
+          span наступна
+          +svg('pagination-next')
 
-      .twelfth__pattern
-      .thirteenth__pattern
-      .fourteenth__pattern
+    .twelfth__pattern
+    .thirteenth__pattern
+    .fourteenth__pattern
 block footer
   include ../includes/footer.pug
 

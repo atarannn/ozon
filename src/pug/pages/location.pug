@@ -1,0 +1,73 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Розташування'
+    var id_page = 'id-page-location'
+    var class_page = 'class-page-location'
+    var breadcrumbsSubitem = [
+      {
+        label: 'location',
+        link: pagesLink[0].location
+      }
+    ]
+    var location = [
+      [{
+        img: 'location/1.png',
+        text: 'Національний Ботанічний сад ім. Гришко',
+        info: '10 хвилин пішки'
+      }, {
+        img: 'location/2.png',
+        text: 'Басейн «Юність»',
+        info: '10 хвилин пішки'
+      }],
+      [{
+        img: 'location/3.png',
+        text: 'Станція метро «Дружби народів»',
+        info: '15 хвилин пішки'
+      }, {
+        img: 'location/4.png',
+        text: 'Вулиця Хрещатик',
+        info: '10 хвилин на авто'
+      }]
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/location.js')
+block content
+  include ../includes/breadcrumbs.pug
+
+  #location
+    .page-inner-offset
+      h1.page-title= title_page
+      .info-top__text.title__bottom-padding2
+        .tenor-title OZON Concept House розташований в центрі Києва, в тихій частині Печерська за адресою: вулиця Вільшанська, 2-6.
+    #map.map
+      .location__map-img
+    .location-blocks__wrapper.page-inner-offset2
+      .block__row
+        each loc in location
+          .col
+            each val in loc
+              .block
+                .block-img__wrapper.relative
+                  +img(val.img)
+                  .block-info-text=val.info
+                .tenor-title.title__top-padding1=val.text
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

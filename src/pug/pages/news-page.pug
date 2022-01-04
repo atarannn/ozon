@@ -1,0 +1,66 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'news-page'
+    var id_page = 'id-page-news-page'
+    var class_page = 'class-page-news-page'
+    var breadcrumbsSubitem = [
+      {
+        label: 'News Page',
+        link: pagesLink[0].news-page
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #news-page
+    .page-inner-offset
+      h1.news-title Чисте повітря завдяки зеленій території та розташуванню поблизу ботанічного саду
+      img(src='./assets/images/news/news-page.png' alt='news').title__bottom-padding2
+      .news-page-text__wrapper
+        .tenor-date 05.05.2021
+        .news-page-text
+          .tenor-title Чисте повітря завдяки зеленій території та розташуванню поблизу ботанічного саду
+          .news-Helvetica
+            p Ми прагнемо формувати дружні ком'юніті спільно з мешканцями наших та сусідніх будинків. Приступаючи до будівництва нового проєкту, ми ретельно вивчаємо та дослухаємося до думки користувачів району.
+            p Саме цей підхід ми застосували на вулиці Вільшанській, 2-6, де зараз працюємо над проєктом OZON Concept House.
+            p Протягом червня-липня  спільно з дослідницькою компанією Ю.С.С. ми провели дослідження громадської думки щодо майбутнього території. Опитування проводилося в форматі онлайн-голосування та особистих інтерв’ю. Загалом було опитано 1000 осіб, які є мешканцями або користувачами території, що безпосередньо межує з ділянкою.
+            p Більшість опитаних вважають, що територія потребує, в першу чергу, благоустрою, ліквідації сміттєзвалища та демонтажу недобудов. За це висловилося понад 60% опитаних. Крім того, більшість респондентів серед нагальних потреб території назвали розширення дороги та освітлення вулиці. Дослідження показало значний запит на громадський простір та місця для відпочинку (55% опитаних), спортивні та дитячі майданчики (54% та 42% відповідно), створення відкритих сходів чи ескалаторів між вулицями Бойчука та Вільшанською (45% респондентів).
+          .button
+            a(href="#")
+              span Обрати квартиру
+              +svg('arrow').btn-svg
+
+      .last-news__wrapper.title__top-padding4
+        .page-title Останні Новини
+        .last-news
+          a(href="#").news
+            img(src='./assets/images/news/2.png' alt='news')
+            .tenor-date 05.05.2021
+            .tenor-title Атмосфера будинку, яка умиротворяє
+          a(href="#").news
+            img(src='./assets/images/news/3.png' alt='news')
+            .tenor-date 05.05.2021
+            .tenor-title Чисте задоволення — насолоджуватися чарівними видами, оточивши себе красою та зручністю
+
+
+    .twelfth__pattern
+    .thirteenth__pattern
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -1,0 +1,48 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Вебкамери'
+    var id_page = 'id-page-webcam'
+    var class_page = 'class-page-webcam'
+    var breadcrumbsSubitem = [
+      {
+        label: 'WebCam',
+        link: pagesLink[0].webcam
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+block content
+  include ../includes/breadcrumbs.pug
+  #webcam
+    .page-inner-offset
+      h1.page-title= title_page
+      .video-webcam__blocks
+        .video-webcam__block.relative
+          iframe(width="810" height="450" src="https://www.youtube.com/embed/gg1Rqx4kSNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+          .helvetica-title.title__top-padding1 Назва веб камери
+          .nineteenth__pattern
+        .video-webcam__block.title__top-padding3.relative
+          iframe(width="810" height="450" src="https://www.youtube.com/embed/gg1Rqx4kSNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+          .helvetica-title.title__top-padding1 Назва веб камери
+          .twentieth__pattern
+        .button.title__top-padding3
+          a(href="#")
+            span Хід будівництва
+            +svg('arrow').btn-svg
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
