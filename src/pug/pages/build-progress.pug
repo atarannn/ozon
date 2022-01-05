@@ -1,0 +1,139 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Хід будівництва'
+    var id_page = 'id-page-build-progress'
+    var class_page = 'class-page-build-progress'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Build-progress',
+        link: pagesLink[0].build_progress
+      }
+    ]
+    var cards = [
+      {
+        img: 'build-progress/2.png',
+        date: '25.01.2021',
+      }, {
+        img: 'build-progress/2.png',
+        date: '25.01.2021',
+      }, {
+        img: 'build-progress/2.png',
+        date: '25.01.2021',
+      }, {
+        img: 'build-progress/2.png',
+        date: '25.01.2021',
+      }, {
+        img: 'build-progress/2.png',
+        date: '25.01.2021',
+      }, {
+        img: 'build-progress/2.png',
+        date: '25.01.2021',
+      }, {
+        img: 'build-progress/2.png',
+        date: '25.01.2021',
+      }, {
+        img: 'build-progress/2.png',
+        date: '25.01.2021',
+      }, {
+        img: 'build-progress/2.png',
+        date: '25.01.2021'
+      }, {
+        img: 'build-progress/2.png',
+        date: '25.01.2021',
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/build-progress.js')
+block content
+  include ../includes/breadcrumbs.pug
+
+  #build-progress
+    .page-inner-offset3
+      h1.page-title= title_page
+    .work-status
+      .work-status-inner
+        .work-status__title.title__bottom-padding Статус робіт:
+        .work-status__text-wrapper
+          .work-status__text-left
+            .work-status__text.title__bottom-padding  Виконується монтаж ліфтів. Триває влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. Проходять фасадні роботи на торцях. Виконується влаштування утеплення на балконах.
+            .button
+              a(href="#")
+                span Вебкамери
+                +svg('arrow').btn-svg
+          .work-status__text-right
+            .col
+              .block
+                .work-status__circle
+                  .svg-wrapper
+                    svg.btn-circle(viewBox="0 0 200 200")
+                      circle.circle(cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0")
+                      circle.circle-build(cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0")
+                    .work-status__title.work-status-absolute 74%
+                .work-status__text Будівництво
+              .block
+                .work-status__circle
+                  .svg-wrapper
+                    svg.btn-circle(viewBox="0 0 200 200")
+                      circle.circle(cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0")
+                      circle.circle-facade(cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0")
+                    .work-status__title.work-status-absolute 25%
+                .work-status__text Фасад
+            .col
+              .block
+                .work-status__circle
+                  .svg-wrapper
+                    svg.btn-circle(viewBox="0 0 200 200")
+                      circle.circle(cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0")
+                      circle.circle-landscaping(cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0")
+                    .work-status__title.work-status-absolute 62%
+                .work-status__text Благоустрій
+              .block
+                .work-status__circle
+                  .svg-wrapper
+                    svg.btn-circle(viewBox="0 0 200 200")
+                      circle.circle(cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0")
+                      circle.circle-network(cx="100" cy="100" r="95" stroke-width="2" fill-opacity="0")
+                    .work-status__title.work-status-absolute 17%
+                .work-status__text Мережі
+        .work-status__section-info.title__top-padding3
+          .work-status__section-info__block
+            .work-status__title 1, 2, 3 секція
+            .work-status__text 4 квартал 2020 року
+          .work-status__section-info__block
+            .work-status__title 4 секція
+            .work-status__text 1 квартал 2021 року
+          .work-status__section-info__block
+            .work-status__title 5 секція
+            .work-status__text 4 квартал 2021 року
+
+
+    .work-status__cards.title__top-padding4
+      .cards.page-inner-offset
+        each val in cards
+          .card__wrapper
+            .card
+              .block-info-text=val.date
+              +img(val.img)
+
+      .twelfth__pattern
+      .thirteenth__pattern
+      .fourteenth__pattern
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

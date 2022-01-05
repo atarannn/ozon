@@ -904,6 +904,10 @@ a {
   @include HelveticaNeueCyr(36px, 160%, left, uppercase, $main-brown, 400);
 }
 
+.title__top-padding {
+  margin-top: 30px;
+}
+
 .title__top-padding1 {
   margin-top: 20px;
 }
@@ -918,6 +922,10 @@ a {
 
 .title__top-padding4 {
   margin-top: 100px;
+}
+
+.title__bottom-padding {
+  margin-bottom: 30px;
 }
 
 .title__bottom-padding1 {

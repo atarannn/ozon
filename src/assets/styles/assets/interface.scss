@@ -82,6 +82,21 @@
   margin-bottom: var(--page-inner-offset2);
 }
 
+.page-inner-offset3 {
+  margin-left: var(--page-inner-offset);
+  margin-right: var(--page-inner-offset);
+}
+
+.page-inner-offset4 {
+  margin-left: var(--page-inner-offset);
+  margin-right: var(--left-right-margin);
+}
+
+.page-inner-offset5 {
+  margin-left: var(--page-inner-offset);
+  margin-bottom: var(--page-inner-offset2);
+}
+
 .col {
   width: 50%;
 
