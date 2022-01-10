@@ -26,20 +26,17 @@ block scripts
   script(defer src='./assets/scripts/home.js')
 
 block content
-  //- include ../includes/breadcrumbs.pug
+
   #home-page
-    section.promo
+    section#up.promo
       .promo__content
         h1.subtitle.bottom-offset ozon concept house
         h2.title.bottom-offset Печерськ здорової людини
         .text.big-main-text.bottom-offset У тихій частині Печерська, біля ботанічного саду ми створюємо OZON Concept House.
         ul.promo__links
-          li
-            a(href="#") Для гармонії
-          li
-            a(href="#") Для спорту та відпочинку
-          li
-            a(href="#") Для спокійного життя
+          li Для гармонії
+          li Для спорту та відпочинку
+          li Для спокійного життя
         .promo__group
         .button
           a(href="#")
@@ -115,13 +112,13 @@ block content
           .concept__item-text паркомісць у підземному паркінгу
         .concept__item
           .concept__item-numbers
-            span від
-            | 9
-            span до
-            | 26
+            .concept__item-text від
+            span 9
+            .concept__item-text до
+            span 26
           .concept__item-text поверхів у будинках комплексу
         .concept__item
-          .concept__item-numbers
+          .concept__item-numbers-2
             | 3500 м
             sup 2
           .concept__item-text комерційної нерухомості
@@ -252,11 +249,6 @@ block content
               |СБ-ВС: 10:00-18:00
 
         .connection__contacts-right.half-block
-          p hello
-
-        .connection__pattern
-          img(src='./assets/images/icons/Pattern-7.svg' alt='Pattern-7')
-
 
 
 

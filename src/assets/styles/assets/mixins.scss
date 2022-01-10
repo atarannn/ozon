@@ -81,7 +81,7 @@ $screen-height: 720;
 	color: $c;
 }
 
-@mixin HelveticaNeueCyr ($fs: 14px, $lh: 170%, $ta: center, $tt: none, $c: $main-brown, $fw: 300) {
+@mixin HelveticaNeueCyr ($fs: 14px, $lh: 170%, $ta: center, $tt: none, $c: $main-brown, $fw: 400) {
 	font-family: $default-font3;
 	font-style: normal;
 	font-weight: $fw;

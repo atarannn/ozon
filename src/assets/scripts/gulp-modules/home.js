@@ -1,29 +1,24 @@
-function init() {
-  // eslint-disable-next-line no-undef
-  const slider = new Swiper('.swiper-container', {
-    loop: true,
-    navigation: {
-      nextEl: document.querySelector('[data-next]'),
-      prevEl: document.querySelector('[data-prev]'),
-    },
-    preloadImages: false,
-    lazy: true,
-    speed: 400,
-    watchSlidesVisibility: true,
-    on: {
-      init: (e) => {
-        document.querySelector('[data-total]').innerHTML = document.querySelectorAll('.slide').length - 2;
-        document.querySelector('[data-current]').innerHTML = e.activeIndex + 1;
-      },
-    },
+$(document).ready(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 500) {
+      $(".pageup").css('opacity', '1');
+    } else {
+      $(".pageup").css('opacity', '0');
+    }
   });
 
-  slider.on('activeIndexChange', (obj) => {
-    document.querySelector('[data-current]').innerHTML = obj.realIndex + 1;
+  $(".pageup").on("click", function () {
+    var el = $(this);
+    var dest = el.attr("href");
+    if (dest !== undefined && dest !== '') {
+      $("html").animate({
+            scrollTop: $(dest).offset().top - 100
+          }, 1000
+      );
+    }
+    return false;
   });
-}
-
-document.addEventListener('DOMContentLoaded', init);
+});
 
 // Google map start
 function func() {

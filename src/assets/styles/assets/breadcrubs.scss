@@ -15,7 +15,7 @@
   }
 
   &-item {
-    @include HelveticaNeueCyr(12px, 100%, right, none, $main-brown, 300);
+    @include HelveticaNeueCyr(12px, 100%, right, none, $main-brown, 400);
 
     svg {
       fill: transparent;
@@ -26,7 +26,7 @@
     }
 
     &__link {
-      @include HelveticaNeueCyr(12px, 100%, right, none, $main-green, 300);
+      @include HelveticaNeueCyr(12px, 100%, right, none, $main-green, 400);
     }
     &:last-child {
       display: initial;

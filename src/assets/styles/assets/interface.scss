@@ -43,10 +43,18 @@
 .row {
   @include row-flex;
   justify-content: space-between;
+
+  @include to(768px) {
+    flex-direction: column;
+  }
 }
 
 .half-block {
   @include size(6);
+
+  @include to(768px) {
+    width: 100%;
+  }
 }
 
 .block-content {

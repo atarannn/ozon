@@ -124,13 +124,54 @@ block content
       .cards.page-inner-offset
         each val in cards
           .card__wrapper
-            .card
+            .card(data-open)
               .block-info-text=val.date
               +img(val.img)
+        .button-load
+          a(href="#")
+            span Завантажити ще
+            +svg('arrow-bottom').btn-svg
 
       .twelfth__pattern
       .thirteenth__pattern
       .fourteenth__pattern
+
+    .popup.build-progress-popup(data-build-progress)
+      .popup__left
+        .helvetica-title Вересень
+        .block-info-text 25.01.2021
+      .popup__center
+        .swiper.mySwiper2
+          .swiper-wrapper
+            .swiper-slide
+              img(src='./assets/images/build-progress/2.png' alt='progress')
+            .swiper-slide
+              img(src='./assets/images/build-progress/2.png' alt='progress')
+            .swiper-slide
+              img(src='./assets/images/build-progress/2.png' alt='progress')
+
+        .swiper.mySwiper
+          .swiper-wrapper
+            .swiper-slide
+              img(src='./assets/images/build-progress/2.png' alt='progress')
+            .swiper-slide
+              img(src='./assets/images/build-progress/2.png' alt='progress')
+            .swiper-slide
+              img(src='./assets/images/build-progress/2.png' alt='progress')
+
+      .popup__right
+        .popup__close(data-close)
+          .text закрити
+          .popup__close-icon
+            span
+            span
+        .popup__bth
+          a(href="#")
+            +svg('build-arrow-next')
+          a(href="#")
+            +svg('build-arrow-prev')
+
+
 
 block footer
   include ../includes/footer.pug

@@ -6,12 +6,26 @@
 
   background-color: $light-grey;
 
+  @include to(575px) {
+    padding-top: 50px;
+  }
+
   &__items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
     border-bottom: 1px solid #D9DBDF;
-    padding-bottom: var(--left-right-margin);
+    padding-bottom: 50px;
+
+    @include to(768px) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 50px;
+    }
+
+    @include to(575px) {
+      row-gap: 30px;
+      padding-bottom: 30px;
+    }
   }
 
   &__item {
@@ -24,7 +38,7 @@
 
       li {
         a {
-          @include HelveticaNeueCyr(10px, 240%, left, uppercase, $main-brown, 300);
+          @include HelveticaNeueCyr(10px, 240%, left, uppercase, $main-brown, 400);
           @include hover-color;
         }
 
@@ -35,7 +49,7 @@
     }
 
     .footer__text {
-      @include HelveticaNeueCyr(12px, 140%, left, none, $main-brown, 300);
+      @include HelveticaNeueCyr(12px, 140%, left, none, $main-brown, 400);
       max-width: 60%;
       margin-bottom: 20px;
     }
@@ -46,9 +60,13 @@
     }
 
     .footer__text-upper {
-      @include HelveticaNeueCyr(12px, 140%, left, uppercase, $main-brown, 300);
+      @include HelveticaNeueCyr(12px, 140%, left, uppercase, $main-brown, 400);
       max-width: 60%;
       margin-top: 20px;
+
+      @include to(575px) {
+        max-width: 100%;
+      }
     }
 
     .footer__saga {
@@ -64,7 +82,7 @@
       }
 
       &-text {
-        @include HelveticaNeueCyr(12px, 140%, left, none, $main-brown, 300);
+        @include HelveticaNeueCyr(12px, 140%, left, none, $main-brown, 400);
       }
     }
   }
@@ -87,20 +105,47 @@
     padding-top: 50px;
     border-top: 1px solid $grey;
 
-    @include HelveticaNeueCyr(12px, 140%, center, none, $footer-c, 300);
+    @include HelveticaNeueCyr(12px, 140%, center, none, $footer-c, 400);
 
-    &-left {
+    @include to(575px) {
+      padding-top: 30px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    &-left, &-right {
       width: 10%;
-      text-align: left;
+
+      @include to(768px) {
+        width: 20%;
+      }
+
+      @include to(575px) {
+        width: 100%;
+      }
     }
 
     &-center {
       width: 40%;
       text-align: center;
+
+      @include to(768px) {
+        width: 50%;
+      }
+
+      @include to(575px) {
+        width: 100%;
+        text-align: left;
+        margin-top: 20px;
+      }
+    }
+
+    &-left {
+      text-align: left;
     }
 
     &-right {
-      width: 10%;
       text-align: right;
 
       display: flex;
@@ -110,6 +155,11 @@
         color: $main-brown;
         font-weight: 400;
         text-decoration: none;
+      }
+
+      @include to(575px) {
+        text-align: left;
+        margin-top: 20px;
       }
     }
   }

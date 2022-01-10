@@ -137,7 +137,12 @@ function disableScroll() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  disableScroll();
+  // disableScroll();
+  window.locoScroll.update();
+});
+window.addEventListener('load', () => {
+  // disableScroll();
+  console.log('i load');
   window.locoScroll.update();
 });
 /** ******************************* */

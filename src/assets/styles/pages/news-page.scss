@@ -21,7 +21,7 @@
     margin-bottom: 30px;
   }
   .news-Helvetica{
-    @include HelveticaNeueCyr(18px, 170%, left, none, $main-brown, 300);
+    @include HelveticaNeueCyr(18px, 170%, left, none, $main-brown, 400);
 
     p {
       margin-bottom: 30px;

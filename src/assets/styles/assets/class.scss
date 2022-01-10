@@ -796,6 +796,10 @@ a {
 
 .button.button-2 {
   margin-top: 80px;
+
+  @include to(575px) {
+    margin-top: 40px;
+  }
 }
 
 .button {
@@ -854,11 +858,27 @@ a {
       }
     }
   }
+
+  @include to(575px) {
+    margin-top: 40px;
+
+    a, button {
+      font-size: 12px;
+    }
+  }
 }
 
 .big-main-text {
   width: 50%;
   margin: 0 auto;
+
+  @include to(768px) {
+    width: 55%;
+  }
+
+  @include to(575px) {
+    width: 70%;
+  }
 }
 
 .little-main-text {
@@ -867,24 +887,45 @@ a {
 }
 
 .little-title {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
+
+  @include to(768px) {
+    width: 75%;
+  }
 }
 
 .subtitle {
   @include tenor;
+
+  @include to(575px) {
+    font-size: 10px;
+    letter-spacing: 0.8em;
+  }
 }
 
 .title {
   @include cormorant;
+
+  @include to(575px) {
+    font-size: 24px;
+  }
 }
 
 .title-2 {
   @include cormorant($fs: 48px, $lh: 100%, $ta: left, $ls: 0.05em, $tt: uppercase, $c: $w);
+
+  @include to(575px) {
+    font-size: 24px;
+  }
 }
 
 .text {
   @include HelveticaNeueCyr;
+
+  @include to(575px) {
+    font-size: 12px;
+  }
 }
 
 .bottom-offset {
