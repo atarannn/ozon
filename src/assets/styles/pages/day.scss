@@ -17,6 +17,10 @@
 
     margin-bottom: 70px;
 
+    @include to(575px) {
+      margin-bottom: 50px;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -38,10 +42,24 @@
 
       @include  tenor(64px, 100%, left, 0.05em, uppercase, $w);
       margin: 0 0 30px 30px;
+
+      @include to(575px) {
+        margin: 0 0 20px 20px;
+        font-size: 46px;
+      }
+
+      @include to(425px) {
+        margin: 0 0 10px 10px;
+        font-size: 32px;
+      }
     }
 
     &__text {
       margin-top: 20px;
+
+      @include to(575px) {
+        margin-top: 10px;
+      }
     }
   }
 }

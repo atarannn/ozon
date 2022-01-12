@@ -33,5 +33,35 @@
         }
       }
     }
+
+    @include to(768px) {
+      flex-direction: column;
+
+      .slides__wrapper {
+        width: 100%;
+
+        .slide {
+          &:last-child {
+            margin-bottom: 70px;
+          }
+        }
+      }
+
+      .helvetica-title {
+        margin-bottom: 20px;
+      }
+    }
+
+    @include to(575px) {
+      .helvetica-title {
+        margin-bottom: 10px;
+      }
+
+      .slides__wrapper .slide {
+        &:last-child {
+          margin-bottom: 50px;
+        }
+      }
+    }
   }
 }

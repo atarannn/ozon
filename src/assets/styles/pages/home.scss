@@ -107,7 +107,7 @@
 
   li {
     margin-right: 50px;
-    @include HelveticaNeueCyr(14px, 170%, center, uppercase, $main-brown, 400);
+    @include HelveticaNeueCyr(14px, 170%, center, uppercase, $main-brown, 300);
 
     &:last-child {
       margin-right: 0;
@@ -233,8 +233,9 @@
     @include cormorant (96px, 100%, left, 0.05em, uppercase, $w);
 
     display: flex;
-    align-self: center;
+    align-self: flex-start;
     margin-left: var(--left-right-margin);
+    margin-top: 15%;
 
     @include to(575px) {
       font-size: 42px;
@@ -305,7 +306,7 @@
     }
 
     &-text {
-      @include HelveticaNeueCyr (18px, 170%, left, lowercase, $w, 400);
+      @include HelveticaNeueCyr (18px, 170%, left, lowercase, $w, 300);
 
       @include to(575px) {
         font-size: 14px;
@@ -588,8 +589,19 @@
 
 .connection {
   background: $dark-grey;
-  padding-left: var(--left-right-margin);
-  padding-right: var(--left-right-margin);
+  padding: 100px var(--left-right-margin);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &__contacts {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
 
   &__contacts-item {
     margin-bottom: 70px;
@@ -612,12 +624,10 @@
     z-index: 1;
   }
 
-  &__contacts-left{
+  &__contacts-left, &__contacts-right{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    padding-top: 10%;
   }
 
   .title {
@@ -625,7 +635,7 @@
   }
 
   .connection__text {
-    @include HelveticaNeueCyr(18px, 170%, left, none, $main-brown, 400);
+    @include HelveticaNeueCyr(18px, 170%, left, none, $main-brown, 300);
     max-width: 60%;
   }
 
@@ -634,13 +644,57 @@
   }
 
   .connection__text-upper {
-    @include HelveticaNeueCyr(18px, 170%, left, uppercase, $main-brown, 400);
-    max-width: 60%;
+    @include HelveticaNeueCyr(18px, 170%, left, uppercase, $main-brown, 300);
     margin-top: 20px;
   }
 
   .button {
     margin-top: 30px;
+  }
+
+  form.home-form {
+    --input-padding: 23px;
+    width: 100%;
+    background: $w;
+    padding: 70px;
+
+    .helvet__title {
+      margin-bottom: 0;
+    }
+
+    .form-field__wrapper {
+      margin-top: 30px;
+    }
+
+    .form-info-block {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .form-checkbox {
+        padding-left: 20px;
+      }
+
+      img {
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .form-field:not(#t) {
+      background: $light-grey;
+      border: 1px solid #D9DBDF;
+    }
+
+    .form-field-input {
+      height: 50px;
+      margin-top: 10px;
+    }
+
+    .mask-absolute {
+      background-color: $light-grey;
+    }
   }
 }
 

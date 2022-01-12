@@ -14,20 +14,7 @@ $dark-grey: linear-gradient(270deg, #F9F9F9 0%, #F2F2F2 100%);
 $w: #FFFFFF;
 
 
-$mc2: #FF554C;
-$mc3: #E5DF06;
-$mc4: #4F90B6;
-$gray:rgb(135, 135, 151);
-$text: #22223E;
-$wc: #fff;
-$bc: #000;
-$bc2: #000;
-
 $mc: #1A2941;
-$bg: #FAFAFA;
-$light: #FCFCFC;
-$dark: #1A2941;
-$gold: #CFA46E;
 
 :root {
   --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
@@ -79,6 +66,21 @@ $gold: #CFA46E;
   }
 }
 
+@media screen and (max-width: 1099px){
+  :root {
+    --inner-margin: 20px;
+    --left-right-margin: 50px;
+    --page-inner-offset: 150px;
+  }
+}
+
+@media screen and (max-width: 992px){
+  :root {
+    --left-right-margin: 40px;
+    --page-inner-offset: 100px;
+  }
+}
+
 @media screen and (max-width: 768px){
   :root {
     --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
@@ -94,14 +96,14 @@ $gold: #CFA46E;
     --blocks-margin: 100px;
     --blocks-offset: 20px;
 
-    --left-right-margin: 80px;
-    --inner-margin: 40px;
+    --left-right-margin: 20px;
+    --inner-margin: 10px;
 
     --offset: 20px;
 
-    --page-inner-offset: 250px;
-    --page-inner-offset2: 100px;
-    --h1-page: 50px;
+    --page-inner-offset: 20px;
+    --page-inner-offset2: 80px;
+    --h1-page: 30px;
   }
 }
 
@@ -121,12 +123,12 @@ $gold: #CFA46E;
     --blocks-offset: 15px;
 
     --left-right-margin: 15px;
-    --inner-margin: 40px;
+    --inner-margin: 10px;
 
     --offset: 20px;
 
-    --page-inner-offset: 250px;
-    --page-inner-offset2: 100px;
-    --h1-page: 50px;
+    --page-inner-offset: 20px;
+    --page-inner-offset2: 50px;
+    --h1-page: 20px;
   }
 }

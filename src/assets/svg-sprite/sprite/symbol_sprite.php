@@ -32,6 +32,10 @@
 			<path d="M0 2l3 2V0L0 2z"></path>
 		</symbol>
 	
+		<symbol id="icon-phone" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M4.565 5.936L5.834 4.47a.603.603 0 0 0 .03-.759L4.058 1.25a.6.6 0 0 0-.663-.224c-1.8.528-2.943 2.102-2.127 4.337 1.493 4.088 5.28 7.876 9.369 9.369 2.236.816 3.81-.327 4.337-2.127a.599.599 0 0 0-.224-.663l-2.462-1.806a.603.603 0 0 0-.76.03l-1.464 1.269c-2.107-.865-4.633-3.392-5.498-5.499z"></path>
+		</symbol>
+	
 		<symbol id="icon-scroll" viewBox="0 0 24 36">
 			<rect x="1" y="1" width="22" height="34" rx="11" stroke="#fff" stroke-width="2"></rect><circle cx="12" cy="9.2" r="2" fill="#fff"></circle>
 		</symbol>

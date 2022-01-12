@@ -27,6 +27,23 @@ function menuInit() {
   document.querySelector('[data-close-menu]').addEventListener('click', () => menuClose(menu));
 }
 
+function callPopup(callSelector, contentToOpenSelector, closeSelector) {
+  const call = document.querySelectorAll(callSelector);
+  const content = document.querySelector(contentToOpenSelector);
+  const close = document.querySelector(closeSelector);
+
+  call.forEach(elem => {
+    elem.addEventListener('click', () => {
+      content.classList.add('active');
+    });
+  });
+
+  close.addEventListener('click', () => {
+    content.classList.remove('active');
+  });
+}
+callPopup('[data-open-call-popup]','[data-call-popup]','[data-close-call-popup]');
+
 function init() {
   $(document).ready(function () {
     $(".select").each(function () {

@@ -6,11 +6,23 @@
 
     .text {
       margin-left: 45%;
+
+      @include to(768px) {
+        margin-left: 25%;
+      }
     }
   }
 
   .infrastructure-block__margin {
     margin-bottom: 150px;
+
+    @include to(768px) {
+      margin-bottom: 80px;
+    }
+
+    @include to(575px) {
+      margin-bottom: 50px;
+    }
   }
 }
 
@@ -25,17 +37,33 @@
 
   .helvetica-title {
     margin-bottom: 30px;
+
+    @include to(768px) {
+      margin-bottom: 20px;
+    }
   }
 
   .block-big{
     margin-top: 80px;
     width: 100%;
+
+    @include to(768px) {
+      margin-top: 40px;
+
+      .tenor-title {
+        margin-bottom: 0;
+      }
+    }
+
+    @include to(425px) {
+      margin-top: 0;
+    }
   }
 }
 
 .block__row {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-between;
 
   .col {
@@ -48,7 +76,24 @@
 
       .tenor-title {
         margin-bottom: 0;
+        max-width: 90%;
       }
+
+      @include to(768px) {
+        margin-bottom: 40px;
+      }
+
+      @include to(575px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @include to(425px) {
+    flex-direction: column;
+
+    .col .block:last-child{
+      margin-bottom: 20px;
     }
   }
 }

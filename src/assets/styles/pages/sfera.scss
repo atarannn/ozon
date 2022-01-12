@@ -3,10 +3,40 @@
 
   .info-top__text .text{
     margin-left: 30%;
+
+    @include to(768px) {
+      margin-left: 20%;
+    }
+
+    @include to(575px) {
+      margin-left: 0;
+    }
+
+    @include to(425px) {
+      text-align: center;
+    }
+  }
+
+  .info-top__text .tenor-title{
+    @include to(425px) {
+      text-align: center;
+    }
   }
 }
 
 .sfera-half-block {
   @include HelveticaNeueCyr(18px, 160%, left, uppercase, $main-brown, 400);
   margin-left: 45%;
+
+  @include to(768px) {
+    margin-left: 30%;
+  }
+
+  @include to(575px) {
+    font-size: 16px;
+  }
+
+  @include to(425px) {
+    font-size: 14px;
+  }
 }

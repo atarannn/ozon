@@ -2,167 +2,228 @@
 /*
 * input start
 */
+
+.form-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  width: 100%;
+  height: 100%;
+  background: #00000045;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-out, visibility 1ms linear 0.5s;
+
+  .form-field__wrapper {
+    &:first-child {
+      padding-right: 50px;
+    }
+
+    &:last-child {
+      padding-left: 50px;
+    }
+  }
+}
+
+.form-wrapper.active {
+  transition: opacity 0.5s ease-in, visibility 1ms linear;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: painted;
+}
+
 form {
   --input-padding: 23px;
+  width: 80%;
+  height: auto;
+  background: $light-grey;
+  padding: 100px 140px 70px 140px;
+  position: relative;
+}
+
+.form-close {
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background: $w;
+  border-radius: 200px;
+
+  transition: all .1s ease-in;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  span {
+    width: 16px;
+    height: 2px;
+    background: $main-brown;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    z-index: 101;
+
+    &:first-child {
+      transform: translate(50%, -50%) rotate(45deg);
+    }
+    &:last-child {
+      transform: translate(50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+.form-top__text-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  margin-bottom: 80px;
+
+  .title {
+    text-align: left;
+    padding-right: 50px;
+    max-width: 50%;
+  }
+
+  .form-text {
+    padding-left: 50px;
+    @include HelveticaNeueCyr(18px, 160%, left, uppercase, $main-brown, 400);
+    max-width: 40%;
+  }
+}
+
+.form-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .form-info__top {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      img {
+        height: 25px;
+        width: 25px;
+      }
+
+      &-text {
+        padding-left: 15px;
+        @include HelveticaNeueCyr(10px, 140%, left, none, $main-brown, 300);
+      }
+    }
+
+    .form-info-text {
+      padding-left: 0;
+      margin-top: 20px;
+      @include HelveticaNeueCyr(10px, 140%, left, none, #9E9E9E, 300);
+    }
+  }
+
+  .button {
+    margin-top: 0;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+
+.form-fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.form-field__wrapper {
+  margin-top: 30px;
   width: 100%;
 }
+
 .form-label {
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 140%;
-  color: #CFA46E;
-  @include to(1440px) {
-    font-size: 16px;
-  }
-  @include to(992px) {
-    font-size: 20px;
-  }
-  @include to(576px) {
-    font-size: 12px;
-  }
+  @include HelveticaNeueCyr(14px, 100%, left, none, $main-brown, 400);
+  margin-bottom: 10px;
+}
+
+.form-field-icon {
+  background-image: url("../images/icons/form-star.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  position: absolute;
+  right: -1px;
+  top: 0;
+  height: 25px;
+  width: 25px;
 }
 
 .form-field:not(#t) {
   position: relative;
-  margin: 60px 0 0;
-  background: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   transition: all 0.3s;
-  @include to(1440px){
-    margin: 40px 0 0;
-  }
-  @include to(992px){
-    margin: 50px 0 0;
-  }
-  @include to(576px){
-    margin: 30px 0 0;
-  }
+  background: $w;
+  border: none;
+}
+
+[data-animation="none"] .input-message {
+  @include HelveticaNeueCyr(10px, 100%, left, none, #DF5E5E, 300);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  display: flex;
+  width: 100%;
+  transform: translate(0%, 100%);
 }
 
 [data-animation="focus"] .input-message {
+  @include HelveticaNeueCyr(10px, 100%, left, none, #DF5E5E, 300);
   position: absolute;
   top: 50%;
-  left: var(--input-padding);
   z-index: 3;
-  padding: 0 7px;
   display: flex;
-  font-weight: 500;
-  font-size: 14px;
   transform: translate(0%, -50%);
   user-select: none;
   pointer-events: none;
-  background-color: #8e8e8e;
   transition: all 0.16s cubic-bezier(0.0, 0, 0.2, 1) 0ms;
 }
 
-/*  */
 .form-field-input {
   display: flex;
   align-items: flex-start;
   width: 100%;
-  height: 60px;
-  @include to(1440px) {
-    height: 40px;
-  }
-  @include to(992px) {
-    height: 55px;
-  }
-  @include to(576px) {
-    height: 35px;
-  }
+  height: 70px;
+  margin-top: 10px;
 }
+
 .form-field__input {
-  width: 100%;
-  font-size: 28px;
-  line-height: 120%;
+  @include HelveticaNeueCyr(14px, 100%, left, none, $main-brown, 400);
   background: none;
   border: none;
-  color: #FFFFFF;
-  @include to(1440px) {
-    font-size: 20px;
-  }
-  @include to(992px) {
-    font-size: 24px;
-    line-height: 140%;
-  }
-  @include to(576px) {
-    font-size: 14px;
-    line-height: 100%;
-  }
+  height: 100%;
+  width: 100%;
+  padding-left: 40px;
+
   &::placeholder {
-    color: #ffffff;
+    color: $main-brown;
   }
   &:focus + .form-field-message {
     opacity: 1;
-  }
-}
-.main-button {
-  margin: 60px 0 0 auto;
-  display: flex;
-  align-items: center;
-  font-family: $default-font;
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 1em;
-  color: #CFA46E;
-  border: none;
-  background: none;
-  white-space: nowrap;
-  text-decoration: none;
-  @include to(1440px) {
-    margin: 40px 0 0 auto;
-    font-size: 20px;
-    line-height: 1.2em;
-  }
-  @include to(992px) {
-    margin: 50px 0 0 auto;
-    font-size: 28px;
-    line-height: 1em;
-  }
-  @include to(576px) {
-    margin: 30px 0 0 auto;
-    font-size: 14px;
-  }
-
-  &__arrow {
-    display: flex;
-    width: 70px;
-    height: 13px;
-    margin: 0 0 0 50px;
-    svg {
-      height: 100%;
-      fill: #CFA46E;
-    }
-    @include to(1440px) {
-      width: 50px;
-      height: 9px;
-      margin: 0 0 0 20px;
-    }
-    @include to(992px) {
-      margin: 0 0 0 30px;
-    }
-    @include to(576px) {
-      width: 34px;
-      height: 6px;
-      margin: 0 0 0 20px;
-    }
-  }
-}
-
-.mask-absolute {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 65px;
-  height: 100%;
-  z-index: 10;
-  background-color: red;
-  opacity: 0;
-  @include to(1440px) {
-    width: 45px;
-  }
-  @include to(576px) {
-    width: 35px;
   }
 }
 
@@ -172,49 +233,33 @@ form {
   left: 0;
   width: 100%;
   height: 100%;
-  font-weight: 500;
-  font-size: max(vh(16), 16px);
-  color: #000;
-  text-indent: var(--input-padding);
+  @include HelveticaNeueCyr(14px, 100%, left, none, $main-brown, 400);
   background-color: transparent;
   border: none;
-  @include to(1440px){
-    font-size: 14px;
-  }
 }
+
 [data-animation="none"] .form-field__input {
-  padding: 0;
-  width: 100%;
   border: none;
-  font-size: max(vh(16), 16px);
-  @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px){
-    font-size: vw(16);
-  }
-  @include to(1440px){
-    font-size: 20px;
-  }
-  @include to(576px){
-    font-size: 14px;
-  }
+  height: 100%;
+  width: 100%;
+  padding-left: 40px;
 }
 
-[data-animation="none"] .input-message {
+.mask-absolute {
   position: absolute;
+  top: 0;
   left: 0;
-  bottom: -6px;
-  display: flex;
-  width: 100%;
-  min-height: 12px;
-  font-size: max(vh(14), 14px);
-  line-height: 100%;
-  transform: translate(0%, 100%);
-  @include to(1440px) {
-    font-size: 12px;
-  }
-  @include to(576px) {
-    font-size: 10px;
-  }
+  width: 85%;
+  height: 100%;
+  z-index: 10;
+  background-color: $w;
+  opacity: 1;
+  @include HelveticaNeueCyr(14px, 100%, left, none, $main-brown, 400);
 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 40px;
 }
 
 
@@ -226,15 +271,16 @@ form {
 
 [data-field-input][data-status="field--active"]:not(#r) {
   border-color: $mc;
+
   .input-message {
     color: $mc;
   }
 }
 
 [data-field-input][data-status="field--error"]:not(#r) {
-  border-color: #EA4041;
+  border-color: #DF5E5E;
   .input-message {
-    color: #EA4041;
+    color: #DF5E5E;
   }
 }
 
@@ -285,62 +331,23 @@ form {
     white-space: nowrap;
 
     color: #BBBEC2;
-    @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px){
-      font-size: vw(16);
-      line-height: 1.4em;
-
-    }
-    @include to(1440px){
-      font-size: 12px;
-      margin: 0px 15px;
-
-    }
   }
 }
 
 .form-textarea {
   position: relative;
-  margin: 82px 0 0 0;
-  @include to(1440px){
-    margin: 40px 0 0 0;
-  }
-  @include to(992px){
-    margin: 50px 0 0 0;
-  }
-  @include to(576px){
-    margin: 30px 0 0 0;
-  }
+  margin-top: 10px;
+
   textarea {
-    padding: 0;
-    height: 115px;
+    padding: 16px 0 0 40px;
+    height: 80px;
     width: 100%;
     display: flex;
-    background: none;
-    font-size: 28px;
-    line-height: 100%;
-    color: #FFFFFF;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px){
-      font-size: vw(28);
-    }
-    @include to(1440px){
-      height: 73px;
-      font-size: 20px;
-      line-height: 120%;
-    }
-    @include to(992px){
-      height: 134px;
-      font-size: 24px;
-      line-height: 140%;
-    }
-    @include to(576px){
-      height: 74px;
-      font-size: 14px;
-      line-height: 100%;
-    }
+    background: $light-grey;
+    border: 1px solid #D9DBDF;
+
     &::placeholder {
-      color: #ffffff;
+      color: $main-brown;
     }
     &:focus + .form-field-message {
       opacity: 1;
@@ -352,21 +359,8 @@ form {
   position: absolute;
   top: 0;
   opacity: 0;
-  font-size: 12px;
-  line-height: 120%;
-  color: #828282;
+  @include HelveticaNeueCyr(10px, 100%, left, none, #DF5E5E, 300);
   transform: translateY(calc(-100% - 10px));
-  //margin: 10px 0 0 0;
-  @media (-webkit-min-device-pixel-ratio: 2) and (min-width:1440px) {
-    font-size: vw(16);
-  }
-  @include to(1440px) {
-    //margin: 10px 0 0 0;
-    font-size: 12px;
-  }
-  @include to(576px){
-    font-size: 14px;
-  }
 }
 
 .requaired-block-ico--position {
@@ -374,4 +368,80 @@ form {
   top: 0;
   right: 0;
   pointer-events: none;
+}
+
+
+.form-checkbox__wrapper{
+  width: 100%;
+  height: 25px;
+  margin-top: 20px;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+  padding-left: 40px;
+
+  @include HelveticaNeueCyr(10px, 140%, left, none, $main-brown, 300);
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.form-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 1px solid #D9DBDF;
+  transition: background-color .3s ease-in-out;
+}
+
+.form-checkbox:hover input ~ .checkmark {
+  background-color: rgba(196, 196, 196, 0.34);
+  transition: background-color .3s ease-in-out;
+}
+
+.form-checkbox input:checked ~ .checkmark {
+  background-color: $main-green;
+  transition: background-color .3s ease-in-out;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.form-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.form-checkbox .checkmark:after {
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 10px;
+  border: solid $w;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-width: 0 3px 3px 0;
 }

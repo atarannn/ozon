@@ -22,10 +22,15 @@ header.header
         .header__right-phone
             a(href='tel:+380442334545')
                 span (044) 233-45-45
-        .header__right-button
-            a(href="#" data-modal='consultation').text.text-hover
+        .header__right-button(data-open-call-popup)
+            a(href="#").text-2.text-hover
                 span Замовити дзвінок
-        .header__right-menu(data-open-menu)
-            .text Меню
-            .header__right-menu-hamburger
+            .button-phone
+                +svg('phone')
 
+        .header__right-menu(data-open-menu)
+            .text-2 Меню
+            .burger__icon
+                span.burger__icon__line
+                span.burger__icon__line
+                span.burger__icon__line

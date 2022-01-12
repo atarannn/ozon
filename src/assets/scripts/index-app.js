@@ -72,10 +72,17 @@ formsWithRedirect.forEach((form) => {
 
       },
     });
+    // $form.querySelector('.js-mask-absolute').addEventListener('click', () => {
+    //   $form.querySelector('[name="phone"]').focus();
+    //   $form.querySelector('.js-mask-absolute').style.display = 'none';
+    // }, false);
 
-    $form.querySelector('.js-mask-absolute').addEventListener('click', () => {
-      $form.querySelector('[name="phone"]').focus();
-    }, false);
+    $form.querySelectorAll('.js-mask-absolute').forEach(elem => {
+      elem.addEventListener('click', () => {
+        $form.querySelector('[name="phone"]').focus();
+        $form.querySelector('.js-mask-absolute').style.display = 'none';
+      }, false);
+    })
   }
 });
 
@@ -114,10 +121,16 @@ forms.forEach((form) => {
 
       },
     });
-
-    $form.querySelector('.js-mask-absolute').addEventListener('click', () => {
-      $form.querySelector('[name="phone"]').focus();
-    }, false);
+    // $form.querySelector('.js-mask-absolute').addEventListener('click', () => {
+    //   $form.querySelector('[name="phone"]').focus();
+    //   $form.querySelector('.js-mask-absolute').style.display = 'none';
+    // }, false);
+    $form.querySelectorAll('.js-mask-absolute').forEach(elem => {
+      elem.addEventListener('click', () => {
+        $form.querySelector('[name="phone"]').focus();
+        $form.querySelector('.js-mask-absolute').style.display = 'none';
+      }, false);
+    })
   }
 });
 

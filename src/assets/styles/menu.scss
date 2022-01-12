@@ -24,7 +24,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10000;
+    z-index: 1000;
     background: $w;
     visibility: hidden;
     opacity: 0;
@@ -58,10 +58,6 @@
 
     .menu-top__right {
       @include size(7);
-
-      @include to(575px) {
-        @include size(8);
-      }
 
       display: flex;
       justify-content: space-between;
@@ -114,15 +110,44 @@
             font-size: 10px;
           }
         }
-      }
 
-      &-button {
         @include to(575px) {
-          display: none;
+          order: 2;
         }
       }
 
-      .text {
+      &-button {
+        .button-phone {
+          display: none;
+
+          background: #2799C1;
+          border-radius: 200px;
+          height: 36px;
+          width: 36px;
+
+          svg {
+            height: 14px;
+            width: 14px;
+            fill: $w;
+          }
+        }
+
+        @include to(575px) {
+          order: 1;
+
+          .button-phone {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .text-2.text-hover {
+            display: none;
+          }
+        }
+      }
+
+      .text-2 {
         @include HelveticaNeueCyr(10px, 140%, center, uppercase, $main-brown, 400);
         letter-spacing: 0.05em;
       }
@@ -136,15 +161,7 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
-
-        .menu-close {
-          margin-left: 20px;
-          width: 22px;
-          height: 20px;
-
-          background-image: url("../images/icons/menu-close.svg");
-          transition: all .1s ease-in;
-        }
+        order: 3;
 
         &:hover {
           .menu-close {
@@ -153,7 +170,55 @@
           }
         }
 
-        .text {
+        .menu-close {
+          width: 22px;
+          height: 20px;
+
+          background-image: url("../images/icons/menu-close.svg");
+          transition: all .1s ease-in;
+
+          &__line {
+            display: none;
+          }
+
+          @include to(768px) {
+            background: $main-green;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.12);
+            border-radius: 200px;
+            height: 36px;
+            width: 36px;
+            position: relative;
+
+            &__line {
+              position: absolute;
+              top: 50%;
+              right: 50%;
+              z-index: 20;
+
+              display: flex;
+              flex-direction: column;
+
+              width: 16px;
+              height: 2px;
+              background: $w;
+
+              &:first-child {
+                transform: translate(50%, -50%) rotate(45deg);
+              }
+              &:last-child {
+                transform: translate(50%, -50%) rotate(-45deg);
+              }
+            }
+          }
+        }
+
+        .text-2 {
+          margin-right: 20px;
+
+          @include to(768px) {
+            margin-right: 10px;
+          }
+
           @include to(575px){
             display: none;
           }
@@ -191,7 +256,7 @@
         }
 
         a {
-          @include HelveticaNeueCyr(14px, 170%, left, normal, $main-brown, 400);
+          @include HelveticaNeueCyr(14px, 170%, left, none, $main-brown, 300);
           @include hover-color;
         }
       }

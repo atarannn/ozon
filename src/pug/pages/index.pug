@@ -230,8 +230,9 @@ block content
             +svg('arrow').btn-svg
 
     section.connection.row.blocks-margin
+      h2.title Контакти
+      .connection__contacts
         .connection__contacts-left.half-block
-          h2.title Контакти
           .connection__contacts-item
             .helvet__title розташування:
             .connection__text Київ, Печерський район,
@@ -245,10 +246,47 @@ block content
             .helvet__title  розташування:
             a(href='tel:+380442334545').connection__text
               span 044 364-50-51
-            .connection__text-upper ПН-ПТ: 09:00-19:00,
-              |СБ-ВС: 10:00-18:00
+            .connection__text-upper
+              p ПН-ПТ: 09:00-19:00,
+              p СБ-ВС: 10:00-18:00
 
         .connection__contacts-right.half-block
+          form.home-form(data-home-contact autocomplete="off")
+            .helvet__title залишились запитання?
+            .form-field__wrapper
+              label(for="name").form-label Введіть ваше ім’я
+              .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
+                input(type='text' name="name" id="name" placeholder="Ім`я:").form-field__input
+                .form-field-icon
+                .input-message(data-input-message)
+
+            .form-field__wrapper
+              label(for="phone").form-label Введіть ваш телефон
+              .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+                input(type='text' name="phone" id="phone").form-field__input
+                .form-field-icon
+                .input-message(data-input-message)
+                .mask-absolute.js-mask-absolute + (38) ___ - ___ - __
+
+            .form-field__wrapper
+              label(for="text").form-label Введіть ваше повідомлення
+              .form-textarea(data-field-input data-field-name data-status="field--inactive")
+                textarea(type='text' name="name" id="text" placeholder="Повідомлення:").form-field__input
+
+
+            .form-checkbox__wrapper
+              label.form-checkbox Натискаючи *Відправити запит*, ви надаєте згоду на обробку, зберігання та використання ваших персональних даних
+                input(type="checkbox" checked="checked")
+                span.checkmark
+
+            .form-info-block
+              img(src='./assets/images/icons/form-star.svg' alt='Pattern-8')
+              .form-checkbox обов’язкові поля для заповнення
+
+            .button
+              button( type="submit" data-btn-submit)
+                span(data-btn-submit-text) Детальніше
+                +svg('arrow').btn-svg
 
 
 

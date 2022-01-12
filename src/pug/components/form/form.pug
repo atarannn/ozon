@@ -1,12 +1,36 @@
-form(data-home-contact autocomplete="off")
-  .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
-    input(type='text' name="name").form-field__input
-    .input-message(data-input-message) Ім’я:*
-  .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
-    input(type='text' name="phone").form-field__input
-    .input-message(data-input-message) Телефон:*
-  button( type="submit" data-btn-submit).home-content__link.link
-    span(data-btn-submit-text).link__text.usn Надіслати
-    span.link-ico.link-ico--margin
-      span.link-ico__stic.bgc--wc
-      +svg('arrow').link__ico.fill--wc
+.form-wrapper(data-call-popup data-disable-page-scroll)
+  form(autocomplete="off")
+    .form-top__text-wrapper
+      .title Замовити дзвінок
+      .form-text ЯКЩО У ВАС Виникли питання, Залиш свій НОМЕР І МИ передзвонимо вам:
+    .form-fields
+      .form-field__wrapper
+        label(for="name").form-label Введіть ваше ім’я
+        .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
+          input(type='text' name="name" id="name" placeholder="Ім`я:").form-field__input
+          .form-field-icon
+          .input-message(data-input-message)
+
+      .form-field__wrapper
+        label(for="phone").form-label Введіть ваш телефон
+        .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+          input(type='text' name="phone" id="phone").form-field__input
+          .form-field-icon
+          .input-message(data-input-message)
+          .mask-absolute.js-mask-absolute + (38) ___ - ___ - __
+
+    .form-bottom
+      .form-bottom-left
+        .form-info__top
+          img(src='./assets/images/icons/form-star.svg' alt='Pattern-8')
+          .form-info__top-text обов’язкові поля для заповнення
+        .form-info-text Натискаючи *Відправити запит*, ви надаєте згоду на обробку, зберігання та використання ваших персональних даних
+
+      .button
+        button( type="submit" data-btn-submit)
+          span(data-btn-submit-text) Відправити запит
+          +svg('arrow').btn-svg
+
+    .form-close(data-close-call-popup)
+      span
+      span

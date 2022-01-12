@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 500) {
+    if ($(this).scrollTop() > 300) {
       $(".pageup").css('opacity', '1');
     } else {
       $(".pageup").css('opacity', '0');

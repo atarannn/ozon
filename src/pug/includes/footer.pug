@@ -58,12 +58,29 @@ footer.footer
                 .footer__saga-text девелопер проєкту
 
     .footer__divider
-        form(data-home-footer autocomplete="off")
-            h5.form-label Якщо у вас виникли запитання, залиште свій номер і ми передзвонимо вам:
-            .form-btn-wrap.df.jcsb.aic.button
-                button(class="main-button home-contact-btn--size" type="submit" data-btn-submit="data-btn-submit")
-                    span надіслати
-                    +svg('arrow').btn-svg
+        form.footer-form(data-home-footer autocomplete="off")
+            h5.form-title Якщо у вас виникли запитання, залиште свій номер і ми передзвонимо вам:
+            .form-fields
+                .form-field__wrapper
+                    .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
+                        input(type='text' name="name" id="name" placeholder="Ім`я:").form-field__input
+                        .form-field-icon
+                        .input-message(data-input-message)
+
+                .form-field__wrapper
+                    .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+                        input(type='text' name="phone" id="phone").form-field__input
+                        .form-field-icon
+                        .input-message(data-input-message)
+                        .mask-absolute.js-mask-absolute + (38) ___ - ___ - __
+
+                .button
+                    button( type="submit" data-btn-submit)
+                        span(data-btn-submit-text) надіслати
+                        +svg('arrow').btn-svg
+
+
+
     .footer__copyright
         .footer__copyright-left © Усі права захищено Ozon Concept House
         .footer__copyright-center Не є публічною офертою. Візуалізації та планування об’єкту є орієнтовними. Забудовник має право вносити зміни згідно з діючим законодавством.
