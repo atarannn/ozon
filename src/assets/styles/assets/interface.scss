@@ -387,3 +387,33 @@
     display: none;
   }
 }
+
+.twentysecond__pattern {
+  position: absolute;
+  z-index: -1;
+  top: -15%;
+  right: 50%;
+  transform: translateX(50%);
+  background: url("../images/icons/Pattern-14.svg") center center / contain no-repeat;
+  width: 194px;
+  height: 200px;
+
+  @include to(992px) {
+    display: none;
+  }
+}
+
+.twentythird__pattern {
+  position: absolute;
+  z-index: 0;
+  bottom: 10%;
+  left: var(--left-right-margin);
+  transform: translateY(50%);
+  background: url("../images/icons/Pattern-15.svg") center center / contain no-repeat;
+  width: 264px;
+  height: 296px;
+
+  @include to(992px) {
+    display: none;
+  }
+}

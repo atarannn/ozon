@@ -910,6 +910,10 @@ a {
 .title {
   @include cormorant;
 
+  @include to(768px) {
+    font-size: 32px;
+  }
+
   @include to(575px) {
     font-size: 24px;
   }

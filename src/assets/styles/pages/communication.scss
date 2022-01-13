@@ -1,0 +1,29 @@
+#communication {
+  position: relative;
+
+  .twentythird__pattern {
+    bottom: 0;
+  }
+
+  .connection {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+
+    .connection__contacts-left {
+      padding: 0;
+
+      @include to(992px){
+        margin-bottom: 80px;
+      }
+
+      @include to(575px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    form.home {
+
+    }
+  }
+}

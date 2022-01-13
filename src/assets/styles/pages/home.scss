@@ -96,6 +96,11 @@
     background: url("../images/icons/Group.svg") center center / contain no-repeat;
     width: 272px;
     height: 264px;
+
+    @include to(575px) {
+      width: 112px;
+      height: 115px;
+    }
   }
 }
 
@@ -184,12 +189,23 @@
   &__pattern {
     position: absolute;
     z-index: -1;
-    bottom: 0;
+    bottom: -17%;
     left: 17%;
-    transform: translateY(50%);
+    transform: translateX(17%);
     background: url("../images/icons/Pattern-1.svg") center center / contain no-repeat;
     width: 200px;
     height: 197px;
+
+    @include to(768px) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include to(575px) {
+      bottom: -15%;
+      height: 142px;
+      width: 142px;
+    }
   }
 }
 
@@ -200,6 +216,17 @@
   background: url("../images/icons/Pattern-2.svg") center center / contain no-repeat;
   width: 133px;
   height: 232px;
+
+  @include to(768px) {
+    bottom: 72%;
+  }
+
+  @include to(575px) {
+    height: 99px;
+    width: 112px;
+    left: -7%;
+    bottom: 80%;
+  }
 }
 
 .infrastructure__pattern {
@@ -211,6 +238,17 @@
   transform: translateX(-50%);
   width: 200px;
   height: 192px;
+
+  @include to(768px) {
+    top: 37%;
+    left: 50%;
+  }
+
+  @include to(575px) {
+    height: 136px;
+    width: 142px;
+    top: 40%;
+  }
 }
 
 .concept {
@@ -372,6 +410,16 @@
   background: url("../images/icons/Pattern-4.svg") center center / contain no-repeat;
   width: 132px;
   height: 261px;
+
+  @include to(768px) {
+    top: 20%;
+  }
+
+  @include to(575px) {
+    left: -7%;
+    height: 111px;
+    width: 112px;
+  }
 }
 
 .card {
@@ -476,14 +524,30 @@
     transform: translate(50%, -50%);
     width: 261px;
     height: 263px;
+
+    @include to(768px) {
+      top: 14%;
+      right: 50%;
+      width: 197px;
+      height: 199px;
+    }
+
+    @include to(575px) {
+      width: 142px;
+      height: 143px;
+      top: 0;
+    }
   }
 
   @include to(768px) {
     margin-left: 10px;
+    padding-top: 100px;
   }
 
   @include to(575px) {
     margin-top: 120px;
+    padding-top: 0;
+    margin-left: 0;
   }
 }
 
@@ -592,6 +656,15 @@
     width: 264px;
     height: auto;
     transform: translate(-50%, -50%);
+
+    @include to(768px) {
+      top: 120%;
+      left: 0;
+    }
+
+    @include to(575px) {
+      width: 112px;
+    }
   }
 }
 
@@ -607,6 +680,10 @@
   @include to(992px) {
     padding: 100px 0 0;
     margin: 100px 0 0 0;
+  }
+
+  @include to(575px) {
+    padding: 50px 0 0;
   }
 
   .half-block {
@@ -631,6 +708,12 @@
 
     &:last-child{
       margin-bottom: 0;
+    }
+
+    @include to(575px) {
+      .helvet__title {
+        font-size: 12px;
+      }
     }
   }
 
@@ -666,6 +749,20 @@
         }
       }
     }
+
+    @include to(575px) {
+      padding: 0 var(--left-right-margin) 50px var(--left-right-margin);
+      flex-direction: column;
+
+      .connection__contacts-item {
+        margin-bottom: 40px;
+
+        &:last-child {
+          margin-bottom: 0;
+          padding-left: 0;
+        }
+      }
+    }
   }
 
   .title {
@@ -674,6 +771,10 @@
     @include to(992px) {
       margin-bottom: 50px;
       padding-left: var(--left-right-margin);
+    }
+
+    @include to(575px) {
+      margin-bottom: 30px;
     }
   }
 
@@ -685,7 +786,7 @@
       max-width: 80%;
     }
 
-    @include to(425px) {
+    @include to(575px) {
       max-width: 100%;
       font-size: 12px;
     }
@@ -698,6 +799,10 @@
   .connection__text-upper {
     @include HelveticaNeueCyr(18px, 170%, left, uppercase, $main-brown, 300);
     margin-top: 20px;
+
+    @include to(575px) {
+      font-size: 12px;
+    }
   }
 
   .button {
@@ -709,6 +814,7 @@
     width: 100%;
     background: $w;
     padding: 70px;
+    position: relative;
 
     @include to(992px) {
       padding: 100px 150px;

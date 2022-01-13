@@ -34,10 +34,16 @@
   &__right {
     @include size(7);
 
+    @include to(425px) {
+      @include size(8);
+    }
+
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    cursor: pointer;
 
     &-social {
       display: flex;
@@ -72,13 +78,13 @@
         }
       }
 
-      @include to(768px) {
+      @include to(992px) {
         display: none;
       }
     }
 
     &-language {
-      @include to(768px){
+      @include to(992px){
         display: none;
       }
     }

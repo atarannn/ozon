@@ -1,0 +1,69 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Технічні характеристики'
+    var id_page = 'id-page-specifications'
+    var class_page = 'class-page-specifications'
+    var breadcrumbsSubitem = [
+      {
+        label: 'Specifications',
+        link: pagesLink[0].specifications
+      }
+    ]
+    var block = [
+      {
+        img: 'news/1.png',
+        text: 'BOSTON Creative House будується за монолітно-каркасною технологією. Каркас будівлі — несучі вертикальні конструкції, перекриття, діафрагми жорсткості (стіни сходових клітин і ліфтових шахт) — виконані з монолітних залізобетонних конструкцій. Оскільки тільки зовнішні стіни є несучими, ви можете перепланувати апартаменти за власним смаком.',
+        title: 'Технологія будівництва',
+      }, {
+        img: 'news/1.png',
+        text: 'Для внутрішніх стін в апартаментах використовується керамічний пустотілий блок М100. Маркування “М-100” вказує на міцність матеріалу: 1 см² цегли витримує навантаження в 100 кг. Матеріал також має високі показники звуко- та теплоізоляції, а завдяки відносно легкій вазі знижує навантаження на будівлю. Для зведення стін ми застосовуємо армовану кладку шириною 250 мм, а для їхнього оздоблення — гіпс.',
+        title: 'Стіни',
+      }, {
+        img: 'news/1.png',
+        text: 'Для всіх апартаментів у BOSTON Creative House ми обрали вікна німецького виробника Rehau. Вони мають відмінні теплоізоляційні властивості, завдяки чому у холодну пору року у кімнатах зберігатиметься тепло, а рахунки за опалення не лякатимуть вас захмарною сумою. Вікна мають п’ятикамерний профіль та двокамерний енергозберігаючий склопакет.' ,
+        title: 'Вікна',
+      }, {
+        img: 'news/1.png',
+        text: 'У BOSTON Creative House — безпека перш за все, тому в усіх апартаментах будуть встановлені вхідні протиударні та противандальні двері з класом вогнестійкості ЕІ 30 (маркуванням ЕІ30 позначена межа вогнестійкості у 30 хвилин). Двері цього типу пройшли випробування за вимогами стандартів і ДСНС України.',
+        title: 'Двері',
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/specifications.js')
+block content
+  include ../includes/breadcrumbs.pug
+
+  #specifications
+    .page-inner-offset
+      h1.page-title= title_page
+      .tenor-title Ми впевнені, комфорт і затишок в оселі залежать не тільки від правильно підібраних меблів чи кольорової гами в інтер’єрі. Головні складові комфорту та гарного мікроклімату в апартаментах — це зручне планування, надійні склопакети, якісна система опалення, продумані внутрішні мережі. Саме такий підхід ми використовуємо при виборі будівельних матеріалів та проєктуванні апартаментів.
+      .specifications-block__wrapper
+         each val in block
+           .specifications-block
+             +img(val.img)
+             .specifications-block__text
+                .tenor-title=val.title
+                .text=val.text
+
+    .twelfth__pattern
+    .thirteenth__pattern
+    .fourteenth__pattern
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
