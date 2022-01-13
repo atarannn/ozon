@@ -18,6 +18,11 @@
     grid-template-rows: var(--header-h) 80px 1fr;
   }
 
+  @include to(425px) {
+    grid-template-columns: 30px 1fr 30px;
+    grid-template-rows: var(--header-h) 50px 1fr;
+  }
+
   &-wrap{
     position: fixed;
     top: 0;
@@ -243,8 +248,14 @@
     position: relative;
 
     @include to(768px) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 60% 40%;
       grid-template-rows: repeat(2, 1fr);
+    }
+
+    @include to(425px) {
+      grid-template-columns: 50% 50%;
+      column-gap: 20px;
+      grid-template-rows: 45%;
     }
 
     .menu__section {
@@ -270,12 +281,22 @@
       transform: translateX(-50%);
       width: 264px;
       height: 130px;
+
+      @include to(425px) {
+        width: 190px;
+        height: 95px;
+      }
     }
   }
 
   &__title {
     @include tenor(18px, 100%, left, 0.05em, uppercase, #000000);
     margin-bottom: 30px;
+
+    @include to(425px) {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
   }
 
 }

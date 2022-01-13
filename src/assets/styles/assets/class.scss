@@ -968,15 +968,15 @@ a {
   }
 
   @include to(768px) {
-    font-size: 28px;
-  }
-
-  @include to(575px) {
     font-size: 24px;
   }
 
+  @include to(575px) {
+    font-size: 20px;
+  }
+
   @include to(425px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -987,7 +987,7 @@ a {
 .title__top-padding1 {
   margin-top: 20px;
 
-  @include to(768px) {
+  @include to(575px) {
     margin-top: 10px;
   }
 
@@ -997,11 +997,7 @@ a {
   margin-top: 50px;
 
   @include to(768px) {
-    margin-top: 30px;
-  }
-
-  @include to(575px) {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 }
 
@@ -1009,11 +1005,11 @@ a {
   margin-top: 70px;
 
   @include to(768px) {
-    margin-top: 50px;
+    margin-top: 60px;
   }
 
   @include to(575px) {
-    margin-top: 30px;
+    margin-top: 50px;
   }
 }
 
@@ -1021,11 +1017,11 @@ a {
   margin-top: 100px;
 
   @include to(768px) {
-    margin-top: 70px;
+    margin-top: 80px;
   }
 
   @include to(575px) {
-    margin-top: 50px;
+    margin-top: 70px;
   }
 }
 
@@ -1036,7 +1032,7 @@ a {
 .title__bottom-padding1 {
   margin-bottom: 20px;
 
-  @include to(768px) {
+  @include to(575px) {
     margin-bottom: 10px;
   }
 }
@@ -1045,11 +1041,7 @@ a {
   margin-bottom: 50px;
 
   @include to(768px) {
-    margin-bottom: 30px;
-  }
-
-  @include to(575px) {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 }
 
@@ -1057,11 +1049,11 @@ a {
   margin-bottom: 70px;
 
   @include to(768px) {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
   }
 
   @include to(575px) {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 }
 
@@ -1069,11 +1061,11 @@ a {
   margin-bottom: 100px;
 
   @include to(768px) {
-    margin-bottom: 70px;
+    margin-bottom: 80px;
   }
 
   @include to(575px) {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
 }
 
@@ -1081,13 +1073,14 @@ a {
   @include tenor(20px, 170%, left, normal, none, $main-brown);
   margin-bottom: 30px;
 
-  @include to(768px) {
+  @include to(992px) {
     font-size: 16px;
   }
 
   @include to(575px) {
     font-size: 14px;
     margin-bottom: 20px;
+    line-height: 140%;
   }
 }
 
@@ -1109,11 +1102,7 @@ a {
 
   @include to(425px) {
     flex-direction: column;
-    align-items: center;
-
-    a {
-      margin-bottom: 10px;
-    }
+    align-items: flex-start;
   }
 
   a {
@@ -1125,8 +1114,8 @@ a {
       width: 80px;
     }
 
-    @include to(575px) {
-      width: 60px;
+    @include to(425px) {
+      margin-bottom: 10px;
     }
   }
 }
@@ -1139,6 +1128,10 @@ a {
 
   .text {
     text-align: left;
+  }
+
+  @include to(425px) {
+    width: 100%;
   }
 }
 

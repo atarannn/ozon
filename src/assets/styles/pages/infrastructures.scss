@@ -1,6 +1,28 @@
 #infrastructure {
   position: relative;
 
+  .button {
+    @include to(768px) {
+      margin-top: 45px;
+    }
+  }
+
+  @include to(768px) {
+    .tenth__pattern {
+      display: none;
+    }
+
+    .eleventh__pattern {
+      left: 0;
+    }
+  }
+
+  @include to(425px) {
+    .eleventh__pattern {
+      display: none;
+    }
+  }
+
   .info-top__text {
     width: 100%;
 
@@ -76,7 +98,7 @@
 
       .tenor-title {
         margin-bottom: 0;
-        max-width: 90%;
+        max-width: 95%;
       }
 
       @include to(768px) {
@@ -91,10 +113,5 @@
 
   @include to(425px) {
     flex-direction: column;
-
-    .col .block:last-child{
-      margin-bottom: 20px;
-    }
   }
 }
-

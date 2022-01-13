@@ -1,5 +1,11 @@
 #day {
   position: relative;
+
+  @include to(768px) {
+    .first__pattern, .second__pattern, .third__pattern, .fourth__pattern, .fifth__pattern, .sixth__pattern, .seventh__pattern, .eighth__pattern, .ninth__pattern {
+      display: none;
+    }
+  }
 }
 
 .day-blocks-wrapper {

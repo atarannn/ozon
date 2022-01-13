@@ -2,6 +2,10 @@
   .info-top__text {
     width: 60%;
 
+    @include to(425px) {
+      width: 100%;
+    }
+
     .tenor-title {
       margin-bottom: 0;
     }
@@ -14,10 +18,6 @@
 
   .location-blocks__wrapper {
     margin-top: 80px;
-
-    .block__row col .block {
-      margin-bottom: 50px;
-    }
 
     .block-info-text{
       position: absolute;
@@ -33,6 +33,16 @@
       height: 50px;
 
       @include HelveticaNeueCyr(14px, 100%, center, none, $main-brown, 400);
+    }
+  }
+
+  @include to(425px) {
+    .location-blocks__wrapper .block__row .col .block {
+      margin-bottom: 40px;
+    }
+
+    .location-blocks__wrapper .block__row .col:last-child .block:last-child {
+      margin-bottom: 0;
     }
   }
 }

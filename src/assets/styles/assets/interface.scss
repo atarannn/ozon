@@ -41,7 +41,7 @@
 }
 
 .row {
-  @include row-flex;
+  display: flex;
   justify-content: space-between;
 
   @include to(768px) {
@@ -263,6 +263,10 @@
   background: url("../images/icons/Pattern-9.svg") center center / contain no-repeat;
   width: 264px;
   height: 272px;
+
+  @include to(768px) {
+    display: none;
+  }
 }
 
 .thirteenth__pattern {
@@ -274,6 +278,10 @@
   background: url("../images/icons/Pattern-5.svg") center center / contain no-repeat;
   width: 286px;
   height: 300px;
+
+  @include to(768px) {
+    display: none;
+  }
 }
 
 .fourteenth__pattern {
@@ -285,6 +293,10 @@
   background: url("../images/icons/Pattern-1.svg") center center / contain no-repeat;
   width: 264px;
   height: 258px;
+
+  @include to(768px) {
+    display: none;
+  }
 }
 
 .fifteenth__pattern {
@@ -340,6 +352,10 @@
   background: url("../images/icons/Pattern-13.svg") center center / contain no-repeat;
   width: 264px;
   height: 266px;
+
+  @include to(768px) {
+    display: none;
+  }
 }
 
 .twentieth__pattern {
@@ -351,6 +367,10 @@
   background: url("../images/icons/Pattern-12.svg") center center / contain no-repeat;
   width: 267px;
   height: 233px;
+
+  @include to(768px) {
+    display: none;
+  }
 }
 
 .twentyfirst__pattern {
@@ -362,4 +382,8 @@
   background: url("../images/icons/Pattern-3.svg") center center / contain no-repeat;
   width: 267px;
   height: 233px;
+
+  @include to(768px) {
+    display: none;
+  }
 }

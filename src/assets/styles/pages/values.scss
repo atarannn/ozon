@@ -1,5 +1,21 @@
 #values {
   position: relative;
+  @include to(768px) {
+    .twelfth__pattern, .fifteenth__pattern, .sixteenth__pattern, .seventeenth__pattern{
+      display: none;
+    }
+
+    .eighteenth__pattern {
+      right: 10px;
+    }
+  }
+
+
+  @include to(425px) {
+    .eighteenth__pattern {
+      display: none;
+    }
+  }
 
   .button {
     margin: 0 auto;
@@ -30,6 +46,10 @@
           margin-bottom: 0;
           margin-top: 20px;
           margin-left: var(--left-right-margin);
+
+          @include to(768px) {
+            margin-top: 10px;
+          }
         }
       }
     }
@@ -41,6 +61,9 @@
         width: 100%;
 
         .slide {
+          .tenor-title {
+            margin-left: 0;
+          }
           &:last-child {
             margin-bottom: 70px;
           }

@@ -378,12 +378,12 @@
   .title {
     text-align: left;
 
-    @include to(768px) {
+    @include to(1199px) {
       font-size: 36px;
     }
 
-    @include to(575px) {
-      font-size: 24px;
+    @include to(768px) {
+      font-size: 30px;
     }
   }
 
@@ -396,8 +396,7 @@
 
 .card-top {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 100px;
+  grid-template-columns: repeat(2, 50%);
 
   .card-button.button {
     margin-top: 20px;
@@ -405,10 +404,6 @@
     a {
       justify-content: flex-start;
     }
-  }
-
-  @include to(768px) {
-    grid-column-gap: 20px;
   }
 
   @include to(575px) {
@@ -461,8 +456,17 @@
   }
 }
 
+.card__item-left {
+  margin-right: 50px;
+
+  @include to(768px) {
+    margin-right: 10px;
+  }
+}
+
 .card__item-right {
   position: relative;
+  margin-left: 50px;
 
   .pattern {
     position: absolute;
@@ -472,6 +476,10 @@
     transform: translate(50%, -50%);
     width: 261px;
     height: 263px;
+  }
+
+  @include to(768px) {
+    margin-left: 10px;
   }
 
   @include to(575px) {
@@ -592,15 +600,30 @@
   padding: 100px var(--left-right-margin);
 
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+
+  @include to(992px) {
+    padding: 100px 0 0;
+    margin: 100px 0 0 0;
+  }
+
+  .half-block {
+    @include to(992px) {
+      width: 100%;
+    }
+  }
 
   &__contacts {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
+
+    @include to(992px) {
+      flex-direction: column;
+    }
   }
 
   &__contacts-item {
@@ -630,13 +653,42 @@
     align-items: flex-start;
   }
 
+  &__contacts-left {
+    @include to(992px) {
+      padding: 0 var(--left-right-margin) 100px var(--left-right-margin);
+      flex-direction: row;
+
+      .connection__contacts-item {
+        margin-bottom: 0;
+
+        &:last-child {
+          padding-left: 50px;
+        }
+      }
+    }
+  }
+
   .title {
     margin-bottom: 100px;
+
+    @include to(992px) {
+      margin-bottom: 50px;
+      padding-left: var(--left-right-margin);
+    }
   }
 
   .connection__text {
     @include HelveticaNeueCyr(18px, 170%, left, none, $main-brown, 300);
     max-width: 60%;
+
+    @include to(992px) {
+      max-width: 80%;
+    }
+
+    @include to(425px) {
+      max-width: 100%;
+      font-size: 12px;
+    }
   }
 
   a.connection__text{
@@ -657,6 +709,14 @@
     width: 100%;
     background: $w;
     padding: 70px;
+
+    @include to(992px) {
+      padding: 100px 150px;
+    }
+
+    @include to(575px) {
+      padding: 50px var(--left-right-margin);
+    }
 
     .helvet__title {
       margin-bottom: 0;

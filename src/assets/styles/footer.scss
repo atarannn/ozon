@@ -29,6 +29,16 @@
 
   background-color: $light-grey;
 
+  @include to(992px) {
+    form {
+      width: 100%;
+
+      .form-fields .form-field__wrapper {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
   @include to(575px) {
     padding-top: 50px;
   }
@@ -123,6 +133,16 @@
     .form-title {
       @include cormorant(36px, 120%, left, 0.05em, uppercase, $main-brown);
       margin-bottom: 60px;
+
+      @include to(768px) {
+        font-size: 30px;
+        margin-bottom: 40px;
+      }
+
+      @include to(425px) {
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
     }
 
     .form-fields {
@@ -136,6 +156,10 @@
       .form-field-input {
         height: 70px;
         margin-top: 0;
+
+        @include to(425px) {
+          height: 50px;
+        }
       }
     }
 

@@ -1,8 +1,23 @@
 #documents {
+
   .documets-block__wrapper {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include to(768px) {
+      flex-direction: column;
+
+      .col {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .col:first-child .document:last-child {
+        margin-bottom: 30px;
+      }
+    }
 
     .document {
       display: flex;

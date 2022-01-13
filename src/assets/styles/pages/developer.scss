@@ -3,8 +3,11 @@
     border-bottom: 1px solid #ECEDEF;
 
     a {
-      height: 120px;
       width: 120px;
+
+      @include to(768px) {
+        width: 80px;
+      }
     }
 
     .tenor-title {
@@ -25,16 +28,28 @@
 
   .swiper {
     overflow: hidden;
+
+    @include to(768px) {
+      margin: 0 50px;
+    }
   }
 
   .swiper-slide {
 
     a img {
       height: 40px;
+
+      @include to(768px) {
+        height: 30px;
+      }
     }
 
     a .bristol-img {
       height: 60px;
+
+      @include to(768px) {
+        height: 50px;
+      }
     }
   }
 
@@ -59,6 +74,14 @@
     background-image: url("../images/icons/prev.svg");
     background-position: center;
     background-repeat: no-repeat;
+
+    @include to(992px) {
+      left: -50px;
+    }
+
+    @include to(768px) {
+      left: 0;
+    }
   }
 
   .swiper-button-next {
@@ -66,5 +89,13 @@
     background-image: url("../images/icons/next.svg");
     background-position: center;
     background-repeat: no-repeat;
+
+    @include to(992px) {
+      right: -50px;
+    }
+
+    @include to(768px) {
+      right: 0;
+    }
   }
 }

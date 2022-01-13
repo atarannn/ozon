@@ -27,14 +27,26 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include to(768px) {
+      flex-direction: column;
+    }
   }
 
   .work-status__text-left, .work-status__text-right {
     width: 50%;
+
+    @include to(768px) {
+      width: 100%;
+    }
   }
 
   .work-status__text-left{
     padding-right: var(--inner-margin);
+
+    @include to(768px) {
+      padding-right: 0;
+    }
   }
 
   .work-status__text-right{
@@ -42,6 +54,11 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include to(768px) {
+      padding-left: 0;
+      margin-top: 30px;
+    }
 
     .col {
       padding-right: 0;
@@ -54,6 +71,10 @@
 
         .work-status__text {
           margin-left: 20px;
+
+          @include to(425px) {
+            margin-left: 10px;
+          }
         }
       }
     }
@@ -69,6 +90,11 @@
     position: relative;
     height: 65px;
     width: 65px;
+
+    @include to(425px) {
+      height: 55px;
+      width: 55px;
+    }
 
     .btn-circle {
       width: 100%;
@@ -115,6 +141,10 @@
 
   .work-status__title {
     @include tenor(20px, 100%, left, normal, none, $w);
+
+    @include to(425px) {
+      font-size: 16px;
+    }
   }
 
   .work-status__text {
@@ -138,6 +168,23 @@
     align-items: flex-start;
     justify-content: space-between;
     width: 80%;
+
+    @include to(768px) {
+      width: 70%;
+    }
+
+    @include to(425px) {
+      flex-wrap: wrap;
+      width: 90%;
+
+      &__block {
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
 
     &__block {
       display: flex;
@@ -179,6 +226,26 @@
         &:nth-child(even) {
           padding-left: var(--inner-margin);
         }
+
+        @include to(575px) {
+          .card {
+            .block-info-text {
+              margin-bottom: 10px;
+            }
+          }
+        }
+
+        @include to(425px) {
+          width: 100%;
+
+          &:nth-child(odd) {
+            padding-right: 0;
+          }
+
+          &:nth-child(even) {
+            padding-left: 0;
+          }
+        }
       }
     }
   }
@@ -187,9 +254,21 @@
     margin-top: 50px;
     width: max-content;
 
+    @include to(768px) {
+      margin-top: 30px;
+    }
+
+    @include to(425px) {
+      margin-top: 0;
+    }
+
     a {
       @include hover-color;
       @include tenor(18px, 100%, center, 0.05em, uppercase, $main-brown);
+
+      @include to(575px) {
+        font-size: 16px;
+      }
 
       display: flex;
       align-items: center;
