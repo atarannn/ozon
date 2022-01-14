@@ -176,6 +176,10 @@
           .menu-close {
             transform: scale(0.8);
             transition: transform .1s ease-in;
+
+            @include to(992px) {
+              transform: none;
+            }
           }
         }
 

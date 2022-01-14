@@ -35,6 +35,8 @@ const forms = [
 ];
 const formsWithRedirect = [
   '[data-popup-form]',
+  '[data-form-popup]',
+  '[data-home-footer]'
 ];
 
 formsWithRedirect.forEach((form) => {

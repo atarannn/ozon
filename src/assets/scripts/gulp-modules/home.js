@@ -1,13 +1,40 @@
-$(document).ready(function () {
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-      $(".pageup").css('opacity', '1');
-    } else {
-      $(".pageup").css('opacity', '0');
-    }
+
+// if (locoScroll !== undefined) {
+//   locoScroll.on('scroll', ({ scroll }) => {
+//   //  pageup
+//     if (scroll.y > 1000) {
+//       $(".pageup").css('opacity', '1');
+//     } else {
+//       $(".pageup").css('opacity', '0');
+//     }
+//   })
+// } else {
+//
+// }
+function downButtonMobHandler() {
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 300) {
+        $(".pageup").css('opacity', '1');
+      } else {
+        $(".pageup").css('opacity', '0');
+      }
+    });
+
+    $(".pageup").on("click", function () {
+      var el = $(this);
+      var dest = el.attr("href");
+      if (dest !== undefined && dest !== '') {
+        $("html").animate({
+              scrollTop: $(dest).offset().top
+            }, 1000
+        );
+      }
+      return false;
+    });
   });
 
-  $(".pageup").on("click", function () {
+  $(".button-bottom").on("click", function () {
     var el = $(this);
     var dest = el.attr("href");
     if (dest !== undefined && dest !== '') {
@@ -18,8 +45,7 @@ $(document).ready(function () {
     }
     return false;
   });
-});
-
+}
 // Google map start
 function func() {
   const script = document.createElement('script');
@@ -233,3 +259,29 @@ function initMap() {
 }
 
 
+const isMobile = window.matchMedia('(max-width: 575px)').matches;
+
+function downButtonHandlerWithLocoScroll() {
+  if (locoScroll === undefined) {
+    downButtonMobHandler();
+    return;
+  }
+  locoScroll.on('scroll', ({ scroll }) => {
+    if (scroll.y > 1000) {
+      $(".pageup").css('opacity', '1');
+    } else {
+      $(".pageup").css('opacity', '0');
+    }
+  })
+  document.querySelector('.pageup').addEventListener('click', () => {
+    locoScroll.scrollTo(0,0)
+  })
+  document.querySelector('.button-bottom').addEventListener('click', () => {
+    locoScroll.scrollTo(document.querySelector('#bottom'), {
+      offset: -100
+    })
+  })
+}
+
+isMobile && downButtonMobHandler();
+!isMobile && downButtonHandlerWithLocoScroll();

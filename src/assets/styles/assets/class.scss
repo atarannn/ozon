@@ -967,7 +967,7 @@ a {
 .helvetica-title {
   @include HelveticaNeueCyr(36px, 160%, left, uppercase, $main-brown, 400);
 
-  @include to(992px) {
+  @include to(1099px) {
     font-size: 30px;
   }
 

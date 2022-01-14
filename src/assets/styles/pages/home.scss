@@ -78,6 +78,24 @@
   width: 100%;
   background-color: $w;
 
+  .button-bottom {
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    @include HelveticaNeueCyr(10px, 140%, center, uppercase, $main-brown, 400);
+
+    @include to(768px) {
+      display: none;
+    }
+
+    svg {
+      vertical-align: middle;
+      margin-left: 0;
+      margin-right: 15px;
+      border-radius: 50%;
+    }
+  }
+
   &__content {
     height: 100%;
     display: flex;
@@ -883,9 +901,13 @@
   svg {
     mix-blend-mode: difference;
 
-    circle,
     path {
-      stroke: #9d9fa1;
+      stroke: $main-brown;
+    }
+
+    circle {
+      stroke: #ECEDEF;
+      stroke-width: 1px;
     }
   }
 

@@ -74,7 +74,7 @@ function sideSwitchArrow(swiper, arrowArgs, conArgs) {
 }
 
 const slider = new Swiper('.swiper-container', {
-    loop: true,
+    loop: false,
     slidesPerView: 1.4,
     spaceBetween: 40,
     navigation: {
@@ -85,6 +85,17 @@ const slider = new Swiper('.swiper-container', {
     lazy: true,
     speed: 400,
     watchSlidesVisibility: true,
+
+    breakpoints: {
+        320: {
+            slidesPerView: 1.1,
+            spaceBetween: 10
+        },
+        992: {
+            slidesPerView: 1.4,
+            spaceBetween: 40
+        },
+    }
 });
 
 sideSwitchArrow(

@@ -141,15 +141,6 @@ block content
         .helvetica-title Вересень
         .block-info-text 25.01.2021
       .popup__center
-        .swiper.mySwiper2
-          .swiper-wrapper
-            .swiper-slide
-              img(src='./assets/images/build-progress/2.png' alt='progress')
-            .swiper-slide
-              img(src='./assets/images/build-progress/2.png' alt='progress')
-            .swiper-slide
-              img(src='./assets/images/build-progress/2.png' alt='progress')
-
         .swiper.mySwiper
           .swiper-wrapper
             .swiper-slide
@@ -158,6 +149,24 @@ block content
               img(src='./assets/images/build-progress/2.png' alt='progress')
             .swiper-slide
               img(src='./assets/images/build-progress/2.png' alt='progress')
+            .swiper-slide
+              img(src='./assets/images/build-progress/2.png' alt='progress')
+          .moving-arrow
+            +svg('gallery').arrow-style
+          .swiper-button-const-next
+          .swiper-button-const-prev
+
+        .swiper.mySwiper2
+          .swiper-wrapper
+            .swiper-slide
+              img(src='./assets/images/build-progress/2.png' alt='progress')
+            .swiper-slide
+              img(src='./assets/images/build-progress/2.png' alt='progress')
+            .swiper-slide
+              img(src='./assets/images/build-progress/2.png' alt='progress')
+            .swiper-slide
+              img(src='./assets/images/build-progress/2.png' alt='progress')
+
 
       .popup__right
         .popup__close(data-close)

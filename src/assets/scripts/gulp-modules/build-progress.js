@@ -95,6 +95,7 @@ class Popup {
             )
             .add(() => {
                 this.afterOpenCb();
+                window.dispatchEvent(new Event('popup-opened'));
             });
     }
 
@@ -131,6 +132,7 @@ const popupContentInit = {
     title: 'Title',
     url: 'https://google.com',
 };
+
 const cards = document.querySelectorAll('[data-open]');
 
 const renderTargets = {
@@ -152,26 +154,31 @@ const buildPopup = new Popup({
     content: document.querySelector('[data-build-progress]'),
     close: document.querySelector('[data-close]'),
 });
+
 const popupContent = new Proxy(popupContentInit, {
     set(obj, prop, value) {
         renderTargets[prop](value);
         return true;
     },
 });
-cards.forEach((card) => {
-    card.addEventListener('click', () => {
-        requestBuildDetails(card.dataset.id, (response) => {
-            popupContent.title = response.title;
-            popupContent.text = response.text;
-            popupContent.url = response.video;
-            popupContent.date = response.date;
-        });
-        document.body.style.overflow = 'visible';
-    });
-});
+
+// cards.forEach((card) => {
+//     card.addEventListener('click', () => {
+//         requestBuildDetails(card.dataset.id, (response) => {
+//             popupContent.title = response.title;
+//             popupContent.text = response.text;
+//             popupContent.url = response.video;
+//             popupContent.date = response.date;
+//         });
+//         document.body.style.overflow = 'visible';
+//     });
+// });
+
 buildPopup.close.addEventListener('click', () => {
     document.body.style.overflow = 'hidden';
 });
+
+
 
 function requestBuildDetails(id, cb = () => {}) {
     const sendData = new FormData();
@@ -188,22 +195,121 @@ function requestBuildDetails(id, cb = () => {}) {
             cb(el);
         });
 }
-
-var swiper = new Swiper(".mySwiper", {
-    loop: true,
-    slidesPerView: 3,
+var swiper2 = new Swiper('.mySwiper2', {
+    loop: false,
+    spaceBetween: 5,
+    slidesPerView: 4,
+    width: 400,
     freeMode: true,
+    watchSlidesVisibility: true,
     watchSlidesProgress: true,
-});
 
-var swiper2 = new Swiper(".mySwiper2", {
-    loop: true,
+    breakpoints: {
+        320: {
+            width: 250,
+        },
+        575: {
+            width: 400
+        }
+    }
+});
+var swiper = new Swiper('.mySwiper', {
+    loop: false,
+    spaceBetween: 0,
     slidesPerView: 1,
+    centeredSlides: true,
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        // nextEl: '.swiper-button-const-next',
+        // prevEl: '.swiper-button-const-prev',
     },
     thumbs: {
-        swiper: swiper,
+        swiper: swiper2,
     },
 });
+
+/** СТрелка переключатель в зависимости от положения на єкране */
+window.addEventListener('popup-opened', () => {
+    swiper2.update();
+    swiper.update();
+})
+function sideSwitchArrow(swiper, arrow, container) {
+    const mediumCordValue = document.documentElement.clientWidth / 2;
+    document.body.append(arrow);
+    container.style.cursor = 'none';
+    arrow.style.cursor = 'none';
+    arrow.style.zIndex = 10;
+    arrow.__proto__.hide = function() {
+        this.style.opacity = '0';
+        this.style.pointerEvents = 'none';
+    };
+    arrow.__proto__.show = function() {
+        this.style.opacity = '1';
+        // this.style.pointerEvents = 'auto';
+    };
+    arrow.dataset.side = 'leftSide';
+
+    container.addEventListener('mousemove', desktopNavButtonHandler);
+    container.addEventListener('mouseenter', () => {
+        arrow.show();
+    });
+    container.addEventListener('mouseleave', () => {
+        arrow.hide();
+    });
+    if (document.documentElement.clientWidth < 769) {
+        window.removeEventListener('mousemove', desktopNavButtonHandler);
+        arrow.remove();
+    }
+
+    /** Записывает координаты обьекта, на котором нужно скрыть стрелку переключения слайдера */
+    /** ms ---> main-screen */
+
+    function desktopNavButtonHandler(evt) {
+        // arrow.style.position = 'fixed';
+        arrow.style.left = `${evt.clientX - 18}px`;
+        arrow.style.top = `${evt.clientY - 18}px`;
+
+        getCursorSide(evt.clientX);
+        handleArrowVisibility(evt);
+    }
+
+    function handleArrowVisibility() {}
+
+    function getCursorSide(x) {
+        if (x < mediumCordValue) {
+            arrow.classList.add('left-side');
+            arrow.dataset.side = 'leftSide';
+            // switchGallerySlide('leftSide');
+        } else {
+            arrow.classList.remove('left-side');
+            arrow.dataset.side = 'rightSide';
+            // switchGallerySlide('rightSide')
+        }
+    }
+    container.addEventListener('click', function clickToChange() {
+        switchGallerySlide(arrow.dataset.side);
+    });
+    if (document.documentElement.clientWidth < 576) {
+        container.removeEventListener('click', clickToChange);
+    }
+    const navigate = {
+        leftSide: () => {
+            swiper.slidePrev();
+        },
+        rightSide: () => {
+            swiper.slideNext();
+        },
+    };
+
+    function switchGallerySlide(side) {
+        navigate[side]();
+        return navigate.side;
+    }
+
+    // eslint-disable-next-line no-unused-vars
+}
+sideSwitchArrow(
+    swiper,
+    document.querySelector('.moving-arrow'),
+    document.querySelector('.swiper '),
+);
+/** СТрелка переключатель в зависимости от положения на єкране END */

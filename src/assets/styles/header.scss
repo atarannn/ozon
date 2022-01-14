@@ -154,6 +154,10 @@
       &:hover .burger__icon {
         transform: scaleY(0.8);
         transition: all .1s ease-in;
+
+        @include to(992px) {
+          transform: none;
+        }
       }
 
       .burger__icon {
