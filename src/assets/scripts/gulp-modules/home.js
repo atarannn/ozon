@@ -1,4 +1,3 @@
-
 function downButtonMobHandler() {
   $(document).ready(function () {
     $(window).scroll(function () {

@@ -14,11 +14,23 @@ function menuOpen(menu) {
   createAnimation(links1, 100, 0.1);
   createAnimation(links2, 100, 0.3);
   menuOpenAnim();
+  document.querySelector('.header__right-menu').style.opacity = '0';
+  document.querySelector('.header__right-menu').style.visibility = 'hidden';
+  document.querySelector('.header__right-menu').style.display = 'none';
+  document.querySelector('.menu-top__right-close').style.opacity = '1';
+  document.querySelector('.menu-top__right-close').style.display = 'flex';
+  document.querySelector('.menu-top__right-close').style.visibility = 'visible';
 }
 
 function menuClose(menu) {
   menu.classList.remove('menu__active');
   menuCloseAnim();
+  document.querySelector('.header__right-menu').style.opacity = '1';
+  document.querySelector('.header__right-menu').style.visibility = 'visible';
+  document.querySelector('.header__right-menu').style.display = 'flex';
+  document.querySelector('.menu-top__right-close').style.opacity = '0';
+  document.querySelector('.menu-top__right-close').style.display = 'none';
+  document.querySelector('.menu-top__right-close').style.visibility = 'hidden';
 }
 
 
@@ -150,7 +162,6 @@ function init() {
   // document.querySelector('[data-lang="desktop"]').addEventListener('click', selectHandler);
 
   menuInit();
-
 }
 
 const header = document.querySelector('.header');

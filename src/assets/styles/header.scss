@@ -4,6 +4,91 @@
   width: 100%;
 }
 
+.menu-top__right-close {
+  transition: all .5s ease-in;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  order: 3;
+
+  &:hover {
+    .menu-close {
+      transform: scale(0.8);
+      transition: transform .1s ease-in;
+
+      @include to(992px) {
+        transform: none;
+      }
+    }
+  }
+
+  .menu-close {
+    width: 22px;
+    height: 20px;
+
+    background-image: url("../images/icons/menu-close.svg");
+    transition: all .1s ease-in;
+
+    &__line {
+      display: none;
+    }
+
+    @include to(768px) {
+      background: $main-green;
+      box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.12);
+      border-radius: 200px;
+      height: 36px;
+      width: 36px;
+      position: relative;
+
+      &__line {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        z-index: 20;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 16px;
+        height: 2px;
+        background: $w;
+
+        &:first-child {
+          transform: translate(50%, -50%) rotate(45deg);
+        }
+        &:last-child {
+          transform: translate(50%, -50%) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .text-2 {
+    margin-right: 20px;
+
+    @include to(768px) {
+      margin-right: 10px;
+    }
+
+    @include to(575px){
+      display: none;
+    }
+  }
+
+
+    &-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+  }
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -149,9 +234,12 @@
     }
 
     &-menu {
+      transition: all .5s ease-in;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      visibility: visible;
+      opacity: 1;
 
       cursor: pointer;
 
