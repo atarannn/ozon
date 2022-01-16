@@ -75,6 +75,10 @@
         a {
           @include HelveticaNeueCyr(10px, 240%, left, uppercase, $main-brown, 400);
           @include hover-color;
+
+          @include from(1600px) {
+            font-size: 12px;
+          }
         }
 
         &:last-child {
@@ -133,6 +137,10 @@
     .form-title {
       @include cormorant(36px, 120%, left, 0.05em, uppercase, $main-brown);
       margin-bottom: 60px;
+
+      @include from(1600px) {
+        font-size: 48px;
+      }
 
       @include to(768px) {
         font-size: 30px;

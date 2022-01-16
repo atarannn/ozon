@@ -40,7 +40,7 @@ $mc: #1A2941;
   --h1-page: 50px;
 }
 
-@media screen and (max-width: 1440px){
+@media screen and (min-width: 1600px){
   :root {
     --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
     --header-h: 110px;
@@ -52,16 +52,16 @@ $mc: #1A2941;
 
     --home-title--margin: 30px;
 
-    --blocks-margin: 100px;
-    --blocks-offset: 20px;
+    --blocks-margin: 160px;
+    --blocks-offset: 50px;
 
-    --left-right-margin: 80px;
-    --inner-margin: 40px;
+    --left-right-margin: 115px;
+    --inner-margin: 60px;
 
-    --offset: 100px;
+    --offset: 200px;
 
     --page-inner-offset: 250px;
-    --page-inner-offset2: 100px;
+    --page-inner-offset2: 150px;
     --h1-page: 50px;
   }
 }

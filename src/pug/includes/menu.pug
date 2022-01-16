@@ -67,28 +67,28 @@
 
     .menu__section-wrapper
       .menu__section
-        .menu__title Будинок
-        ul
+        .menu__title(data-animation) Будинок
+        ul(data-animation2)
           each el in menu1
             li
               a(href=el[1])= el[0]
       .menu__section
-        .menu__title Квартири
-        ul
+        .menu__title(data-animation) Квартири
+        ul(data-animation2)
           each el in menu2
             li
               a(href=el[1])= el[0]
 
       .menu__section
-        .menu__title Будівництво
-        ul
+        .menu__title(data-animation) Будівництво
+        ul(data-animation2)
           each el in menu3
             li
               a(href=el[1])= el[0]
 
       .menu__section
-        .menu__title Контакти
-        ul
+        .menu__title(data-animation) Контакти
+        ul(data-animation2)
           each el in menu4
             li
               a(href=el[1])= el[0]

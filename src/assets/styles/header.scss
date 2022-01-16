@@ -34,6 +34,10 @@
   &__right {
     @include size(7);
 
+    @include from(1600px) {
+      @include size(5);
+    }
+
     @include to(425px) {
       @include size(8);
     }

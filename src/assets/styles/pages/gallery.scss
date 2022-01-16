@@ -1,11 +1,11 @@
+#id-page-gallery .moving-arrow{
+  @include to(992px) {
+    display: none;
+  }
+}
+
 #gallery .page-inner-offset5 {
   position: relative;
-
-  .moving-arrow {
-    @include to(992px) {
-      display: none;
-    }
-  }
 
   .swiper-container {
     overflow: visible;
@@ -66,6 +66,12 @@
   }
 }
 
+.gallery-slider__wrap {
+  @include from(1600px) {
+    cursor: pointer;
+  }
+}
+
 .gallery-slide {
   position: relative;
   height: 100%;
@@ -85,6 +91,11 @@
     height: 70px;
     width: 70px;
     fill: transparent;
+
+    @include from(1600px) {
+      height: 100px;
+      width: 100px;
+    }
   }
 
   &.left-side {

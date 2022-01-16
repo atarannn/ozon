@@ -50,7 +50,7 @@
 }
 
 .half-block {
-  @include size(6);
+  width: 50%;
 
   @include to(768px) {
     width: 100%;
@@ -82,6 +82,11 @@
   margin-left: var(--page-inner-offset);
   margin-right: var(--page-inner-offset);
   margin-bottom: var(--page-inner-offset2);
+
+  @include from(1600px) {
+    margin-left: 375px;
+    margin-right: 375px;
+  }
 }
 
 .page-inner-offset2 {
@@ -142,6 +147,12 @@
   background: url("../images/icons/Pattern-11.svg") center center / contain no-repeat;
   width: 264px;
   height: 296px;
+
+  @include from(1600px) {
+    left: calc(-325px/2);
+    width: 325px;
+    height: 335px;
+  }
 }
 
 .second__pattern {
@@ -153,6 +164,13 @@
   background: url("../images/icons/Pattern-9.svg") center center / contain no-repeat;
   width: 264px;
   height: 272px;
+
+  @include from(1600px) {
+    right: calc(-325px/2);
+    top: 1100px;
+    width: 325px;
+    height: 335px;
+  }
 }
 
 .third__pattern {
@@ -164,6 +182,13 @@
   background: url("../images/icons/Pattern-5.svg") center center / contain no-repeat;
   width: 265px;
   height: 267px;
+
+  @include from(1600px) {
+    left: calc(-325px/2);
+    top: 1900px;
+    width: 325px;
+    height: 335px;
+  }
 }
 
 .fourth__pattern {
@@ -175,6 +200,13 @@
   background: url("../images/icons/Pattern-8.svg") center center / contain no-repeat;
   width: 264px;
   height: 266px;
+
+  @include from(1600px) {
+    right: calc(-325px/2);
+    top: 2800px;
+    width: 325px;
+    height: 335px;
+  }
 }
 
 .fifth__pattern {
@@ -186,6 +218,13 @@
   background: url("../images/icons/Pattern-2.svg") center center / contain no-repeat;
   width: 133px;
   height: 267px;
+
+  @include from(1600px) {
+    left: -100px;
+    top: 3400px;
+    width: 325px;
+    height: 335px;
+  }
 }
 
 .sixth__pattern {
@@ -197,6 +236,13 @@
   background: url("../images/icons/Pattern-1.svg") center center / contain no-repeat;
   width: 264px;
   height: 258px;
+
+  @include from(1600px) {
+    right: calc(-325px/2);
+    top: 4200px;
+    width: 325px;
+    height: 335px;
+  }
 }
 
 .seventh__pattern {
@@ -208,6 +254,13 @@
   background: url("../images/icons/Pattern-4.svg") center center / contain no-repeat;
   width: 134px;
   height: 273px;
+
+  @include from(1600px) {
+    left: -100px;
+    top: 5200px;
+    width: 325px;
+    height: 335px;
+  }
 }
 
 .eighth__pattern{
@@ -219,6 +272,13 @@
   background: url("../images/icons/Pattern-5.svg") center center / contain no-repeat;
   width: 286px;
   height: 300px;
+
+  @include from(1600px) {
+    right: calc(-325px/2);
+    top: 6200px;
+    width: 325px;
+    height: 335px;
+  }
 }
 
 .ninth__pattern {
@@ -230,6 +290,13 @@
   background: url("../images/icons/Pattern-3.svg") center center / contain no-repeat;
   width: 286px;
   height: 274px;
+
+  @include from(1600px) {
+    left: calc(-325px/2);
+    top: 7200px;
+    width: 325px;
+    height: 335px;
+  }
 }
 
 .tenth__pattern{
@@ -241,6 +308,11 @@
   background: url("../images/icons/Pattern-13.svg") center center / contain no-repeat;
   width: 132px;
   height: 266px;
+
+  @include from(1600px) {
+    width: 160px;
+    height: 335px;
+  }
 }
 
 .eleventh__pattern{
@@ -252,6 +324,11 @@
   background: url("../images/icons/Pattern-12.svg") center center / contain no-repeat;
   width: 267px;
   height: 232px;
+
+  @include from(1600px) {
+    width: 383px;
+    height: 335px;
+  }
 }
 
 .twelfth__pattern {
@@ -263,6 +340,11 @@
   background: url("../images/icons/Pattern-9.svg") center center / contain no-repeat;
   width: 264px;
   height: 272px;
+
+  @include from(1600px) {
+    width: 325px;
+    height: 335px;
+  }
 
   @include to(768px) {
     display: none;
@@ -278,6 +360,7 @@
   background: url("../images/icons/Pattern-5.svg") center center / contain no-repeat;
   width: 286px;
   height: 300px;
+
 
   @include to(768px) {
     display: none;
@@ -308,6 +391,11 @@
   background: url("../images/icons/Pattern-5.svg") center center / contain no-repeat;
   width: 286px;
   height: 300px;
+
+  @include from(1600px) {
+    width: 325px;
+    height: 335px;
+  }
 }
 
 .sixteenth__pattern {
@@ -319,28 +407,44 @@
   background: url("../images/icons/Pattern-1.svg") center center / contain no-repeat;
   width: 264px;
   height: 258px;
+
+  @include from(1600px) {
+    width: 345px;
+    height: 335px;
+  }
 }
 
 .seventeenth__pattern {
   position: absolute;
   z-index: -1;
   bottom: -105px;
-  left: 80px;
+  left: var(--left-right-margin);
   transform: translateY(50%);
   background: url("../images/icons/Pattern-8.svg") center center / contain no-repeat;
   width: 264px;
   height: 265px;
+
+  @include from(1600px) {
+    width: 325px;
+    height: 335px;
+    bottom: -148px;
+  }
 }
 
 .eighteenth__pattern {
   position: absolute;
   z-index: -1;
   bottom: -105px;
-  right: 80px;
+  right: var(--left-right-margin);
   transform: translateY(50%);
   background: url("../images/icons/Pattern-12.svg") center center / contain no-repeat;
   width: 267px;
   height: 232px;
+
+  @include from(1600px) {
+    width: 385px;
+    height: 335px;
+  }
 }
 
 .nineteenth__pattern {
@@ -383,6 +487,12 @@
   width: 267px;
   height: 233px;
 
+  @include from(1600px) {
+    width: 299px;
+    height: 335px;
+    bottom: -30%;
+  }
+
   @include to(768px) {
     display: none;
   }
@@ -398,6 +508,12 @@
   width: 194px;
   height: 200px;
 
+  @include from(1600px) {
+    width: 299px;
+    height: 335px;
+    top: -25%;
+  }
+
   @include to(992px) {
     display: none;
   }
@@ -412,6 +528,11 @@
   background: url("../images/icons/Pattern-14.svg") center center / contain no-repeat;
   width: 264px;
   height: 296px;
+
+  @include from(1600px) {
+    width: 299px;
+    height: 335px;
+  }
 
   @include to(992px) {
     display: none;

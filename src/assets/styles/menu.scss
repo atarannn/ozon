@@ -13,6 +13,11 @@
   '. . .'
   '. section .';
 
+  @include from(1600px) {
+    grid-template-columns: 180px 1fr 180px;
+    grid-template-rows: var(--header-h) 180px 1fr;
+  }
+
   @include to(768px) {
     grid-template-columns: 100px 1fr 100px;
     grid-template-rows: var(--header-h) 80px 1fr;
@@ -63,6 +68,10 @@
 
     .menu-top__right {
       @include size(7);
+
+      @include from(1600px) {
+        @include size(5);
+      }
 
       @include to(425px) {
         @include size(8);
@@ -278,6 +287,10 @@
         a {
           @include HelveticaNeueCyr(14px, 170%, left, none, $main-brown, 300);
           @include hover-color;
+
+          @include from(1600px) {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -291,6 +304,11 @@
       width: 264px;
       height: 130px;
 
+      @include from(1600px) {
+        width: 494px;
+        height: 244px;
+      }
+
       @include to(425px) {
         width: 190px;
         height: 95px;
@@ -302,12 +320,15 @@
     @include tenor(18px, 100%, left, 0.05em, uppercase, #000000);
     margin-bottom: 30px;
 
+    @include from(1600px) {
+      font-size: 36px;
+    }
+
     @include to(425px) {
       font-size: 16px;
       margin-bottom: 15px;
     }
   }
-
 }
 
 

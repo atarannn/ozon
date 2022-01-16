@@ -53,7 +53,8 @@
 //  justify-content: flex-start;
 //  width: min-content;
 //  z-index: 5;
-//  &__title {
+//  &__
+//  {
 //    font-family: $default-font;
 //    font-weight: 600;
 //    font-size: 68px;
@@ -785,6 +786,7 @@
 //  }
 //}
 
+
 a {
   text-decoration: none;
 }
@@ -910,6 +912,10 @@ a {
 .title {
   @include cormorant;
 
+  @include from(1600px) {
+    font-size: 64px;
+  }
+
   @include to(768px) {
     font-size: 32px;
   }
@@ -922,6 +928,10 @@ a {
 .title-2 {
   @include cormorant($fs: 48px, $lh: 100%, $ta: left, $ls: 0.05em, $tt: uppercase, $c: $w);
 
+  @include from(1600px) {
+    font-size: 64px;
+  }
+
   @include to(575px) {
     font-size: 24px;
   }
@@ -929,6 +939,10 @@ a {
 
 .text {
   @include HelveticaNeueCyr(14px, 170%, center, none, $main-brown, 300);
+
+  @include from(1600px) {
+    font-size: 18px;
+  }
 
   @include to(575px) {
     font-size: 12px;
@@ -955,6 +969,10 @@ a {
   @include cormorant(48px, 120%, left, 0.05em, uppercase, $main-brown);
   margin-bottom: var(--h1-page);
 
+  @include from(1600px) {
+    font-size: 64px;
+  }
+
   @include to(768px) {
     font-size: 40px;
   }
@@ -966,6 +984,10 @@ a {
 
 .helvetica-title {
   @include HelveticaNeueCyr(36px, 160%, left, uppercase, $main-brown, 400);
+
+  @include from(1600px) {
+    font-size: 48px;
+  }
 
   @include to(1099px) {
     font-size: 30px;
@@ -1077,6 +1099,10 @@ a {
   @include tenor(20px, 170%, left, normal, none, $main-brown);
   margin-bottom: 30px;
 
+  @include from(1600px) {
+    font-size: 30px;
+  }
+
   @include to(992px) {
     font-size: 16px;
   }
@@ -1093,6 +1119,10 @@ a {
   border-bottom: 2px solid $main-green;
   padding-bottom: 10px;
   width: 100%;
+
+  @include from(1600px) {
+    font-size: 24px;
+  }
 
   @include to(768px) {
     font-size: 16px;
@@ -1113,6 +1143,10 @@ a {
     height: auto;
     object-fit: contain;
     width: 100px;
+
+    @include from(1600px) {
+      width: 180px;
+    }
 
     @include to(768px) {
       width: 80px;

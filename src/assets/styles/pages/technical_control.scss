@@ -90,6 +90,10 @@
   justify-content: flex-start;
   width: 50%;
 
+  @include from(1600px) {
+    width: 50%;
+  }
+
   @include to(700px) {
     width: 100%;
   }
@@ -145,6 +149,10 @@
   img {
     width: auto;
     margin-bottom: 50px;
+
+    @include from(1600px) {
+      margin-bottom: 70px;
+    }
   }
 
   .technical_control-list {

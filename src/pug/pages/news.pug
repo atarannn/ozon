@@ -85,10 +85,11 @@ block content
       h1.page-title= title_page
       .news-block__wrapper
         each val in news
-          a(href=val.link).news
-            +img(val.img)
-            .tenor-date=val.date
-            .tenor-title=val.text
+          .news-wrapper
+            a(href=val.link).news
+              +img(val.img)
+              .tenor-date=val.date
+              .tenor-title=val.text
 
       .pagination__wrapper
         a(href="#")

@@ -24,6 +24,10 @@
   @include HelveticaNeueCyr(18px, 160%, left, uppercase, $main-brown, 400);
   margin-left: 45%;
 
+  @include from(1600px) {
+    font-size: 22px;
+  }
+
   @include to(768px) {
     margin-left: 30%;
   }

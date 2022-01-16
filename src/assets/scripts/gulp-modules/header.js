@@ -1,24 +1,48 @@
 function menuOpen(menu) {
   menu.classList.add('menu__active');
-  // const createAnimation = (links, translateY = 0, delay = 0) => {
-  //   links.forEach((link, i) => {
-  //     gsap.from(link, {
-  //       delay: delay + i / 10,
-  //       y: translateY,
-  //       opacity: 0,
-  //     });
-  //   });
-  // };
-  // const links1 = menu.querySelectorAll('[data-animation1]');
-  // const links2 = menu.querySelectorAll('[data-animation2]');
-  // const links3 = menu.querySelectorAll('[data-animation3]');
-  // createAnimation(links1, 100, 0.5);
-  // createAnimation(links2, 100, 0.8);
-  // createAnimation(links3, 100, 1.1);
+  const createAnimation = (links, translateY = 0, delay = 0) => {
+    links.forEach((link, i) => {
+      gsap.from(link, {
+        delay: delay + i / 10,
+        y: translateY,
+        opacity: 0,
+      });
+    });
+  };
+  const links1 = menu.querySelectorAll('[data-animation]');
+  const links2 = menu.querySelectorAll('[data-animation2]');
+  createAnimation(links1, 100, 0.1);
+  createAnimation(links2, 100, 0.3);
+  menuOpenAnim();
 }
 
 function menuClose(menu) {
   menu.classList.remove('menu__active');
+  menuCloseAnim();
+}
+
+
+
+function menuOpenAnim(evt, reverseArg) {
+  const menu = document.querySelector('.menu-wrap');
+  if  (menu === null) return;
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo(menu,
+      { webkitClipPath: 'circle(0% at 200% 20%)' },
+      { webkitClipPath: 'circle(150% at 50% 0%)', ease: 'power4.easeInOut', duration: 1.2, clearProps: 'all' });
+  tl.play();
+}
+
+function menuCloseAnim(evt, reverseArg) {
+  const menu = document.querySelector('.menu-wrap');
+  if  (menu === null) return;
+  const ease = 'power4.easeOut';
+  const tl = gsap.timeline({ paused: true });
+  tl.set(menu, { opacity: 1, visibility: 'visible' });
+    tl.fromTo(menu,
+      { webkitClipPath: 'circle(150% at 100% 0)', },
+      {  webkitClipPath: 'circle(0% at 94% 7%)', ease: 'power4.easeInOut', duration: 0.75, clearProps: 'all' }, '<');
+  tl.play();
 }
 
 function menuInit() {
@@ -106,6 +130,7 @@ function init() {
       });
     });
   });
+
   // const unSelectHandler = (container) => {
   //   const elem = container.querySelector('.select-items');
   //   if (!elem.classList.contains('select-hide')) {
@@ -125,6 +150,7 @@ function init() {
   // document.querySelector('[data-lang="desktop"]').addEventListener('click', selectHandler);
 
   menuInit();
+
 }
 
 const header = document.querySelector('.header');

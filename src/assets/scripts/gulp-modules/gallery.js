@@ -34,6 +34,11 @@ function sideSwitchArrow(swiper, arrowArgs, conArgs) {
         arrow.remove();
     }
 
+    if (document.documentElement.clientWidth < 992) {
+        container.style.cursor = 'pointer';
+        arrow.style.cursor = 'pointer';
+    }
+
     function desktopNavButtonHandler(evt) {
         arrow.style.left = `${evt.clientX - 18}px`;
         arrow.style.top = `${evt.clientY - 18}px`;

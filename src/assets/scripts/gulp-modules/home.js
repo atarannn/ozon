@@ -1,16 +1,4 @@
 
-// if (locoScroll !== undefined) {
-//   locoScroll.on('scroll', ({ scroll }) => {
-//   //  pageup
-//     if (scroll.y > 1000) {
-//       $(".pageup").css('opacity', '1');
-//     } else {
-//       $(".pageup").css('opacity', '0');
-//     }
-//   })
-// } else {
-//
-// }
 function downButtonMobHandler() {
   $(document).ready(function () {
     $(window).scroll(function () {
@@ -33,7 +21,6 @@ function downButtonMobHandler() {
       return false;
     });
   });
-
   $(".button-bottom").on("click", function () {
     var el = $(this);
     var dest = el.attr("href");
@@ -55,13 +42,11 @@ function func() {
   script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap`;
   document.getElementsByTagName('head')[0].appendChild(script);
 }
-
 const maps = document.querySelectorAll('.map');
 const options = {
   rootMargin: '0px',
   threshold: 0.1,
 };
-
 maps.forEach((image) => {
   const callback = (entries, observer) => {
     /* Content excerpted, show below */
@@ -78,7 +63,6 @@ maps.forEach((image) => {
   const target = image;
   observer.observe(target);
 });
-
 function setMap() {
   const gmarkers1 = [];
   // const { points, main: center } = data;
@@ -257,10 +241,7 @@ function setMap() {
 function initMap() {
   setMap();
 }
-
-
 const isMobile = window.matchMedia('(max-width: 575px)').matches;
-
 function downButtonHandlerWithLocoScroll() {
   if (locoScroll === undefined) {
     downButtonMobHandler();
@@ -282,6 +263,5 @@ function downButtonHandlerWithLocoScroll() {
     })
   })
 }
-
 isMobile && downButtonMobHandler();
 !isMobile && downButtonHandlerWithLocoScroll();
