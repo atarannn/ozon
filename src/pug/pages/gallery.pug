@@ -29,11 +29,13 @@ block scripts
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/gallery.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
   #gallery
     .page-inner-offset5
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
       .gallery-slider__wrap.swiper-container
         .swiper-wrapper
           each sl in slider

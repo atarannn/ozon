@@ -7,7 +7,7 @@
 }
 
 .ecological__content {
-  @include to(768px) {
+  @include to(820px) {
     margin-bottom: 200px;
     margin-top: 100px;
   }
@@ -19,7 +19,7 @@
 }
 
 .garden__content {
-  @include to(768px) {
+  @include to(820px) {
     margin-top: 0;
     margin-bottom: 200px;
   }
@@ -30,7 +30,7 @@
 }
 
 .aesthetics__content, .location__content, .apartments__content {
-  @include to(768px) {
+  @include to(820px) {
     margin-top: 0;
     margin-bottom: 100px;
   }
@@ -40,7 +40,7 @@
 }
 
 .infrastructure__content {
-  @include to(768px) {
+  @include to(820px) {
     margin-bottom: 250px;
   }
   @include to(575px) {
@@ -49,7 +49,7 @@
 }
 
 .garden__image img {
-  @include to(768px) {
+  @include to(820px) {
     height: 600px;
     object-fit: cover;
   }
@@ -60,7 +60,7 @@
 }
 
 .ecological__image img, .aesthetics__image img, .infrastructure__image img {
-  @include to(768px) {
+  @include to(820px) {
     height: 477px;
     object-fit: cover;
   }
@@ -70,8 +70,21 @@
   }
 }
 
+.ecological__image img {
+  @include to(575px) {
+    object-position: top;
+  }
+}
+
+.infrastructure__image img {
+  @include to(575px) {
+    object-position: bottom;
+  }
+}
+
+
 .garden, .aesthetics, .location, .apartments, .happiness {
-  @include to(768px) {
+  @include to(820px) {
     display: flex;
     flex-direction: column-reverse;
   }
@@ -88,7 +101,7 @@
     bottom: 50px;
     @include HelveticaNeueCyr(10px, 140%, center, uppercase, $main-brown, 400);
 
-    @include to(768px) {
+    @include to(820px) {
       display: none;
     }
 
@@ -115,7 +128,7 @@
     top: 50%;
     left: 0;
     transform: translate(-50%, -50%);
-    background: url("../images/icons/Group.svg") center center / contain no-repeat;
+    //background: url("../images/icons/Group.svg") center center / contain no-repeat;
     width: 272px;
     height: 264px;
 
@@ -150,7 +163,7 @@
     }
   }
 
-  @include to(768px){
+  @include to(820px){
     max-width: 60%;
 
     li {
@@ -227,7 +240,7 @@
     bottom: -17%;
     left: 17%;
     transform: translateX(17%);
-    background: url("../images/icons/Pattern-1.svg") center center / contain no-repeat;
+    //background: url("../images/icons/Pattern-1.svg") center center / contain no-repeat;
     width: 200px;
     height: 197px;
 
@@ -236,13 +249,13 @@
       height: 306px;
     }
 
-    @include to(768px) {
+    @include to(820px) {
       left: 50%;
       transform: translateX(-50%);
     }
 
     @include to(575px) {
-      bottom: -15%;
+      bottom: -10%;
       height: 142px;
       width: 142px;
     }
@@ -252,24 +265,26 @@
 .garden__pattern {
   position: absolute;
   bottom: -5%;
-  left: 0;
-  background: url("../images/icons/Pattern-2.svg") center center / contain no-repeat;
-  width: 133px;
+  left: calc(-1*(266px/2));
+  //background: url("../images/icons/Pattern-2.svg") center center / contain no-repeat;
+  width: 266px;
   height: 232px;
 
   @include from(1600px) {
+    left: calc(-1*(355px/2));
     height: 293px;
-    width: 165px;
+    width: 335px;
+
   }
 
-  @include to(768px) {
+  @include to(820px) {
     bottom: 72%;
   }
 
   @include to(575px) {
     height: 99px;
     width: 112px;
-    left: -7%;
+    left: calc(-1*(112px/2));;
     bottom: 80%;
   }
 }
@@ -279,7 +294,7 @@
   top: -150px;
   left: 75%;
   z-index: -1;
-  background: url("../images/icons/Pattern-3.svg") center center / contain no-repeat;
+  //background: url("../images/icons/Pattern-3.svg") center center / contain no-repeat;
   transform: translateX(-50%);
   width: 200px;
   height: 192px;
@@ -290,7 +305,7 @@
     top: -240px;
   }
 
-  @include to(768px) {
+  @include to(820px) {
     top: 37%;
     left: 50%;
   }
@@ -298,7 +313,7 @@
   @include to(575px) {
     height: 136px;
     width: 142px;
-    top: 40%;
+    top: 35%;
   }
 }
 
@@ -307,7 +322,7 @@
   grid-template-columns: repeat(2, 50%);
   background: url("../images/img/concept.jpg") center center / cover no-repeat;
 
-  @include to(768px){
+  @include to(820px){
     grid-template-columns: repeat(1, 100%);
     padding-top: 100px;
     padding-bottom: 120px;
@@ -330,8 +345,19 @@
       font-size: 120px;
     }
 
+    @include to(992px) {
+      font-size: 82px;
+    }
+
+
+    @include to(820px) {
+      font-size: 96px;
+      margin: 0 80px 0 80px;
+    }
+
     @include to(575px) {
       font-size: 42px;
+      margin: 0 var(--left-right-margin);
       max-width: 70%;
     }
   }
@@ -342,8 +368,8 @@
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 90px;
 
-    @include to(768px) {
-      margin: 100px 0 0 var(--left-right-margin);
+    @include to(820px) {
+      margin: 100px 0 0 80px;;
       grid-row-gap: 40px;
     }
 
@@ -418,7 +444,7 @@
     width: 50%;
     height: 80vh;
 
-    @include to(768px) {
+    @include to(820px) {
       width: 100%;
       height: 477px;
     }
@@ -469,22 +495,23 @@
   position: absolute;
   top: 83%;
   transform: translateY(-50%);
-  left: 0%;
-  background: url("../images/icons/Pattern-4.svg") center center / contain no-repeat;
-  width: 132px;
+  left: calc(-1*(264px/2));
+  //background: url("../images/icons/Pattern-4.svg") center center / contain no-repeat;
+  width: 264px;
   height: 261px;
 
   @include from(1600px) {
+    left: calc(-1*(334px/2));
     height: 331px;
-    width: 165px;
+    width: 334px;
   }
 
-  @include to(768px) {
+  @include to(820px) {
     top: 20%;
   }
 
   @include to(575px) {
-    left: -7%;
+    left: calc(-1*(112px/2));
     height: 111px;
     width: 112px;
   }
@@ -498,7 +525,7 @@
       font-size: 36px;
     }
 
-    @include to(768px) {
+    @include to(820px) {
       font-size: 30px;
     }
   }
@@ -536,7 +563,7 @@
       height: 660px;
     }
 
-    @include to(768px) {
+    @include to(820px) {
       height: 477px;
     }
 
@@ -553,6 +580,10 @@
 
   @include from(1600px) {
     height: 800px;
+  }
+
+  @include to(820px) {
+    height: 477px;
   }
 
   @include to(575px) {
@@ -583,7 +614,7 @@
 .card__item-left {
   margin-right: 50px;
 
-  @include to(768px) {
+  @include to(820px) {
     margin-right: 10px;
   }
 }
@@ -606,7 +637,7 @@
       width: 315px;
     }
 
-    @include to(768px) {
+    @include to(820px) {
       top: 14%;
       right: 50%;
       width: 197px;
@@ -620,7 +651,7 @@
     }
   }
 
-  @include to(768px) {
+  @include to(820px) {
     margin-left: 10px;
     padding-top: 100px;
   }
@@ -644,7 +675,7 @@
   row-gap: 90px;
   background: url("../images/img/info.jpg") center center / cover no-repeat;
 
-  @include to(768px) {
+  @include to(820px) {
     padding-top: 100px;
     padding-bottom: 100px;
     padding-left: 0;
@@ -673,8 +704,9 @@
       grid-template-columns: 200px auto;
     }
 
-    @include to(768px) {
+    @include to(820px) {
       grid-template-columns: 120px auto;
+      column-gap: 30px;
     }
 
     @include to(575px) {
@@ -684,13 +716,21 @@
     &-svg {
       grid-row: 1 / 3;
 
-      @include to(768px) {
+      @include to(820px) {
         margin: 0 auto;
         margin-bottom: 30px;
       }
+
+      img {
+        width: 120px;
+
+        @include to(575px) {
+          width: 90px;
+        }
+      }
     }
 
-    @include to(768px) {
+    @include to(820px) {
       grid-template-columns: repeat(1, 100%);
     }
   }
@@ -699,7 +739,7 @@
   &__second,
   &__third,
   &__fourth {
-    @include to(768px) {
+    @include to(820px) {
       width: 100%;
       justify-content: center;
       align-items: center;
@@ -708,7 +748,7 @@
     .title-2 {
       text-align: left;
 
-      @include to(768px) {
+      @include to(820px) {
         text-align: center;
       }
     }
@@ -716,7 +756,7 @@
     .button {
       margin-top: 0;
 
-      @include to(768px) {
+      @include to(820px) {
         margin: 0 auto;
       }
 
@@ -745,7 +785,7 @@
       height: 301px;
     }
 
-    @include to(768px) {
+    @include to(920px) {
       top: 120%;
       left: 0;
     }
@@ -828,12 +868,18 @@
     align-items: flex-start;
   }
 
-  &__contacts-left {
+  &__contacts-right {
+    @include to(992px) {
+      align-items: center;
+    }
+  }
+
+  &__contacts-left{
     @include to(992px) {
       padding: 0 var(--left-right-margin) 100px var(--left-right-margin);
       flex-direction: row;
 
-      .connection__contacts-item {
+      .connection__contacts-item{
         margin-bottom: 0;
 
         &:last-child {
@@ -842,11 +888,12 @@
       }
     }
 
-    @include to(575px) {
+
+    @include to(650px) {
       padding: 0 var(--left-right-margin) 50px var(--left-right-margin);
       flex-direction: column;
 
-      .connection__contacts-item {
+      .connection__contacts-item{
         margin-bottom: 40px;
 
         &:last-child {

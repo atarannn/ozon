@@ -43,12 +43,14 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
 
   #documents
     .page-inner-offset
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
       .documets-block__wrapper
         each docs in documents
           .col

@@ -1,7 +1,7 @@
 #day {
   position: relative;
 
-  @include to(768px) {
+  @include to(820px) {
     .first__pattern, .second__pattern, .third__pattern, .fourth__pattern, .fifth__pattern, .sixth__pattern, .seventh__pattern, .eighth__pattern, .ninth__pattern {
       display: none;
     }
@@ -35,6 +35,7 @@
       position: relative;
       height: max-content;
       width: 100%;
+      overflow: hidden;
 
       img {
         object-fit: cover;

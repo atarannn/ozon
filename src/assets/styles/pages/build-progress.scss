@@ -33,7 +33,7 @@
     align-items: flex-start;
     justify-content: space-between;
 
-    @include to(768px) {
+    @include to(820px) {
       flex-direction: column;
     }
   }
@@ -41,7 +41,7 @@
   .work-status__text-left, .work-status__text-right {
     width: 50%;
 
-    @include to(768px) {
+    @include to(820px) {
       width: 100%;
     }
   }
@@ -49,7 +49,7 @@
   .work-status__text-left{
     padding-right: var(--inner-margin);
 
-    @include to(768px) {
+    @include to(820px) {
       padding-right: 0;
     }
   }
@@ -60,7 +60,7 @@
     align-items: flex-start;
     justify-content: space-between;
 
-    @include to(768px) {
+    @include to(820px) {
       padding-left: 0;
       margin-top: 30px;
     }
@@ -187,7 +187,7 @@
     justify-content: space-between;
     width: 80%;
 
-    @include to(768px) {
+    @include to(820px) {
       width: 70%;
     }
 
@@ -307,12 +307,8 @@
       margin-top: 150px;
     }
 
-    @include to(768px) {
+    @include to(820px) {
       margin-top: 30px;
-    }
-
-    @include to(425px) {
-      margin-top: 0;
     }
 
     a {
@@ -360,7 +356,7 @@
   padding-left: 50px;
   padding-right: 50px;
 
-  @include to(768px) {
+  @include to(820px) {
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -461,7 +457,7 @@
     width: fit-content;
 
     .text {
-      @include to(768px) {
+      @include to(820px) {
         display: none;
       }
     }
@@ -503,7 +499,7 @@
         height: 50px;
         width: 50px;
 
-        @include to(768px) {
+        @include to(820px) {
           height: 40px;
           width: 40px;
         }
@@ -511,7 +507,7 @@
         &:last-child {
           margin-top: 20px;
 
-          @include to(768px) {
+          @include to(820px) {
             margin-top: 5px;
           }
         }
@@ -527,7 +523,7 @@
     margin-top: 15px;
     font-size: 18px;
 
-    @include to(768px) {
+    @include to(820px) {
       font-size: 12px;
       margin-top: 10px;
     }
@@ -565,7 +561,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 

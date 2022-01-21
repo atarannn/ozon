@@ -44,15 +44,18 @@ block scripts
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/location.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
 
   #location
     .page-inner-offset.relative
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
       .info-top__text.title__bottom-padding2
-        .tenor-title OZON Concept House розташований в центрі Києва, в тихій частині Печерська за адресою: вулиця Вільшанська, 2-6.
+        .tenor-title(data-span-entry2) OZON Concept House розташований в центрі Києва, в тихій частині Печерська за адресою: вулиця Вільшанська, 2-6.
       .twentyfirst__pattern
+        img(src='./assets/images/icons/Pattern-3.svg' alt='Pattern')
     #map.map
       .location__map-img
     .location-blocks__wrapper.page-inner-offset2

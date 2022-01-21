@@ -70,33 +70,39 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/values.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
   #values
     .page-inner-offset3
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
     .page-inner-offset4
       each val in values
         .value
-          .helvetica-title=val.title
+          .helvetica-title(data-span-entry1)=val.title
           .slides__wrapper
             each item in val.slides
               .slide.title__bottom-padding2
                 +img(item.img)
                 .tenor-title=item.text
     .page-inner-offset2
-      .button
+      .button(data-span-entry1)
         a(href="#")
           span Обрати квартиру
           +svg('arrow').btn-svg
 
 
     .twelfth__pattern
+      img(src='./assets/images/icons/Pattern-9.svg' alt='Pattern')
     .fifteenth__pattern
+      img(src='./assets/images/icons/Pattern-5.svg' alt='Pattern')
     .sixteenth__pattern
+      img(src='./assets/images/icons/Pattern-1.svg' alt='Pattern')
     .seventeenth__pattern
+      img(src='./assets/images/icons/Pattern-8.svg' alt='Pattern')
     .eighteenth__pattern
+      img(src='./assets/images/icons/Pattern-12.svg' alt='Pattern')
 block footer
   include ../includes/footer.pug
 

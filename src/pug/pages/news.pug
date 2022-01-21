@@ -77,19 +77,21 @@ block scripts
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/news.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
 
   #news
     .page-inner-offset
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
       .news-block__wrapper
         each val in news
           .news-wrapper
             a(href=val.link).news
               +img(val.img)
-              .tenor-date=val.date
-              .tenor-title=val.text
+              .tenor-date(data-span-entry1)=val.date
+              .tenor-title(data-span-entry1)=val.text
 
       .pagination__wrapper
         a(href="#")
@@ -110,8 +112,11 @@ block content
           +svg('pagination-next')
 
     .twelfth__pattern
+      img(src='./assets/images/icons/Pattern-9.svg' alt='Pattern')
     .thirteenth__pattern
+      img(src='./assets/images/icons/Pattern-5.svg' alt='Pattern')
     .fourteenth__pattern
+      img(src='./assets/images/icons/Pattern-1.svg' alt='Pattern')
 block footer
   include ../includes/footer.pug
 

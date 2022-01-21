@@ -2,12 +2,12 @@
   position: relative;
 
   .button {
-    @include to(768px) {
+    @include to(820px) {
       margin-top: 45px;
     }
   }
 
-  @include to(768px) {
+  @include to(820px) {
     .tenth__pattern {
       display: none;
     }
@@ -29,7 +29,7 @@
     .text {
       margin-left: 45%;
 
-      @include to(768px) {
+      @include to(820px) {
         margin-left: 25%;
       }
     }
@@ -38,7 +38,7 @@
   .infrastructure-block__margin {
     margin-bottom: 150px;
 
-    @include to(768px) {
+    @include to(820px) {
       margin-bottom: 80px;
     }
 
@@ -60,7 +60,7 @@
   .helvetica-title {
     margin-bottom: 30px;
 
-    @include to(768px) {
+    @include to(820px) {
       margin-bottom: 20px;
     }
   }
@@ -69,12 +69,12 @@
     margin-top: 80px;
     width: 100%;
 
-    @include to(768px) {
-      margin-top: 40px;
+    .tenor-title {
+      margin-bottom: 0;
+    }
 
-      .tenor-title {
-        margin-bottom: 0;
-      }
+    @include to(820px) {
+      margin-top: 40px;
     }
 
     @include to(425px) {
@@ -94,6 +94,10 @@
 
       &:last-child {
         margin-bottom: 0;
+
+        @include to(425px) {
+          margin-bottom: 20px;
+        }
       }
 
       .tenor-title {
@@ -101,7 +105,7 @@
         max-width: 95%;
       }
 
-      @include to(768px) {
+      @include to(820px) {
         margin-bottom: 40px;
       }
 

@@ -42,25 +42,28 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/specifications.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
 
   #specifications
     .page-inner-offset
-      h1.page-title= title_page
-      .tenor-title Ми впевнені, комфорт і затишок в оселі залежать не тільки від правильно підібраних меблів чи кольорової гами в інтер’єрі. Головні складові комфорту та гарного мікроклімату в апартаментах — це зручне планування, надійні склопакети, якісна система опалення, продумані внутрішні мережі. Саме такий підхід ми використовуємо при виборі будівельних матеріалів та проєктуванні апартаментів.
+      h1(data-span-entry1)#up.page-title= title_page
+      .tenor-title(data-span-entry2) Ми впевнені, комфорт і затишок в оселі залежать не тільки від правильно підібраних меблів чи кольорової гами в інтер’єрі. Головні складові комфорту та гарного мікроклімату в апартаментах — це зручне планування, надійні склопакети, якісна система опалення, продумані внутрішні мережі. Саме такий підхід ми використовуємо при виборі будівельних матеріалів та проєктуванні апартаментів.
       .specifications-block__wrapper
          each val in block
            .specifications-block
-             +img(val.img)
+             .specifications-block__img
+                +img(val.img)
              .specifications-block__text
                 .tenor-title=val.title
                 .text=val.text
 
     .twelfth__pattern
+      img(src='./assets/images/icons/Pattern-9.svg' alt='Pattern')
     .thirteenth__pattern
-    .fourteenth__pattern
+      img(src='./assets/images/icons/Pattern-5.svg' alt='Pattern')
 
 block footer
   include ../includes/footer.pug

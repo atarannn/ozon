@@ -24,12 +24,14 @@ block scripts
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/communication.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
 
   #communication
     .page-inner-offset2
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
       .connection
         .connection__contacts
           .connection__contacts-left.half-block
@@ -51,7 +53,7 @@ block content
                 p СБ-ВС: 10:00-18:00
 
           .connection__contacts-right.half-block
-            form.home-form(data-home-contact autocomplete="off")
+            form.home-form(data-communication-contact autocomplete="off")
               .helvet__title залишились запитання?
               .form-field__wrapper
                 label(for="name").form-label Введіть ваше ім’я
@@ -85,10 +87,11 @@ block content
 
               .button
                 button( type="submit" data-btn-submit)
-                  span(data-btn-submit-text) Відправити запит
+                  span(data-btn-submit-text) надіслати
                   +svg('arrow').btn-svg
 
     .twentythird__pattern
+      img(src='./assets/images/icons/Pattern-14.svg' alt='Pattern')
 block footer
   include ../includes/footer.pug
 

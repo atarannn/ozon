@@ -105,20 +105,22 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
 
   #infrastructure
     .page-inner-offset
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
       .info-top-wrapper.title__bottom-padding4
         .info-top__text
-          .tenor-title Завдяки тому, що OZON Concept House розташований у центрі, він оточений насиченою міською інфраструктурою. Поруч з будинком знаходиться багато кафе, ресторанів і магазинів, є декілька супермаркетів.
-          .text Створюючи OZON Concept House, ми також подбали про його внутрішню інфраструктуру. Все, що потрібно для комфорту та гармонійного життя, можна знайти у будинку або поруч з ним:
+          .tenor-title(data-span-entry2) Завдяки тому, що OZON Concept House розташований у центрі, він оточений насиченою міською інфраструктурою. Поруч з будинком знаходиться багато кафе, ресторанів і магазинів, є декілька супермаркетів.
+          .text(data-span-entry3) Створюючи OZON Concept House, ми також подбали про його внутрішню інфраструктуру. Все, що потрібно для комфорту та гармонійного життя, можна знайти у будинку або поруч з ним:
 
     .infrastructure-block-wrapper.page-inner-offset2
       .infrastructure-block.infrastructure-block__margin
-        .helvetica-title Для відпочинку
+        .helvetica-title(data-span-entry4) Для відпочинку
         .block__row
           each inf in rest
             .col
@@ -128,7 +130,7 @@ block content
                   .tenor-title.title__top-padding1=val.text
 
       .infrastructure-block.infrastructure-block__margin
-        .helvetica-title Для спорту
+        .helvetica-title(data-span-entry1) Для спорту
         .block__row
           each inf in sport
             .col
@@ -138,7 +140,7 @@ block content
                   .tenor-title.title__top-padding1=val.text
 
       .infrastructure-block.infrastructure-block__margin
-        .helvetica-title Для дітей
+        .helvetica-title(data-span-entry1) Для дітей
         .block__row
           each inf in child
             .col
@@ -147,7 +149,7 @@ block content
                 .tenor-title.title__top-padding1=inf.text
 
       .infrastructure-block.infrastructure-block__margin
-        .helvetica-title Для відпочинку
+        .helvetica-title(data-span-entry1) Для відпочинку
         .block__row
           each inf in beauty
             .col
@@ -157,7 +159,7 @@ block content
                   .tenor-title.title__top-padding1=val.text
 
       .infrastructure-block
-        .helvetica-title Для автомобілістів
+        .helvetica-title(data-span-entry1) Для автомобілістів
         .block__row
           each inf in cars
             .col
@@ -168,14 +170,16 @@ block content
           img(src='./assets/images/infrastructures/21.png' alt='car')
           .tenor-title.title__top-padding1 Наземний паркінг
 
-      .button.title__top-padding4
+      .button(data-span-entry1).title__top-padding4
         a(href="#")
           span Обрати квартиру
           +svg('arrow').btn-svg
 
 
     .tenth__pattern
+      img(src='./assets/images/icons/Pattern-8.svg' alt='Pattern')
     .eleventh__pattern
+      img(src='./assets/images/icons/Pattern-12.svg' alt='Pattern')
 
 
 block footer

@@ -24,20 +24,22 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/animation.js')
 
 block content
   #home-page
     section#up.promo
       .promo__content
-        h1.subtitle.bottom-offset  ozon concept house
-        h2.title.bottom-offset Печерськ здорової людини
-        .text.big-main-text.bottom-offset У тихій частині Печерська, біля ботанічного саду ми створюємо OZON Concept House.
+        h1(data-span-entry1).subtitle.bottom-offset  ozon concept house
+        h2(data-span-entry2).title.bottom-offset Печерськ здорової людини
+        .text.big-main-text.bottom-offset(data-span-entry3) У тихій частині Печерська, біля ботанічного саду ми створюємо OZON Concept House.
         ul.promo__links
-          li Для гармонії
-          li Для спорту та відпочинку
-          li Для спокійного життя
+          li(data-span-entry3) Для гармонії
+          li(data-span-entry3) Для спорту та відпочинку
+          li(data-span-entry3) Для спокійного життя
         .promo__group
-        .button
+          img(src='./assets/images/icons/Group.svg' alt='pattern')
+        .button(data-span-entry3)
           a(href="#")
             span Дивитися квартири
             +svg('arrow').btn-svg
@@ -49,7 +51,7 @@ block content
             circle(cx='26' cy='26' r='25' stroke='#ECEDEF')
           | дізнатися більше
 
-    .video
+    .video#bottom
       video(autoplay='false' muted='' loop='' playsinline controls)
         source(src='./assets/images/video/video-main.mp4' type='video/mp4')
       //.button.video__button
@@ -59,13 +61,14 @@ block content
       //      circle(cx="25" cy="25" r="25" fill="#A6B720")
       //      path(d="M20 32V18L34 25L20 32Z" fill="white")
       .video__pattern
+        img(src='./assets/images/icons/Pattern-1.svg' alt='pattern')
 
     section.ecological.row.blocks-margin.blocks-offset
       .ecological__content.half-block.block-content
-        h2.subtitle.bottom-offset ecological
-        h2.title.little-title.bottom-offset екологічне оточення
-        .text.little-main-text Атмосфера умиротворення в оточенні зелені — всього за декілька хвилин пішки від ботанічного саду
-        .button
+        h2(data-span-entry1).subtitle.bottom-offset ecological
+        h2(data-span-entry2).title.little-title.bottom-offset екологічне оточення
+        .text.little-main-text(data-span-entry3) Атмосфера умиротворення в оточенні зелені — всього за декілька хвилин пішки від ботанічного саду
+        .button(data-span-entry3)
           a(href="#")
             span Детальніше
             +svg('arrow').btn-svg
@@ -76,34 +79,36 @@ block content
       .garden__image
         img(src='./assets/images/img/garden.jpg' alt='garden')
       .garden__content.blocks-margin
-        h2.subtitle.bottom-offset garden
-        h2.title.bottom-offset концепція "дім-сад"
-        .text.big-main-text Сади на терасах і дахах, куди матимуть доступ усі мешканці, парк навколо будинку
+        h2(data-span-entry1).subtitle.bottom-offset garden
+        h2(data-span-entry2).title.bottom-offset концепція "дім-сад"
+        .text.big-main-text(data-span-entry3) Сади на терасах і дахах, куди матимуть доступ усі мешканці, парк навколо будинку
       .garden__pattern
+        img(src='./assets/images/icons/Pattern-2.svg' alt='pattern')
 
     section.aesthetics.row.blocks-margin.blocks-offset
       .aesthetics__image.half-block
         img(src='./assets/images/img/aesthetics.jpg' alt='aesthetics')
       .aesthetics__content.half-block.block-content
-        h2.subtitle.bottom-offset aesthetics
-        h2.title.bottom-offset естетика 360º
-        .text.little-main-text Сучасна архітектура, стильний дизайн суспільних просторів, панорамний вид на ботанічний сад
+        h2(data-span-entry1).subtitle.bottom-offset aesthetics
+        h2(data-span-entry2).title.bottom-offset естетика 360º
+        .text.little-main-text(data-span-entry3) Сучасна архітектура, стильний дизайн суспільних просторів, панорамний вид на ботанічний сад
 
     section.infrastructure.row.blocks-margin.blocks-offset
       .infrastructure__content.half-block.block-content
-        h2.subtitle.bottom-offset infrastructure
-        h2.title.bottom-offset продумана інфраструктура
-        .text.little-main-text Усе, що потрібно для гармонійного життя
-        .button
+        h2(data-span-entry1).subtitle.bottom-offset infrastructure
+        h2(data-span-entry2).title.bottom-offset продумана інфраструктура
+        .text.little-main-text(data-span-entry3) Усе, що потрібно для гармонійного життя
+        .button(data-span-entry3)
           a(href="#")
             span Детальніше
             +svg('arrow').btn-svg
       .infrastructure__image.half-block
         img(src='./assets/images/img/infrastructure.jpg' alt='infrastructure')
       .infrastructure__pattern
+        img(src='./assets/images/icons/Pattern-3.svg' alt='pattern')
 
     section.concept.blocks-margin
-      h2.concept__title ozon concept house
+      h2(data-span-entry1).concept__title ozon concept house
       .concept__items
         .concept__item
           .concept__item-numbers 2,4 га
@@ -134,10 +139,10 @@ block content
       #map.map.location__map.half-block
         .location__map-img
       .location__content.half-block.block-content
-        h2.subtitle.bottom-offset location
-        h2.title.bottom-offset розташування
-        .text.little-main-text OZON Concept House розташований у центрі Києва, у тихій частині Печерська за адресою: вулиця Вільшанська, 2-6.
-        .button
+        h2(data-span-entry1).subtitle.bottom-offset location
+        h2(data-span-entry2).title.bottom-offset розташування
+        .text.little-main-text(data-span-entry3) OZON Concept House розташований у центрі Києва, у тихій частині Печерська за адресою: вулиця Вільшанська, 2-6.
+        .button(data-span-entry3)
           a(href="#")
             span Детальніше
             +svg('arrow').btn-svg
@@ -147,14 +152,16 @@ block content
         video(autoplay='true' muted='' loop='' playsinline controls)
           source(src='./assets/images/video/video-apartments.mp4' type='video/mp4')
       .apartments__content.blocks-margin.block-content
-        h2.subtitle.bottom-offset apartments
-        h2.title.little-title.bottom-offset Квартири, створені для гармонії
-        .text.big-main-text Для тих, хто хоче жити в гармонії та оточенні однодумців, щодня насолоджуватися атмосферою тихого центру та видом на улюблений Печерськ, ми створюємо OZON Concept House. Тут кожна квартира продумана до деталей та створена для вашого комфорту. Хочете стати його мешканцем? Вибирайте квартиру та плануйте переїжджати до нашого будинку!
-        .button-2.button
+        h2(data-span-entry1).subtitle.bottom-offset apartments
+        h2(data-span-entry2).title.little-title.bottom-offset Квартири, створені для гармонії
+        .text.big-main-text(data-span-entry3) Для тих, хто хоче жити в гармонії та оточенні однодумців, щодня насолоджуватися атмосферою тихого центру та видом на улюблений Печерськ, ми створюємо OZON Concept House. Тут кожна квартира продумана до деталей та створена для вашого комфорту. Хочете стати його мешканцем? Вибирайте квартиру та плануйте переїжджати до нашого будинку!
+        .button-2.button(data-span-entry3)
           a(href="#")
             span Детальніше
             +svg('arrow').btn-svg
       .apartments__pattern
+        img(src='./assets/images/icons/Pattern-4.svg' alt='pattern')
+
 
     section.card.blocks-margin.offset
       .card-top
@@ -221,23 +228,23 @@ block content
             +svg('arrow').btn-svg
 
       .info__pattern
-        img(src='./assets/images/icons/Pattern-8.svg' alt='Pattern-8')
+        img(src='./assets/images/icons/Pattern-8.svg' alt='Pattern')
 
 
-    section.happiness.row.blocks-margin.blocks-offset#bottom
+    section.happiness.row.blocks-margin.blocks-offset
       .aesthetics__image.half-block
         img(src='./assets/images/img/happiness.jpg' alt='happiness')
       .aesthetics__content.half-block.block-content
-        h2.subtitle.bottom-offset Happiness
-        h2.title.bottom-offset День в ozon
-        .text.little-main-text Дізнайтесь, як проходитиме день, коли ви будете жити в OZON Concept House.
-        .button
+        h2(data-span-entry1).subtitle.bottom-offset Happiness
+        h2(data-span-entry2).title.bottom-offset День в ozon
+        .text.little-main-text(data-span-entry3) Дізнайтесь, як проходитиме день, коли ви будете жити в OZON Concept House.
+        .button(data-span-entry3)
           a(href="#")
             span Детальніше
             +svg('arrow').btn-svg
 
     section.connection.blocks-margin
-      h2.title Контакти
+      h2(data-span-entry1).title Контакти
       .connection__contacts
         .connection__contacts-left.half-block
           .connection__contacts-item
@@ -292,12 +299,14 @@ block content
 
             .button
               button( type="submit" data-btn-submit)
-                span(data-btn-submit-text) Відправити запит
+                span(data-btn-submit-text) надіслати
                 +svg('arrow').btn-svg
 
 
             .twentysecond__pattern
+              img(src='./assets/images/icons/Pattern-15.svg' alt='Pattern')
       .twentythird__pattern
+        img(src='./assets/images/icons/Pattern-14.svg' alt='Pattern')
 
 
 

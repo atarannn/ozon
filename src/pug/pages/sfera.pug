@@ -23,22 +23,24 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
 
   #sfera
     .page-inner-offset
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
       .info-top-wrapper.title__bottom-padding3
         a(href="#")
           img(src='./assets/images/icons/sfera.svg' alt='sfera')
         .info-top__text
-          .tenor-title ATMOSFERA — це високотехнологічна управляюча компанія, яка піклується про комфортне та щасливе життя мешканців.
-          .text Головна мета компанії ATMOSFERA – передбачити запити мешканців і забезпечити їх належне виконання в максимально короткий термін. ATMOSFERA піклується про комфорт мешканців OZON Concept House на всіх етапах – як після введення об’єкту до експлуатації та отримання права власності на квартиру, так і під час проживання у будинку.
+          .tenor-title(data-span-entry2) ATMOSFERA — це високотехнологічна управляюча компанія, яка піклується про комфортне та щасливе життя мешканців.
+          .text(data-span-entry2) Головна мета компанії ATMOSFERA – передбачити запити мешканців і забезпечити їх належне виконання в максимально короткий термін. ATMOSFERA піклується про комфорт мешканців OZON Concept House на всіх етапах – як після введення об’єкту до експлуатації та отримання права власності на квартиру, так і під час проживання у будинку.
       .technical_control-info.title__top-padding2.title__bottom-padding3
-        .tenor-title-upper Client Technical Control надає право майбутнім мешканцям:
+        .tenor-title-upper(data-span-entry3) Client Technical Control надає право майбутнім мешканцям:
         .info-text-block.title__top-padding2
-          .info-text-block__left
+          .info-text-block__left(data-span-entry3)
             .text Команда професіоналів з укомплектованою матеріально-технічною базою
             .text Сервіс-менеджер, який вирішить усі питання до заселення
             .text Консьєрж, який вирішує усі запитання після заселення: від доставки продуктів до виклика сантехніка
@@ -47,7 +49,7 @@ block content
             .text Управління витратами та комунальними послугами
             .text Автоматизована звітність будинку
             .text Своєчасне усунення несправностей
-          .info-text-block__right
+          .info-text-block__right(data-span-entry3)
             .text Ремонт у квартирі
             .text Відповідальність за кожну задачу від мешканця
             .text Енергозберігаючі технології
@@ -63,15 +65,15 @@ block content
         img(src='./assets/images/sfera/1.png' alt='sfera')
 
       .technical_control-info.title__top-padding2.title__bottom-padding2
-        .tenor-title-upper МОБІЛЬНИЙ ДОДАТОК SFERA
+        .tenor-title-upper(data-span-entry1) МОБІЛЬНИЙ ДОДАТОК SFERA
         .info-text-block.title__top-padding2.title__bottom-padding3
-          .info-text-block__left
+          .info-text-block__left(data-span-entry1)
             .text Звітність про будівництво
             .text Домофон у смартфоні – відкривайте двері з мобільного додатку навіть коли вас немає вдома
             .text Важливі повідомлення
             .text Новини будинку
             .text Фінансова звірка
-          .info-text-block__right
+          .info-text-block__right(data-span-entry1)
             .text Дистанційне відеоспостереження в зонах загального користування
             .text Контроль над змінами по ремонту чи переплануванню
             .text Вся документація в одному місці
@@ -82,12 +84,12 @@ block content
 
 
       .technical_control-info.title__bottom-padding2
-        .tenor-title-upper ЧАТ SFERA
+        .tenor-title-upper(data-span-entry1) ЧАТ SFERA
         .info-text-block.title__top-padding2.title__bottom-padding3
-          .info-text-block__left
+          .info-text-block__left(data-span-entry1)
             .text Вирішення екстрених проблем
             .text Зворотний зв’язок 24/7
-          .info-text-block__right
+          .info-text-block__right(data-span-entry1)
             .text Виклик сантехніка та інших технічних спеціалістів
             .text Замовлення послуг та товарів
 
@@ -95,39 +97,44 @@ block content
         img(src='./assets/images/sfera/2.png' alt='sfera')
 
       .technical_control-info.title__top-padding3.title__bottom-padding2
-        .tenor-title-upper МОБІЛЬНИЙ ДОДАТОК SFERA
+        .tenor-title-upper(data-span-entry1) МОБІЛЬНИЙ ДОДАТОК SFERA
         .info-text-block.title__top-padding2.title__bottom-padding3
-          .info-text-block__left
+          .info-text-block__left(data-span-entry1)
             .text Управління вуличним освітленням
             .text Автоматизоване освітлення у під’їздах
             .text Відео-нагляд
             .text Єдина система моніторингу стану будинку
             .text IP-домофонія
             .text Система контролю доступу
-          .info-text-block__right
+          .info-text-block__right(data-span-entry1)
             .text Збір даних з приладів обліку енергоресурсів
             .text Автоматизація та контроль індивідуального теплового пункту
             .text Контроль температури у під’їздах
             .text Система «розумний ліфт»
 
       .technical_control-info.title__bottom-padding2
-        .tenor-title-upper СИСТЕМА «РОЗУМНА КВАРТИРА»
+        .tenor-title-upper(data-span-entry1) СИСТЕМА «РОЗУМНА КВАРТИРА»
         .info-text-block.title__top-padding2.title__bottom-padding3
-          .info-text-block__left
+          .info-text-block__left(data-span-entry1)
             .text Система «розумний будинок» встановлена у всіх місцях загального користування. Вона не стосується приватного життя.
-          .info-text-block__right
+          .info-text-block__right(data-span-entry1)
             .text Система «розумна квартира» є частиною приватного простору, тому вона може бути встановлена лише за бажанням мешканця.
-      .helvetica-title.title__bottom-padding3 Ми прагнемо створювати не лише будинки, але й атмосферу у них.
+      .helvetica-title.title__bottom-padding3(data-span-entry1) Ми прагнемо створювати не лише будинки, але й атмосферу у них.
       .info-img
         img(src='./assets/images/sfera/3.png' alt='sfera')
-      .sfera-half-block.title__top-padding3.title__bottom-padding3 Ми мріємо досягнути затишку, у якому абсолютний комфорт буде підкреслюватися сучасними технологіями.
-      .helvetica-title Саме тому в кожному будинку присутня ATMOSFERA – система для життя.
+      .sfera-half-block.title__top-padding3.title__bottom-padding3(data-span-entry1) Ми мріємо досягнути затишку, у якому абсолютний комфорт буде підкреслюватися сучасними технологіями.
+      .helvetica-title(data-span-entry1) Саме тому в кожному будинку присутня ATMOSFERA – система для життя.
 
     .first__pattern
+      img(src='./assets/images/icons/Pattern-11.svg' alt='Pattern')
     .second__pattern
+      img(src='./assets/images/icons/Pattern-9.svg' alt='Pattern')
     .third__pattern
+      img(src='./assets/images/icons/Pattern-5.svg' alt='Pattern')
     .fourth__pattern
+      img(src='./assets/images/icons/Pattern-8.svg' alt='Pattern')
     .fifth__pattern
+      img(src='./assets/images/icons/Pattern-2.svg' alt='Pattern')
 
 block footer
   include ../includes/footer.pug

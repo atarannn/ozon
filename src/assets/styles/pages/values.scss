@@ -1,7 +1,7 @@
 #values {
   position: relative;
 
-  @include to(768px) {
+  @include to(820px) {
     .twelfth__pattern, .fifteenth__pattern, .sixteenth__pattern, .seventeenth__pattern{
       display: none;
     }
@@ -27,6 +27,14 @@
 
     @include from(1600px) {
       margin-top: 150px;
+    }
+
+    @include to(820px) {
+      margin-top: 80px;
+    }
+
+    @include to(575px) {
+      margin-top: 50px;
     }
 
     a .btn-svg {
@@ -68,14 +76,14 @@
           margin-top: 20px;
           margin-left: var(--left-right-margin);
 
-          @include to(768px) {
+          @include to(820px) {
             margin-top: 10px;
           }
         }
       }
     }
 
-    @include to(768px) {
+    @include to(820px) {
       flex-direction: column;
 
       .slides__wrapper {

@@ -1,7 +1,7 @@
 #sfera{
   position: relative;
 
-  @include to(768px) {
+  @include to(820px) {
     .first__pattern, .second__pattern, .third__pattern, .fourth__pattern, .fifth__pattern {
       display: none;
     }
@@ -10,7 +10,7 @@
   .info-top__text .text{
     margin-left: 30%;
 
-    @include to(768px) {
+    @include to(820px) {
       margin-left: 20%;
     }
 
@@ -28,7 +28,7 @@
     font-size: 22px;
   }
 
-  @include to(768px) {
+  @include to(820px) {
     margin-left: 30%;
   }
 

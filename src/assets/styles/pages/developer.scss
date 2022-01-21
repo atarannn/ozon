@@ -9,7 +9,7 @@
         width: 215px;
       }
 
-      @include to(768px) {
+      @include to(820px) {
         width: 80px;
       }
     }
@@ -33,7 +33,7 @@
   .swiper {
     overflow: hidden;
 
-    @include to(768px) {
+    @include to(820px) {
       margin: 0 50px;
     }
   }
@@ -43,7 +43,7 @@
     a img {
       height: 40px;
 
-      @include to(768px) {
+      @include to(820px) {
         height: 30px;
       }
     }
@@ -51,7 +51,7 @@
     a .bristol-img {
       height: 60px;
 
-      @include to(768px) {
+      @include to(820px) {
         height: 50px;
       }
     }
@@ -83,7 +83,7 @@
       left: -50px;
     }
 
-    @include to(768px) {
+    @include to(820px) {
       left: 0;
     }
   }
@@ -98,7 +98,7 @@
       right: -50px;
     }
 
-    @include to(768px) {
+    @include to(820px) {
       right: 0;
     }
   }

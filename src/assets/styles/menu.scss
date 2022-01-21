@@ -1,5 +1,5 @@
 .menu-wrap.menu__active {
-  transition: opacity 0.5s ease-in, visibility 1ms linear;
+  //transition: opacity 0.5s ease-in, visibility 1ms linear;
   visibility: visible;
   opacity: 1;
 }
@@ -18,10 +18,15 @@
     grid-template-rows: var(--header-h) 180px 1fr;
   }
 
-  @include to(768px) {
+  @include to(820px) {
     grid-template-columns: 100px 1fr 100px;
     grid-template-rows: var(--header-h) 80px 1fr;
   }
+
+  @include to(650px) {
+    grid-template-columns: 50px 1fr 50px;
+  }
+
 
   @include to(425px) {
     grid-template-columns: 30px 1fr 30px;
@@ -38,7 +43,7 @@
     background: $w;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.5s ease-out, visibility 1ms linear 0.5s;
+    //transition: opacity 0.5s ease-out, visibility 1ms linear 0.5s;
   }
 
   &__section-wrapper {
@@ -48,7 +53,7 @@
 
     position: relative;
 
-    @include to(768px) {
+    @include to(820px) {
       grid-template-columns: 60% 40%;
       grid-template-rows: repeat(2, 1fr);
       row-gap: 30px;
@@ -88,10 +93,6 @@
       width: 264px;
       height: 130px;
 
-      @include from(1600px) {
-        width: 494px;
-        height: 244px;
-      }
 
       @include to(425px) {
         width: 190px;
@@ -101,7 +102,7 @@
   }
 
   &__title {
-    @include tenor(18px, 100%, left, 0.05em, uppercase, #000000);
+    @include tenor(18px, 100%, left, 0.05em, uppercase, $main-brown);
     margin-bottom: 30px;
 
     @include from(1600px) {

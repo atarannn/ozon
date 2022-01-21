@@ -64,30 +64,40 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/day.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
 
   #day
     .page-inner-offset
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
       .day-blocks-wrapper
         each bl in blocks
           .block
             .block__img-wrapper
               +img(bl.img)
               .block__gradient
-              .block__time= bl.time
-            .block__text.helvetica-title= bl.text
+              .block__time(data-span-entry2)= bl.time
+            .block__text.helvetica-title(data-span-entry1)= bl.text
     .first__pattern
+      img(src='./assets/images/icons/Pattern-11.svg' alt='Pattern')
     .second__pattern
+      img(src='./assets/images/icons/Pattern-9.svg' alt='Pattern')
     .third__pattern
+      img(src='./assets/images/icons/Pattern-5.svg' alt='Pattern')
     .fourth__pattern
+      img(src='./assets/images/icons/Pattern-8.svg' alt='Pattern')
     .fifth__pattern
+      img(src='./assets/images/icons/Pattern-2.svg' alt='Pattern')
     .sixth__pattern
+      img(src='./assets/images/icons/Pattern-1.svg' alt='Pattern')
     .seventh__pattern
+      img(src='./assets/images/icons/Pattern-4.svg' alt='Pattern')
     .eighth__pattern
+      img(src='./assets/images/icons/Pattern-5.svg' alt='Pattern')
     .ninth__pattern
+      img(src='./assets/images/icons/Pattern-3.svg' alt='Pattern')
 
 
 block footer

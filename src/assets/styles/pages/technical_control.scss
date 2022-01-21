@@ -25,7 +25,7 @@
     }
   }
 
-  @include to(768px) {
+  @include to(820px) {
     .first__pattern, .second__pattern, .third__pattern, .fourth__pattern, .fifth__pattern, .sixth__pattern {
       display: none;
     }
@@ -147,7 +147,7 @@
 
 
   img {
-    width: auto;
+    width: 55%;
     margin-bottom: 50px;
 
     @include from(1600px) {

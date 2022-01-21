@@ -24,19 +24,21 @@ block scripts
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/developer.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
 
   #developer
     .page-inner-offset
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
       .info-top-wrapper.title__bottom-padding2
         a(href="#")
           img(src='./assets/images/icons/footer-saga.svg' alt='saga')
         .info-top__text
-          .tenor-title Девелопер OZON Concept House – компанія SAGA Development. Глобальна мета компанії – розвивати міста, спираючись на екосистему партнерства. SAGA Development кидає виклик консервативним стандартам, втілюючи інноваційні та креативні рішення для комфортного життя поколінь.
+          .tenor-title(data-span-entry2) Девелопер OZON Concept House – компанія SAGA Development. Глобальна мета компанії – розвивати міста, спираючись на екосистему партнерства. SAGA Development кидає виклик консервативним стандартам, втілюючи інноваційні та креативні рішення для комфортного життя поколінь.
       .developer-projects
-        .tenor-title.title__bottom-padding2 Інші проєкти компанії
+        .tenor-title.title__bottom-padding2(data-span-entry2) Інші проєкти компанії
         .developer-projects__swipper
           .swiper
             .swiper-wrapper

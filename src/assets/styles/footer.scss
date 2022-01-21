@@ -27,6 +27,8 @@
   justify-content: flex-start;
   width: 100%;
 
+  z-index: 1;
+
   background-color: $light-grey;
 
   @include to(992px) {
@@ -52,7 +54,7 @@
     border-bottom: 1px solid #D9DBDF;
     padding-bottom: 50px;
 
-    @include to(768px) {
+    @include to(820px) {
       grid-template-columns: repeat(2, 1fr);
       row-gap: 50px;
     }
@@ -142,7 +144,7 @@
         font-size: 48px;
       }
 
-      @include to(768px) {
+      @include to(820px) {
         font-size: 30px;
         margin-bottom: 40px;
       }
@@ -197,7 +199,7 @@
     &-left, &-right {
       width: 10%;
 
-      @include to(768px) {
+      @include to(820px) {
         width: 20%;
       }
 
@@ -210,7 +212,7 @@
       width: 40%;
       text-align: center;
 
-      @include to(768px) {
+      @include to(820px) {
         width: 50%;
       }
 

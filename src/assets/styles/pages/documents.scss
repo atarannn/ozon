@@ -5,7 +5,7 @@
     align-items: flex-start;
     justify-content: space-between;
 
-    @include to(768px) {
+    @include to(820px) {
       flex-direction: column;
 
       .col {

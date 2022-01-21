@@ -25,6 +25,14 @@
         margin-bottom: 0;
       }
 
+      .specifications-block__img{
+        width: 50%;
+
+        @include to(650px) {
+          width: 100%;
+        }
+      }
+
       &:nth-child(odd) {
         justify-content: flex-start;
 
@@ -32,7 +40,7 @@
           flex-direction: column;
         }
 
-        img {
+        .specifications-block__img{
           padding-right: var(--inner-margin);
 
           @include to(650px) {
@@ -56,7 +64,7 @@
           flex-direction: column;
         }
 
-        img {
+        .specifications-block__img{
           padding-left: var(--inner-margin);
 
           @include to(650px) {
@@ -70,14 +78,6 @@
           @include to(650px) {
             padding-right: 0;
           }
-        }
-      }
-
-      img {
-        width: 50%;
-
-        @include to(650px) {
-          width: 100%;
         }
       }
 

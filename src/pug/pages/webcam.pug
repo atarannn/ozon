@@ -23,21 +23,25 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
   #webcam
     .page-inner-offset
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
       .video-webcam__blocks
         .video-webcam__block.relative
           iframe(width="810" height="450" src="https://www.youtube.com/embed/gg1Rqx4kSNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-          .helvetica-title.title__top-padding1 Назва веб камери
+          .helvetica-title.title__top-padding1(data-span-entry2) Назва веб камери
           .nineteenth__pattern
+            img(src='./assets/images/icons/Pattern-10.svg' alt='Pattern')
         .video-webcam__block.title__top-padding3.relative
           iframe(width="810" height="450" src="https://www.youtube.com/embed/gg1Rqx4kSNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-          .helvetica-title.title__top-padding1 Назва веб камери
+          .helvetica-title.title__top-padding1(data-span-entry1) Назва веб камери
           .twentieth__pattern
-        .button.title__top-padding3
+            img(src='./assets/images/icons/Pattern-12.svg' alt='Pattern')
+        .button(data-span-entry1).title__top-padding3
           a(href="#")
             span Хід будівництва
             +svg('arrow').btn-svg

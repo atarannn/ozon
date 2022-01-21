@@ -36,6 +36,10 @@
     }
   }
 
+  .block-img__wrapper {
+    overflow: hidden;
+  }
+
   @include to(425px) {
     .location-blocks__wrapper .block__row .col .block {
       margin-bottom: 40px;

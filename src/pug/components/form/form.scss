@@ -12,20 +12,21 @@
   height: 100%;
   background: #00000045;
 
-  display: flex;
   align-items: center;
   justify-content: center;
 
   visibility: hidden;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.5s ease-out, visibility 1ms linear 0.5s;
+  display: flex;
+  //display: none;
+  //transition: opacity 0.5s ease-out, visibility 1ms linear 0.5s;
 
   .form-field__wrapper {
     &:first-child {
       padding-right: 50px;
 
-      @include to(992px) {
+      @include to(1099px) {
         padding-right: 0;
       }
     }
@@ -33,7 +34,7 @@
     &:last-child {
       padding-left: 50px;
 
-      @include to(992px) {
+      @include to(1099px) {
         padding-left: 0;
         margin-top: 30px;
       }
@@ -42,10 +43,11 @@
 }
 
 .form-wrapper.active {
-  transition: opacity 0.5s ease-in, visibility 1ms linear;
+  //transition: opacity 0.5s ease-in, visibility 1ms linear;
   visibility: visible;
   opacity: 1;
   pointer-events: painted;
+  //display: flex;
 }
 
 form {
@@ -56,17 +58,20 @@ form {
   padding: 100px 140px 70px 140px;
   position: relative;
 
+  @include from(1600px) {
+    width: 70%;
+  }
+
   @include to(575px) {
-    display: flex;
     flex-direction: column;
     justify-content: space-around;
   }
 
-  @include to(992px) {
+  @include to(1099px) {
     padding: 80px 100px 50px 100px;
   }
 
-  @include to(768px) {
+  @include to(820px) {
     padding: 80px 70px 50px 70px;
   }
 
@@ -123,7 +128,7 @@ form {
 
   margin-bottom: 80px;
 
-  @include to(992px) {
+  @include to(1099px) {
     flex-direction: column;
     margin-bottom: 50px;
   }
@@ -133,7 +138,7 @@ form {
     padding-right: 50px;
     max-width: 50%;
 
-    @include to(992px) {
+    @include to(1099px) {
       max-width: 90%;
       padding-right: 0;
     }
@@ -144,13 +149,13 @@ form {
     @include HelveticaNeueCyr(18px, 160%, left, uppercase, $main-brown, 400);
     max-width: 40%;
 
-    @include to(992px) {
+    @include to(1099px) {
       margin-top: 40px;
       max-width: 90%;
       padding-left: 0;
     }
 
-    @include to(768px) {
+    @include to(820px) {
       font-size: 16px;
     }
 
@@ -165,7 +170,7 @@ form {
   align-items: flex-start;
   justify-content: space-between;
 
-  @include to(992px) {
+  @include to(1099px) {
     flex-direction: column;
   }
 
@@ -176,7 +181,7 @@ form {
     justify-content: flex-start;
     width: 60%;
 
-    @include to(992px) {
+    @include to(1099px) {
       width: 100%;
     }
 
@@ -212,7 +217,7 @@ form {
       text-align: left;
     }
 
-    @include to(992px) {
+    @include to(1099px) {
       font-size: 16px;
       margin-top: 30px;
     }
@@ -225,7 +230,7 @@ form {
   justify-content: space-between;
   margin-bottom: 100px;
 
-  @include to(992px) {
+  @include to(1099px) {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 50px;
@@ -479,6 +484,10 @@ form {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  @include from (1099px) {
+    width: 70%;
+  }
 }
 
 .form-checkbox input {
@@ -529,3 +538,30 @@ form {
   transform: translate(-50%, -50%) rotate(45deg);
   border-width: 0 3px 3px 0;
 }
+
+//.form-thanks-wrapper {
+//  transition: all .5s linear;
+//  position: absolute;
+//  top: 50%;
+//  left: 50%;
+//  transform: translate(-50%, -50%);
+//
+//  opacity: 0;
+//  visibility: hidden;
+//
+//  height: 40vh;
+//  background: $light-grey;
+//
+//  padding: 100px 140px;
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  justify-content: center;
+//}
+//
+//.form-thanks-wrapper.thanks-active {
+//  opacity: 1;
+//  z-index: 1001;
+//  visibility: visible;
+//  transition: all .5s linear;
+//}

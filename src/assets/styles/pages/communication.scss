@@ -5,13 +5,10 @@
 #communication {
   position: relative;
 
-  .twentythird__pattern {
-    bottom: 0;
-    z-index: -1;
 
-    @include from(1600px) {
-      bottom: -6%;
-    }
+  .twentythird__pattern {
+    bottom: -10%;
+    z-index: -1;
   }
 
   .connection {
@@ -31,8 +28,14 @@
       }
     }
 
-    form.home {
+    .connection__contacts-right {
+      form.home-form {
+        max-width: 700px;
 
+        @include to(820px) {
+          max-width: 100%;
+        }
+      }
     }
   }
 }

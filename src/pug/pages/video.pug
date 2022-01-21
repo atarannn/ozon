@@ -23,20 +23,25 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
   #video
     .page-inner-offset
-      h1.page-title= title_page
+      h1(data-span-entry1)#up.page-title= title_page
       .video-webcam__blocks
         .video-webcam__block.relative
           iframe(width="810" height="450" src="https://www.youtube.com/embed/gg1Rqx4kSNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-          .helvetica-title.title__top-padding1 Назва відеоролику
+          .helvetica-title.title__top-padding1(data-span-entry2) Назва відеоролику
           .nineteenth__pattern
+            img(src='./assets/images/icons/Pattern-10.svg' alt='Pattern')
+
         .video-webcam__block.title__top-padding3.relative
           iframe(width="810" height="450" src="https://www.youtube.com/embed/gg1Rqx4kSNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-          .helvetica-title.title__top-padding1 Назва відеоролику
+          .helvetica-title.title__top-padding1(data-span-entry1) Назва відеоролику
           .twentieth__pattern
+            img(src='./assets/images/icons/Pattern-12.svg' alt='Pattern')
 block footer
   include ../includes/footer.pug
 

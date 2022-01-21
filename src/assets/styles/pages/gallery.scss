@@ -25,7 +25,7 @@
       display: block;
     }
 
-    @include to(768px) {
+    @include to(820px) {
       top: 4%;
     }
 
@@ -39,6 +39,14 @@
     right: 17%;
     left: auto;
     background: url("../images/icons/gallery-btn-prev.svg") center center / contain no-repeat;
+
+    @include to(820px) {
+      right: 12%;
+    }
+
+    @include to(425px) {
+      right: 18%;
+    }
   }
 
   .swiper-button-next {

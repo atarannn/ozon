@@ -23,11 +23,13 @@ block scripts
   script(defer src='./assets/scripts/libs.js')
   script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/animation.js')
+
 block content
   include ../includes/breadcrumbs.pug
   #news-page
     .page-inner-offset
-      h1.news-title Чисте повітря завдяки зеленій території та розташуванню поблизу ботанічного саду
+      h1(data-span-entry1)#up.news-title Чисте повітря завдяки зеленій території та розташуванню поблизу ботанічного саду
       img(src='./assets/images/news/news-page.png' alt='news').title__bottom-padding2
       .news-page-text__wrapper
         .tenor-date 05.05.2021
@@ -44,14 +46,14 @@ block content
               +svg('arrow').btn-svg
 
       .last-news__wrapper.title__top-padding4
-        .page-title Останні Новини
+        .page-title(data-span-entry1) Останні Новини
         .last-news
-          .news-wrapper
+          .news-wrapper(data-span-entry1)
             a(href="#").news
               img(src='./assets/images/news/2.png' alt='news')
               .tenor-date 05.05.2021
               .tenor-title Атмосфера будинку, яка умиротворяє
-          .news-wrapper
+          .news-wrapper(data-span-entry1)
             a(href="#").news
               img(src='./assets/images/news/3.png' alt='news')
               .tenor-date 05.05.2021

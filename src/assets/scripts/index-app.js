@@ -36,7 +36,8 @@ const forms = [
 const formsWithRedirect = [
   '[data-popup-form]',
   '[data-form-popup]',
-  '[data-home-footer]'
+  '[data-home-footer]',
+  '[data-communication-contact]'
 ];
 
 formsWithRedirect.forEach((form) => {
@@ -48,7 +49,18 @@ formsWithRedirect.forEach((form) => {
       elements: {
         $form,
         showSuccessMessage: false,
-        successAction: () => { window.location.href = 'message'; },
+        successAction: () => {
+          // window.location.href = 'message';
+            function closePopup(callSelector) {
+              const submitBtn = document.querySelector(callSelector);
+              const callContent = document.querySelector('[data-call-popup]');
+
+              submitBtn.addEventListener('click', () => {
+                callContent.classList.remove('active');
+              });
+            }
+            closePopup('[data-btn-submit]');
+          },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
           name: {
@@ -71,7 +83,6 @@ formsWithRedirect.forEach((form) => {
             error: [],
           },
         },
-
       },
     });
     // $form.querySelector('.js-mask-absolute').addEventListener('click', () => {
@@ -127,6 +138,9 @@ forms.forEach((form) => {
     //   $form.querySelector('[name="phone"]').focus();
     //   $form.querySelector('.js-mask-absolute').style.display = 'none';
     // }, false);
+
+
+
     $form.querySelectorAll('.js-mask-absolute').forEach(elem => {
       elem.addEventListener('click', () => {
         $form.querySelector('[name="phone"]').focus();
