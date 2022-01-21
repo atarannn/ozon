@@ -22,9 +22,9 @@ window.addEventListener('load', () => {
     paralaxImages.forEach((image) => {
         const wrap = document.createElement('div');
         wrap.style.overflow = 'hidden';
-        wrap.style.height = 'auto';
+        wrap.style.height = '100%';
         image.parentElement.prepend(wrap);
-        gsap.set(image, { willChange: 'transform', scale: 1 });
+        gsap.set(image, { willChange: 'transform', scale: 1.1 });
         wrap.prepend(image);
 
         gsap
