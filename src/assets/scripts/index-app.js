@@ -50,16 +50,16 @@ formsWithRedirect.forEach((form) => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
-          // window.location.href = 'message';
-            function closePopup(callSelector) {
-              const submitBtn = document.querySelector(callSelector);
-              const callContent = document.querySelector('[data-call-popup]');
-
-              submitBtn.addEventListener('click', () => {
-                callContent.classList.remove('active');
-              });
-            }
-            closePopup('[data-btn-submit]');
+          window.location.href = 'message';
+            // function closePopup(callSelector) {
+            //   const submitBtn = document.querySelector(callSelector);
+            //   const callContent = document.querySelector('[data-call-popup]');
+            //
+            //   submitBtn.addEventListener('click', () => {
+            //     callContent.classList.remove('active');
+            //   });
+            // }
+            // closePopup('[data-btn-submit]');
           },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {

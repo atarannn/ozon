@@ -539,3 +539,74 @@
     display: none;
   }
 }
+
+.first-404-pattern {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: calc(-262px/2);
+  transform: translateY(-50%);
+  //background: url("../images/icons/Pattern-14.svg") center center / contain no-repeat;
+  height: 272px;
+  width: 262px;
+
+  @include from(1600px) {
+    width: 299px;
+    height: 335px;
+    right: calc(-299px/2);
+  }
+
+  @include to(992px) {
+    display: none;
+  }
+}
+
+.second-404-pattern {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: calc(-264px/2);
+  transform: translateY(-50%);
+  //background: url("../images/icons/Pattern-14.svg") center center / contain no-repeat;
+  height: 296px;
+  width: 264px;
+
+  @include from(1600px) {
+    width: 299px;
+    height: 335px;
+    left: calc(-299px/2);
+  }
+
+  @include to(992px) {
+    display: none;
+  }
+}
+
+.third-404-pattern {
+  position: absolute;
+  z-index: 0;
+  bottom: calc(-265px/2);
+  left: 50%;
+  transform: translateX(-50%);
+  //background: url("../images/icons/Pattern-14.svg") center center / contain no-repeat;
+  height: 265px;
+  width: 264px;
+
+  @include from(1600px) {
+    width: 350px;
+    height: 335px;
+    bottom: calc(-335px/2);
+  }
+
+  @include to(992px) {
+    width: 250px;
+    height: 250px;
+    bottom: calc(-250px/2);
+  }
+
+  @include to(575px) {
+    width: 200px;
+    height: 200px;
+    bottom: calc(-200px/2);
+  }
+}

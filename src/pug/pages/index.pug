@@ -11,13 +11,6 @@ block variable
         link: pagesLink[0].home
       }
     ]
-
-block meta
-  title= 'Главная'
-  meta(name='description', content='')
-block head
-    link(rel='stylesheet', href="./assets/styles/main.min.css")
-block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
   script(defer src='./assets/scripts/index.js')
@@ -25,6 +18,13 @@ block scripts
   script(defer src='./assets/scripts/header.js')
   script(defer src='./assets/scripts/home.js')
   script(defer src='./assets/scripts/animation.js')
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+
 
 block content
   #home-page
@@ -307,7 +307,6 @@ block content
               img(src='./assets/images/icons/Pattern-15.svg' alt='Pattern')
       .twentythird__pattern
         img(src='./assets/images/icons/Pattern-14.svg' alt='Pattern')
-
 
 
 block footer

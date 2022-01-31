@@ -1,0 +1,66 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'Умови купівлі'
+    var id_page = 'id-page-terms-purchase'
+    var class_page = 'class-page-terms-purchase'
+    var breadcrumbsSubitem = [
+      {
+        label: 'terms-purchase',
+        link: pagesLink[0].terms-purchase
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/animation.js')
+block content
+  include ../includes/breadcrumbs.pug
+
+  #terms-purchase
+    .page-inner-offset
+      h1(data-span-entry1)#up.page-title= title_page
+
+      .terms-purchase_text-wrapper
+        .tenor-title(data-span-entry2) Якби ми складали перелік питань, які нам найчастіше ставлять клієнти, перше місце посіло би питання про умови купівлі на виплат.
+        .text(data-span-entry2) У цьому розділі ми вирішили розповісти про те, як придбати квартиру в OZON Concept House та на який період можна розподілити оплату. Перший внесок складає 50%. Решту ви можете оплатити протягом трьох років. Ми хочемо, щоб ви були впевнені у своєму виборі нерухомості, тому кожному, хто скористається умовами на виплат, ми надаємо пільговий період на 24 місяці — термін, коли вартість вашої квартири буде зафіксована. Подорожчання на суму залишку скласть 7,9% річних в доларах США.
+      .terms-img.title__top-padding2.title__bottom-padding2
+        img(src='./assets/images/terms/1.png' alt='terms')
+      .terms-info
+        .tenor-title(data-span-entry1) Деталі умов на виплат:
+        .info-text-block
+          .info-text-block__left(data-span-entry1)
+            ul.terms-purchase_list
+              li.text перший внесок — від 50%,
+              li.text строк — 36 місяців,
+              li.text пільговий період без подорожчання — 24 місяці,
+              li.text подорожчання — 7,9% річних в доларах США в рік на суму залишку.
+            .button(data-span-entry1).title__top-padding2
+              a(href="#")
+                span Вибрати квартиру
+                +svg('arrow').btn-svg
+          .info-text-block__right(data-span-entry1)
+            .text Обирайте планування на сайті проєкту, а за деталями відносно будинку та умов придбання в OZON Concept House завітайте до нашого відділу продажу: вул. Антоновича, 44.
+            .button(data-span-entry1)
+              a(href="#")
+                span Замовити дзвінок
+                +svg('arrow').btn-svg
+    .first__pattern
+      img(src='./assets/images/icons/Pattern-11.svg' alt='Pattern')
+    .second__pattern
+      img(src='./assets/images/icons/Pattern-9.svg' alt='Pattern')
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

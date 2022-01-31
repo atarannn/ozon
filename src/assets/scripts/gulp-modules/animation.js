@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
         pinType: document.querySelector(".page__inner").style.transform ? "transform" : "fixed"
     });
 
-    const paralaxImages = document.querySelectorAll('.ecological__image img, .garden__image img, .aesthetics__image img, .infrastructure__image img, .card__item-image img, #values .slide img, #infrastructure .block img, #sfera .info-img img, .specifications-block img, .technical_control-img');
+    const paralaxImages = document.querySelectorAll('.terms-img img, .ecological__image img, .garden__image img, .aesthetics__image img, .infrastructure__image img, .card__item-image img, #values .slide img, #infrastructure .block img, #sfera .info-img img, .specifications-block img, .technical_control-img');
     paralaxImages.forEach((image) => {
         const wrap = document.createElement('div');
         wrap.style.overflow = 'hidden';

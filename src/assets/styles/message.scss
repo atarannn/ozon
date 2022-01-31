@@ -1,4 +1,4 @@
-.page404-wrap {
+.message-wrap {
   position: relative;
   background: $w;
   height: 100vh;
@@ -10,7 +10,7 @@
   justify-content: center;
   overflow: hidden;
 
-  .page404 {
+  .message {
     width: 100%;
     height: 100%;
     display: flex;
@@ -19,9 +19,21 @@
     justify-content: center;
   }
 
-  .tenor-title {
+  .title {
     text-align: center;
     margin-bottom: 10px;
+
+    @include to(820px) {
+      max-width: 90%;
+    }
+  }
+
+  .text {
+    max-width: 35%;
+
+    @include to(820px) {
+      max-width: 70%;
+    }
   }
 
   .link-wrap {
@@ -49,14 +61,5 @@
         }
       }
     }
-  }
-}
-
-.page404__title {
-  @include tenor(160px, 90%, center, -0.03em, uppercase, $main-green);
-  margin-bottom: 30px;
-
-  @include to(575px) {
-    font-size: 120px;
   }
 }

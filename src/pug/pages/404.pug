@@ -1,30 +1,43 @@
 extends ../layout/main
-	
+
 block meta
 	title= '404'
 	meta(name='description', content='')
 block head
-		link(rel='stylesheet', href="./assets/styles/main.min.css")
+	link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
-	script(src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/vendors.bundle.js')
+	script(defer src='./assets/scripts/index.bundle.js')
+	script(defer src='./assets/scripts/index.js')
+	script(defer src='./assets/scripts/libs.js')
+	script(defer src='./assets/scripts/header.js')
+	script(defer src='./assets/scripts/animation.js')
 
 block content
 	section(class="page404-wrap")
 		div(class="page404")
-			h1(class="page404__title") 404
-				span(class="page404__title-small") упс...
-			p(class="page404__subtitle") Что-то пошло не так, страница не найдена
+			h1(class="page404__title" data-span-entry1) 404
+				//span(class="page404__title-small") упс...
+			p(class="page404__subtitle tenor-title" data-span-entry1) Такої сторінки не існує.
+			p(data-span-entry1).text Почніть з головної або подивіться, які квартири ми пропонуємо
 			div(class="link-wrap")
-				a(class="button-fill" onclick="window.history.go(-1);")
-					span.button-fill__text Назад
-				a(class="button-fill" href="/")
-					span.button-fill__text На главную
+				.button(data-span-entry1)
+					a(class="button-fill" href="#")
+						span.button-fill__text На головну
+						+svg('arrow').btn-svg
+				.button(data-span-entry1)
+					a(class="button-fill" href="#")
+						span.button-fill__text Вибрати квартиру
+						+svg('arrow').btn-svg
 
-block footer
-	footer.footer
-		include ../includes/footer.pug
+		div(class= "first-404-pattern")
+			img(src='./assets/images/icons/Pattern-16.svg' alt='Pattern')
+		div(class= "second-404-pattern")
+			img(src='./assets/images/icons/Pattern-17.svg' alt='Pattern')
+		div(class= "third-404-pattern")
+			img(src='./assets/images/icons/Pattern-18.svg' alt='Pattern')
+
 
 block header
-	header.header
-		include ../includes/header.pug
+	include ../includes/header.pug
 

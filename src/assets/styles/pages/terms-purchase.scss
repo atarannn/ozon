@@ -1,0 +1,79 @@
+#terms-purchase {
+  position: relative;
+  @include to(820px) {
+    .first__pattern, .second__pattern {
+      display: none;
+    }
+  }
+}
+
+.terms-purchase_text-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include to(575px) {
+    flex-direction: column;
+  }
+
+  .tenor-title {
+    width: 50%;
+    margin-bottom: 0;
+    padding-right: var(--inner-margin);
+
+    @include to(575px) {
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+
+  .text {
+    width: 50%;
+    text-align: left;
+    padding-left: var(--inner-margin);
+
+    @include to(575px) {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 30px;
+    }
+  }
+}
+
+.terms-info {
+  .info-text-block {
+    align-items: stretch;
+
+    //@include to(575px) {
+    //  flex-direction: column;
+    //}
+  }
+
+  .tenor-title {
+    margin-bottom: 20px;
+  }
+
+  .info-text-block__right {
+    height: auto;
+
+    div:first-child {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-between;
+
+      .button {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.terms-purchase_list {
+  margin-left: 20px;
+  .text {
+    margin-top: 10px;
+    list-style: disc;
+  }
+}

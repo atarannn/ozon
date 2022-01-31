@@ -1,0 +1,42 @@
+extends ../layout/main
+
+block meta
+    title= 'message'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(defer src='./assets/scripts/vendors.bundle.js')
+    script(defer src='./assets/scripts/index.bundle.js')
+    script(defer src='./assets/scripts/index.js')
+    script(defer src='./assets/scripts/libs.js')
+    script(defer src='./assets/scripts/header.js')
+    script(defer src='./assets/scripts/animation.js')
+
+block content
+    section(class="message-wrap")
+        div(class="message")
+            h1(class="title" data-span-entry1) Повідомлення надіслано
+                //span(class="page404__title-small") упс...
+            p(data-span-entry1 class="text") Дякуємо за звернення. Очікуйте на дзвінок наших менеджерів. Бажаемо приємного дня та гарного настрою =)
+            div(class="link-wrap")
+                .button(data-span-entry1)
+                    a(class="button-fill" href="#")
+                        span.button-fill__text На головну
+                        +svg('arrow').btn-svg
+                .button(data-span-entry1)
+                    a(class="button-fill" href="#")
+                        span.button-fill__text Вибрати квартиру
+                        +svg('arrow').btn-svg
+
+        div(class= "first-404-pattern")
+            img(src='./assets/images/icons/Pattern-16.svg' alt='Pattern')
+        div(class= "second-404-pattern")
+            img(src='./assets/images/icons/Pattern-17.svg' alt='Pattern')
+        div(class= "third-404-pattern")
+            img(src='./assets/images/icons/Pattern-18.svg' alt='Pattern')
+
+
+block header
+    include ../includes/header.pug
+
