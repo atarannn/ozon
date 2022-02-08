@@ -20,6 +20,7 @@ const lang = langDetect();
         // Тексты конкретного языка
         translation: {
           // Так называемый namespace по умолчанию
+          onlyletters: 'имя должно содержать только буквы',
           name: 'Имя:*',
           phone: 'Телефон:*',
           send: 'Отправить',
@@ -46,6 +47,7 @@ const lang = langDetect();
         // Тексты конкретного языка
         translation: {
           // Так называемый namespace по умолчанию
+          onlyletters: 'ім`я повинне містити тільки літери',
           name: 'Ім’я:*',
           phone: 'Телефон:*',
           send: 'Надіслати',
@@ -74,6 +76,7 @@ const lang = langDetect();
         // Тексты конкретного языка
         translation: {
           // Так называемый namespace по умолчанию
+          onlyletters: 'name must contain only letters',
           name: 'Name:*',
           phone: 'Phone:*',
           send: 'Sand',

@@ -51,21 +51,12 @@ formsWithRedirect.forEach((form) => {
         showSuccessMessage: false,
         successAction: () => {
           window.location.href = 'message';
-            // function closePopup(callSelector) {
-            //   const submitBtn = document.querySelector(callSelector);
-            //   const callContent = document.querySelector('[data-call-popup]');
-            //
-            //   submitBtn.addEventListener('click', () => {
-            //     callContent.classList.remove('active');
-            //   });
-            // }
-            // closePopup('[data-btn-submit]');
           },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
           name: {
             inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-name]') }),
-            rule: yup.string().required(i18next.t('required')).trim(),
+            rule: yup.string().required(i18next.t('required')).matches(/^[aA-zZ\s]+$/, i18next.t('onlyletters')).trim(),
             defaultMessage: i18next.t('name'),
             valid: false,
             error: [],
@@ -113,7 +104,7 @@ forms.forEach((form) => {
         fields: {
           name: {
             inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-name]') }),
-            rule: yup.string().required(i18next.t('required')).trim(),
+            rule: yup.string().required(i18next.t('required')).matches(/^[aA-zZ\s]+$/, i18next.t('onlyletters')).trim(),
             defaultMessage: i18next.t('name'),
             valid: false,
             error: [],

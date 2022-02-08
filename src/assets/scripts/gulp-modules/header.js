@@ -128,7 +128,9 @@ function formCloseAnim(evt, reverseArg) {
 
 function formInit() {
   const form = document.querySelector('[data-call-popup]');
-  document.querySelector('[data-open-call-popup]').addEventListener('click', () => formOpen(form));
+  document.querySelectorAll('[data-open-call-popup]').forEach(elem => {
+    elem.addEventListener('click', () => formOpen(form));
+  });
   document.querySelector('[data-close-call-popup]').addEventListener('click', () => formClose(form));
 }
 

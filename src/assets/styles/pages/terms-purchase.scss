@@ -55,17 +55,20 @@
 
   .info-text-block__right {
     height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 
-    div:first-child {
-      height: 100%;
+    .text {
       display: flex;
       flex-direction: column;
       align-items: start;
       justify-content: space-between;
+    }
 
-      .button {
-        margin-top: 0;
-      }
+    .button {
+      margin-top: 0;
     }
   }
 }
