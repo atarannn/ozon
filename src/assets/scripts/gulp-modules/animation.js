@@ -18,6 +18,41 @@ window.addEventListener('load', () => {
         pinType: document.querySelector(".page__inner").style.transform ? "transform" : "fixed"
     });
 
+    const paralaxImagesInfra = document.querySelectorAll('#infrastructure .block img');
+    paralaxImagesInfra.forEach((image) => {
+        const wrap = document.createElement('div');
+        wrap.style.overflow = 'hidden';
+        wrap.style.height = 'auto';
+        image.parentElement.prepend(wrap);
+        gsap.set(image, { willChange: 'transform', scale: 1.1 });
+        wrap.prepend(image);
+
+        gsap
+            .timeline({
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: wrap,
+                    scrub: 1.5,
+                    scroller: '.page__inner',
+                    // markers: true,
+                    onLeave: () => {
+                        console.log('leave');
+                    },
+                    // markers: true,
+                },
+            })
+            .fromTo(
+                image,
+                {
+                    y: -25,
+                },
+                {
+                    y: 25,
+                    ease: 'linear',
+                },
+            );
+    });
+
     const paralaxImages = document.querySelectorAll('.terms-img img, .ecological__image img, .garden__image img, .aesthetics__image img, .infrastructure__image img, .card__item-image img, #values .slide img, #infrastructure .block img, #sfera .info-img img, .specifications-block img, .technical_control-img');
     paralaxImages.forEach((image) => {
         const wrap = document.createElement('div');

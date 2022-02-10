@@ -243,6 +243,11 @@
         .card {
           cursor: pointer;
 
+          img {
+            height: 300px;
+            object-fit: cover;
+          }
+
           &:hover {
             .block-info-text {
               color: $main-green;

@@ -136,10 +136,10 @@ form {
   .title {
     text-align: left;
     padding-right: 50px;
-    max-width: 50%;
+    width: 50%;
 
     @include to(1099px) {
-      max-width: 90%;
+      width: 90%;
       padding-right: 0;
     }
   }
@@ -147,11 +147,11 @@ form {
   .form-text {
     padding-left: 50px;
     @include HelveticaNeueCyr(18px, 160%, left, uppercase, $main-brown, 400);
-    max-width: 40%;
+    width: 40%;
 
     @include to(1099px) {
       margin-top: 40px;
-      max-width: 90%;
+      width: 90%;
       padding-left: 0;
     }
 
