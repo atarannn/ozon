@@ -72,8 +72,14 @@ function menuCloseAnim(evt, reverseArg) {
 
 function menuInit() {
   const menu = document.querySelector('.menu-wrap');
-  document.querySelector('[data-open-menu]').addEventListener('click', () => menuOpen(menu));
-  document.querySelector('[data-close-menu]').addEventListener('click', () => menuClose(menu));
+  document.querySelector('[data-open-menu]').addEventListener('click', () => {
+    menuOpen(menu);
+    document.body.style.overflow = 'hidden';
+  });
+  document.querySelector('[data-close-menu]').addEventListener('click', () => {
+    menuClose(menu);
+    document.body.style.overflow = 'auto';
+  });
 }
 
 // function callPopup(callSelector, contentToOpenSelector, closeSelector) {
@@ -132,9 +138,15 @@ function formCloseAnim(evt, reverseArg) {
 function formInit() {
   const form = document.querySelector('[data-call-popup]');
   document.querySelectorAll('[data-open-call-popup]').forEach(elem => {
-    elem.addEventListener('click', () => formOpen(form));
+    elem.addEventListener('click', () => {
+      formOpen(form);
+      document.body.style.overflow = 'hidden';
+    });
   });
-  document.querySelector('[data-close-call-popup]').addEventListener('click', () => formClose(form));
+  document.querySelector('[data-close-call-popup]').addEventListener('click', () => {
+    formClose(form);
+    document.body.style.overflow = 'auto';
+  });
 }
 
 
@@ -146,19 +158,19 @@ const formCallMobile = document.querySelector('.js-mobile-form');
 const form = document.querySelector('[data-call-popup]');
 
 formCallMobile.addEventListener('click', () => {
-  form.classList.add('active');
+  formOpen(form);
   formMobile.classList.remove('sideform-active');
-  document.querySelector('body').style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
 });
 
 btnCallMobile.addEventListener('click', () => {
   formMobile.classList.add('sideform-active');
-  document.querySelector('body').style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
 });
 
 btnCloseMobile.addEventListener('click', () => {
   formMobile.classList.remove('sideform-active');
-  document.querySelector('body').style.overflow = 'auto';
+  document.body.style.overflow = 'auto';
 });
 // Mobile phone menu end
 
