@@ -95,6 +95,11 @@
   width: 100%;
   background-color: $w;
 
+  @media screen and (max-width: 992px) and(min-width: 640px){
+    height: 100%;
+    padding: 200px 0;
+  }
+
   .button-bottom {
     position: absolute;
     left: 50px;
@@ -179,7 +184,7 @@
     }
   }
 
-  @include to(575px) {
+  @include to(585px) {
     max-width: 70%;
     flex-direction: column;
 
