@@ -538,7 +538,7 @@
     background: none;
     content: '';
     display: inline-block;
-    background-image:  url("../images/icons/ozon.svg");
+    background-image:  url("../images/icons/ozon-2.svg");
     background-color: inherit;
     position: absolute;
     bottom: -42%;
@@ -546,10 +546,6 @@
     transform: translateX(-50%);
     height: 10px;
     width: 65px;
-
-    @include to(1099px) {
-      display: none;
-    }
   }
 
   .mySwiper2 .swiper-slide-thumb-active {
